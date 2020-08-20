@@ -41,7 +41,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :items,
-- has_many :items_categores, through: :items
 - has_one :address
 - has_one :creditcard
 
