@@ -40,7 +40,7 @@ Things you may want to cover:
 |birth_day|integer|null: false|
 
 ### Association
-- has_many :items,
+- has_many :items
 - has_one :address
 - has_one :creditcard
 
