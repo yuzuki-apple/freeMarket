@@ -1,0 +1,59 @@
+<header class="single-header">
+  <h1>
+    <%= link_to image_tag("logo.svg"), root_path %>
+  </h1>
+</header>
+
+<div class="session">
+  <main>
+    <section>
+      <div class="sessionHeader">
+        <p>アカウントをお持ちでない方はこちら</p>
+        <%= link_to "新規会員登録",new_user_registration_path %>
+      </div>
+
+      <div class="sessionContent">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="formGroup">
+            <%= f.email_field :email, autofocus: true, placeholder:"メールアドレス", autocomplete:"email", class:"inputDefault" %>
+          </div>
+
+          <div class="formGroup">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class:"inputDefault" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="formGroup">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+          <div class="submit">
+            <%= f.submit "Log in" %>
+          </div>
+        <% end %>
+      </div>
+      <a href="/users/password/new">パスワードをお忘れの方</a>
+    </section>
+  </main>
+</div>
+
+<footer class="single-footer">
+  <nav>
+    <ul>
+      <li>
+        <a href="/">プライバシーポリシー</a>
+      </li>
+      <li>
+        <a href="/">メルカリ利用規約</a>
+      </li>
+      <li>
+          <a href="/">特定商取引に関する表記</a>
+      </li>
+    </ul>
+  </nav>
+  <%= link_to image_tag("logo-white.svg"),root_path  %>
+  <p>
+    <small>&copy; FURIMA</small>
+  </p>
+</footer>
