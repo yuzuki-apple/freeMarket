@@ -1,3 +1,205 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "UTF-8";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+.pcHeader {
+  padding: 0 60px;
+}
+
+.pcHeader .headerInner {
+  max-width: 1040px;
+  width: 100%;
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 15px 0 0;
+}
+
+.pcHeader .headerInner .mainHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pcHeader .headerInner .mainHeader .icon {
+  padding-bottom: 10px;
+  margin-right: 30px;
+  border-radius: 4px;
+}
+
+.pcHeader .headerInner .mainHeader .icon a {
+  width: 140px;
+  display: block;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.pcHeader .headerInner .mainHeader .searchBox {
+  margin-left: auto;
+  width: 100%;
+}
+
+.pcHeader .headerInner .mainHeader .searchBox form {
+  width: 100%;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.pcHeader .headerInner .mainHeader .searchBox form input {
+  width: calc(100% - 26px);
+  height: 36px;
+  padding: 0 0 0 5px;
+}
+
+.pcHeader .headerInner .mainHeader .searchBox form button {
+  width: 36px;
+  border: 0;
+  cursor: pointer;
+  background-color: #3CCACE;
+  padding: 8px;
+}
+
+
+.pcHeader .headerInner .mainHeader .resultLists {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 36px;
+  z-index: 2;
+}
+
+.pcHeader .headerInner .nav {
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.pcHeader .headerInner .nav .listsLeft {
+  position: relative;
+  display: flex;
+}
+
+.pcHeader .headerInner .nav .listsLeft__item--first {
+  text-decoration: none;
+  padding: 0;
+  list-style: none;
+  
+}
+
+// .pcHeader .headerInner .nav .listsLeft__item--first>a {
+//   background-image: url(icon_category.svg);
+  
+// }
+
+.displayNone {
+  display: none;
+  width: 250px;
+}
+
+.tree .categoryTree {
+  background-color: red;
+  flex-direction: column;
+  position: relative;
+}
+
+.tree .categoryTree li {
+  position: relative;
+  list-style: none;
+}
+
+
+.subcatTree {
+  display: none;
+  position: absolute;
+  left: 245px;
+  top: 0px;
+  width: 250px;
+  list-style: none;
+  background-color:blue;
+}
+
+.itemTree {
+  display: none;
+  position: absolute;
+  left: 250px;
+  top: 0px;
+  width: 250px;
+  list-style: none;
+  background-color:yellow;
+}
+
+.pcHeader .headerInner .nav .listsLeft__item a {
+  color: #333;
+  text-decoration: none;
+  // line-height: 32px;
+  // background-position: center right;
+  // background-repeat: no-repeat;
+  // background-size: 18px;
+  padding-right: 80px;
+  
+}
+
+.pcHeader .headerInner .nav .listsLeft__item {
+  line-height: 38px;
+  padding: 0 0 0 16px;
+  list-style: none;
+}
+
+.listsLeft__item__first{
+  
+}
+
+.listsLeft__item__second{
+  position: absolute;
+  left: 110px;
+  width: 140px;
+}
+
+// .pcHeader .headerInner .nav .listsLeft__item:nth-child(2)>a {
+//   background-image: url(icon_brand.svg);
+// }
+
+// .brandsPulldown {
+//   position: absolute;
+//   z-index: 1;
+//   background-color: #fff;
+// }
+
+.pcHeader .headerInner .nav .listsRight {
+  margin-left: auto;
+  display: flex;
+}
+
+
+.pcHeader .headerInner .nav .listsRight__item a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  line-height: 32px;
+}
+
+
+.pcHeader .headerInner .nav .listsRight__item {
+  color: #333;
+  line-height: 38px;
+  padding: 0 0 0 16px;
+  list-style: none;
+}
+
+
+
