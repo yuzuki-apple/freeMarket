@@ -30,13 +30,18 @@
           <div class="formGroup">
             <%= f.label :nickname,"ニックネーム" %>
             <span class="formGroup-require">必須</span>
-            <%= f.text_field :nickname, autofocus: true, placeholder:"例) DIV太郎", class:"inputDefault" %>
+            <%= f.text_field :nickname, placeholder:"例) DIV太郎", class:"inputDefault" %>
           </div>
 
           <div class="formGroup">
             <%= f.label :email,"メールアドレス" %>
             <span class="formGroup-require">必須</span>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"PC・携帯どちらでも可", class:"inputDefault" %>
+            <% if @user.errors.messages[:email][0] %>
+              <%= f.email_field :email, autocomplete: "email",placeholder:"PC・携帯どちらでも可", class:"inputDefault errBorder" %>
+              <div class="errMessage errHeight"><%= "このメールアドレス#{@user.errors.messages[:email][0]}" %></div>
+            <% else %>
+              <%= f.email_field :email, autocomplete: "email",placeholder:"PC・携帯どちらでも可", class:"inputDefault" %>
+            <% end %>
           </div>
 
           <div class="formGroup">
@@ -65,8 +70,23 @@
               <%= f.label "お名前(全角)" %>
               <span class="formGroup-require">必須</span>
             </div>
-            <%= f.text_field :family_name_kanji, autofocus: true, placeholder:"例) 山田", class:"inputDefault" %>
-            <%= f.text_field :first_name_kanji, autofocus: true, placeholder:"例) 彩", class:"inputDefault" %>
+            <% if @user.errors.messages[:family_name_kanji][0] && @user.errors.messages[:first_name_kanji][0] %>
+              <%= f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault errBorder" %>
+              <%= f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault errBorder" %>
+              <div class="errMessage errHeight"><%= "姓 #{@user.errors.messages[:family_name_kanji][0]}" %></div>
+              <div class="errMessage errHeight"><%= "名 #{@user.errors.messages[:first_name_kanji][0]}" %></div>
+            <% elsif @user.errors.messages[:family_name_kanji][0] %>
+              <%= f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault errBorder" %>
+              <%= f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault" %>
+              <div class="errMessage errHeight"><%= "姓 #{@user.errors.messages[:family_name_kanji][0]}" %></div>
+            <% elsif @user.errors.messages[:first_name_kanji][0] %>
+              <%= f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault" %>
+              <%= f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault errBorder" %>
+              <div class="errMessage errHeight"><%= "名 #{@user.errors.messages[:first_name_kanji][0]}" %></div>
+            <% else %>
+              <%= f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault" %>
+              <%= f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault" %>
+            <% end %>
           </div>
 
           <div class="formGroup half">
@@ -74,8 +94,23 @@
               <%= f.label "お名前カナ(全角)" %>
               <span class="formGroup-require">必須</span>
             </div>
-            <%= f.text_field :family_name_kana, autofocus: true, placeholder:"例) 山田", class:"inputDefault" %>
-            <%= f.text_field :first_name_kana, autofocus: true, placeholder:"例) 彩", class:"inputDefault" %>
+            <% if @user.errors.messages[:family_name_kana][0] && @user.errors.messages[:first_name_kana][0] %>
+              <%= f.text_field :family_name_kana, placeholder:"例) いかりや", class:"inputDefault errBorder" %>
+              <%= f.text_field :first_name_kana, placeholder:"例) ちょうすけ", class:"inputDefault errBorder" %>
+              <div class="errMessage errHeight"><%= "姓カナ #{@user.errors.messages[:family_name_kana][0]}" %></div>
+              <div class="errMessage errHeight"><%= "名カナ #{@user.errors.messages[:first_name_kana][0]}" %></div>
+            <% elsif @user.errors.messages[:family_name_kana][0] %>
+              <%= f.text_field :family_name_kana, placeholder:"例) いかりや", class:"inputDefault errBorder" %>
+              <%= f.text_field :first_name_kana, placeholder:"例) ちょうすけ", class:"inputDefault" %>
+              <div class="errMessage errHeight"><%= "姓カナ #{@user.errors.messages[:family_name_kana][0]}" %></div>
+            <% elsif @user.errors.messages[:first_name_kana][0] %>
+              <%= f.text_field :family_name_kana, placeholder:"例) いかりや", class:"inputDefault" %>
+              <%= f.text_field :first_name_kana, placeholder:"例) ちょうすけ", class:"inputDefault errBorder" %>
+              <div class="errMessage errHeight"><%= "名カナ #{@user.errors.messages[:first_name_kana][0]}" %></div>
+            <% else %>
+            <%= f.text_field :family_name_kana, placeholder:"例) いかりや", class:"inputDefault" %>
+            <%= f.text_field :first_name_kana, placeholder:"例) ちょうすけ", class:"inputDefault" %>
+            <% end %>
           </div>
 
           <div class="formGroup birthday">

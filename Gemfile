@@ -75,3 +75,4 @@ end
 gem 'devise'
 gem "haml-rails", "~> 2.0"
 gem "jquery-rails"
+gem 'rails-i18n'

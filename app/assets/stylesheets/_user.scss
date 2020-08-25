@@ -62,7 +62,9 @@ body{background:#f5f5f5;}
     border-bottom:1px solid #eee;
     text-align:center;
     font-size:5vw;
-    p{font-size:3.5vw;}
+    p{
+      font-size:3.5vw;
+    }
     a{
       margin:10vw auto 0;
       background:#3CCACE;
@@ -94,10 +96,10 @@ body{background:#f5f5f5;}
         border-radius:1vw;
         border:1px solid #ccc;
         font-size:4vw;
-      }
-      .inputDefault:focus,.selectDefault:focus {
-        border:2px solid #3CCACE;
-        outline:0;
+        &:focus{
+          border:2px solid #3CCACE;
+          outline:0;
+        }
       }
       &-require{
         background:#3CCACE;
@@ -108,6 +110,59 @@ body{background:#f5f5f5;}
         font-size:3vw;
         vertical-align:top;
       }
+      .errMessage{
+        height:4vw;
+        font-size:4vw;
+        color:rgba(255,0,0,1);
+      }
+      @keyframes errHeight{0%{height:0;color:rgba(255,0,0,0);}100%{height:4vw;color:rgba(255,0,0,1);}}
+      .errHeight{
+        animation:errHeight 0.3s;
+      }
+      @keyframes errHeight0{0%{height:4vw;color:rgba(255,0,0,1);}100%{height:0;color:rgba(255,0,0,0);}}
+      .errHeight0{
+        animation:errHeight0 0.3s;
+      }
+      .errBorder{
+        border:2px solid #ff0000;
+      }
+      &.half{
+        >*:nth-child(3){
+          margin-left:2vw;
+        }
+        .inputDefault{
+          width:45vw;
+          &:nth-of-type(2){
+            margin-left:2vw;
+          }
+        }
+      }
+      &.birthday{
+        >span{
+          display:inline-block;
+          width:25vw;
+          position:relative;
+          &::after{
+            content:'';
+            display:block;
+            width:5vw;
+            height:5vw;
+            position:absolute;
+            bottom:4vw;
+            left:103%;
+            font-size:4vw;
+          }
+          &:nth-of-type(1)::after{content:'年';}
+          &:nth-of-type(2)::after{content:'月';}
+          &:nth-of-type(3)::after{content:'日';}
+          &:nth-of-type(n+2){
+            margin-left:6vw;
+          }
+        }
+      }
+      .field_with_errors{
+        display:inline;
+      }
     }
     .revealedPassword {
       background:#ccffee;
@@ -115,33 +170,6 @@ body{background:#f5f5f5;}
       border-radius:1vw;
       font-size:4vw;
       overflow:hidden;
-    }
-    .formGroup.half{
-      .inputDefault{
-        width:45vw;
-        &:last-of-type{margin-left:2vw;}
-      }
-    }
-    .formGroup.birthday{
-      >span{
-        display:inline-block;
-        width:25vw;
-        position:relative;
-        &::after{
-          content:'';
-          display:block;
-          width:5vw;
-          height:5vw;
-          position:absolute;
-          bottom:4vw;
-          left:103%;
-          font-size:4vw;
-        }
-        &:nth-of-type(1)::after{content:'年';}
-        &:nth-of-type(2)::after{content:'月';}
-        &:nth-of-type(3)::after{content:'日';}
-        &:nth-of-type(n+2){margin-left:6vw;}
-      }
     }
     .submit input{
       margin:10vw auto 0;
@@ -238,7 +266,9 @@ body{background:#f5f5f5;}
     &Header {
       padding:32px;
       font-size:22px;
-      p{font-size:14px;}
+      p{
+        font-size:14px;
+      }
       a{
         margin:8px auto 0;
         width:48%;
@@ -267,30 +297,46 @@ body{background:#f5f5f5;}
           border-radius:2px;
           font-size:12px;
         }
+        .errMessage{
+          height:15px;
+          font-size:14px;
+        }
+        @keyframes errHeight{0%{height:0;color:rgba(255,0,0,0);}100%{height:15px;color:rgba(255,0,0,1);}}
+        @keyframes errHeight0{0%{height:15px;color:rgba(255,0,0,1);}100%{height:0;color:rgba(255,0,0,0);}}
+        &.half{
+          >*:nth-child(3){
+            margin-left:2%;
+          }
+          .inputDefault{
+            width:49%;
+            &:nth-of-type(2){
+              margin-left:2%;
+            }
+          }
+        }
+        &.birthday{
+          >span{
+            width:26%;
+            &::after{
+              width:3%;
+              height:3%;
+              bottom:33px;
+              left:103%;
+              font-size:16px;
+            }
+            &:nth-of-type(n+2){
+              margin-left:8%;
+            }
+          }
+        }
+        .field_with_errors{
+          display:inline;
+        }
       }
       .revealedPassword {
         padding:2px 4px;
         border-radius:4px;
         font-size:16px;
-      }
-      .formGroup.half{
-        .inputDefault{
-          width:49%;
-          &:last-of-type{margin-left:2%;}
-        }
-      }
-      .formGroup.birthday{
-        >span{
-          width:26%;
-          &::after{
-            width:3%;
-            height:3%;
-            bottom:33px;
-            left:103%;
-            font-size:16px;
-          }
-          &:nth-of-type(n+2){margin-left:8%;}
-        }
       }
       .submit input{
         margin:24px auto 0;
