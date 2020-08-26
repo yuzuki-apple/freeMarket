@@ -1,5 +1,5 @@
 $(function(){
-  if($('.registration').length){
+  if($('.registration,.session').length){
 
     let displayTime=300;
 
