@@ -1,0 +1,92 @@
+%body
+  %header.single-header
+    %h1
+      = link_to image_tag("logo.svg"), root_path
+    - if params[:controller]=="addresses"&&params[:action]=="new"
+      %nav.regiNavi
+        %ul
+          %li 会員情報
+          %li.active 送付先情報
+          %li 完了
+  .address
+    %main
+      %section
+        %h2.addressHeader 送付先情報入力
+        = form_with url:addresses_path do |f|
+          .addressContent
+            .formGroup.half
+              %div
+                = f.label "お名前(全角)"
+                %span.formGroup-require 必須
+              -# - if @user.errors.messages[:family_name_kanji][0] && @user.errors.messages[:first_name_kanji][0]
+              -#   = f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault errBorder"
+              -#   = f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault errBorder"
+              -#   .errMessage.errHeight= "姓 #{@user.errors.messages[:family_name_kanji][0]}"
+              -#   .errMessage.errHeight= "名 #{@user.errors.messages[:first_name_kanji][0]}"
+              -# - elsif @user.errors.messages[:family_name_kanji][0]
+              -#   = f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault errBorder"
+              -#   = f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault"
+              -#   .errMessage.errHeight= "姓 #{@user.errors.messages[:family_name_kanji][0]}"
+              -# - elsif @user.errors.messages[:first_name_kanji][0]
+              -#   = f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault"
+              -#   = f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault errBorder"
+              -#   .errMessage.errHeight= "名 #{@user.errors.messages[:first_name_kanji][0]}"
+              -# - else
+              = f.text_field :family_name_kanji, placeholder:"例) 碇矢", class:"inputDefault"
+              = f.text_field :first_name_kanji, placeholder:"例) 長介", class:"inputDefault"
+            .formGroup.half
+              %div
+                = f.label "お名前カナ(全角)"
+                %span.formGroup-require 必須
+              -# - if @user.errors.messages[:family_name_kana][0] && @user.errors.messages[:first_name_kana][0]
+              -#   = f.text_field :family_name_kana, placeholder:"例) イカリヤ", class:"inputDefault errBorder"
+              -#   = f.text_field :first_name_kana, placeholder:"例) チョウスケ", class:"inputDefault errBorder"
+              -#   .errMessage.errHeight= "姓カナ #{@user.errors.messages[:family_name_kana][0]}"
+              -#   .errMessage.errHeight= "名カナ #{@user.errors.messages[:first_name_kana][0]}"
+              -# - elsif @user.errors.messages[:family_name_kana][0]
+              -#   = f.text_field :family_name_kana, placeholder:"例) イカリヤ", class:"inputDefault errBorder"
+              -#   = f.text_field :first_name_kana, placeholder:"例) チョウスケ", class:"inputDefault"
+              -#   .errMessage.errHeight= "姓カナ #{@user.errors.messages[:family_name_kana][0]}"
+              -# - elsif @user.errors.messages[:first_name_kana][0]
+              -#   = f.text_field :family_name_kana, placeholder:"例) イカリヤ", class:"inputDefault"
+              -#   = f.text_field :first_name_kana, placeholder:"例) チョウスケ", class:"inputDefault errBorder"
+              -#   .errMessage.errHeight= "名カナ #{@user.errors.messages[:first_name_kana][0]}"
+              -# - else
+              = f.text_field :family_name_kana, placeholder:"例) イカリヤ", class:"inputDefault"
+              = f.text_field :first_name_kana, placeholder:"例) チョウスケ", class:"inputDefault"
+            .formGroup.half
+              = f.label :post_number,"郵便番号"
+              %span.formGroup-require 必須
+              = f.text_field :post_number, placeholder:"例) 1000000", class:"inputDefault"
+            .formGroup
+              = f.label :prefecture,"都道府県"
+              %span.formGroup-require 必須
+              = f.text_field :prefecture, placeholder:"例) 東京都", class:"inputDefault"
+            .formGroup
+              = f.label :city,"市区町村"
+              %span.formGroup-require 必須
+              = f.text_field :city, placeholder:"例) 千代田区", class:"inputDefault"
+            .formGroup
+              = f.label :block_number,"番地"
+              %span.formGroup-require 必須
+              = f.text_field :block_number, placeholder:"例) 1-1-1", class:"inputDefault"
+            .formGroup
+              = f.label :apartment_name,"マンション名"
+              = f.text_field :apartment_name, placeholder:"例) 千代田区マンション101号室", class:"inputDefault"
+            .formGroup
+              = f.label :phone_number,"電話番号"
+              = f.text_field :phone_number, placeholder:"例) 090-1234-1234", class:"inputDefault"
+            .submit
+              = f.submit "完了する"
+  %footer.single-footer
+    %nav
+      %ul
+        %li
+          %a{href:"/"} プライバシーポリシー
+        %li
+          %a{href:"/"} メルカリ利用規約
+        %li
+          %a{href:"/"} 特定商取引に関する表記
+    = link_to image_tag("logo-white.svg"),root_path
+    %p
+      %small © FURIMA
