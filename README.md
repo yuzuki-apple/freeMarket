@@ -50,12 +50,16 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|post_number|interger|null: false|
-|prefecture|strings|null: false|
+|family_name_kanji|string|null: false|
+|first_name_kanji|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|post_number|string|null: false|
+|prefecture|string|null: false|
 |city|string|null: false|
 |block_number|string|null: false|
 |apartment_name|string||
-|phone_number|integer||
+|phone_number|string||
 
 ### Association
 - belongs_to :user
