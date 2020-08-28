@@ -6,70 +6,78 @@
     .form
       .form__image
         .form__image--content
-          .content__image
-            .content__image--title
-              %label 出品画像
-              %span 必須
-            %p.image_title 最大10枚までアップロードできます
+          .content
+            .content__image
+              .content__image--title
+                %label 出品画像
+                %span 必須
+              %p.image_title 最大10枚までアップロードできます
       .form__description
         .form__description--content
-          .content__description_name
-            .content__description_name--title
-              %label 商品名
-              %span 必須
-          .content__description_text
-            .content__description_text--title
-              %label 商品の説明
-              %span 必須
+          .content
+            .content__description_name
+              .content__description_name--title
+                %label 商品名
+                %span 必須
+              %input.content__description_name--input{:placeholder => "40字まで", :type => "text"}
+            .content__description_text
+              .content__description_text--title
+                %label 商品の説明
+                %span 必須
       .form__detail
         .form__detail--content
-          .content__detail_category
-            %p.detail_category 商品の詳細
-            .content__detail_category--title
-              %label カテゴリー
-              %span 必須
-          .content__detail_brand
-            .content__detail_brand--title
-              %label ブランド
-              %span 任意
-          .content__detail_condition
-            .content__detail_condition--title
-              %label 商品の状態
-              %span 必須
+          .content
+            .content__detail_category
+              %p.detail_category 商品の詳細
+              .content__detail_category--title
+                %label カテゴリー
+                %span 必須
+            .content__detail_brand
+              .content__detail_brand--title
+                %label ブランド
+                %span 任意
+              %input.content__detail_brand--input{:placeholder => "例）ユニクロ", :type => "text"}
+            .content__detail_condition
+              .content__detail_condition--title
+                %label 商品の状態
+                %span 必須
       .form__shipment
         .form__shipment--content
-          .content__shipment_fee
-            %p.shipment_fee 配送について
-            .content__shipment_fee--title
-              %label 配送料の負担
-              %span 必須
-          .content__snipment_region
-            .content__shipment_region--title
-              %label 発送元の地域
-              %span 必須
-          .content__shipment_schedule
-            .content__shipment_schedule--title
-              %label 発送までの日数
-              %span 必須
+          .content
+            .content__shipment_fee
+              %p.shipment_fee 配送について
+              .content__shipment_fee--title
+                %label 配送料の負担
+                %span 必須
+            .content__snipment_region
+              .content__shipment_region--title
+                %label 発送元の地域
+                %span 必須
+            .content__shipment_schedule
+              .content__shipment_schedule--title
+                %label 発送までの日数
+                %span 必須
       .form__price
         .form__price--content
-          .content__price
-            %p.price_range 価格（¥300〜9,999,999）
-            .content__price--title
-              %label 販売価格
-              %span 必須
-            %p.price_tax 販売手数料（10%）
-            %p.price_profit 販売利益
+          .content
+            .content__price
+              %p.price_range 価格（¥300〜9,999,999）
+              .content__price--title
+                %label 販売価格
+                %span 必須
+              %p.content__price--tax 販売手数料（10%）
+              %p.content__price--profit 販売利益
       .form__send
         .form__send--content
-          .content__image
-            .content__image--title
-              %label 出品画像
-              %span 必須
+          .content
+            .content__image
+              .content__image--title
+                %label 出品画像
+                %span 必須
         .form__send--note
           %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
     .footer
       = link_to "#", class: "footer__logo" do
-        -# = image_tag "#", class: "footer__logo--image"
+        = image_tag "logo.png", class: "footer__logo--image"
       .footer__copy_right
         %p © FURIMA, Inc

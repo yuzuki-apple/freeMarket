@@ -1,6 +1,8 @@
 .body{
   .container{
+    background-color: lightgray;
     .header{
+      text-align: center;
       &__logo{
         &--image{
           width: 200px;
@@ -9,12 +11,120 @@
       }
     }
     .form{
-      width: 700px;
       margin: 0 auto;
-      
+      width: 700px;
+      padding: 40px;
+      background-color: #ffffff;
+      &__image{
+        &--content{
+          .content{
+            &__image{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__description{
+        &--content{
+          .content{
+            &__description_name{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+            &__description_text{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+          }
+        }
+        &__detail{
+          &--content{
+            .content{
+            }
+          }
+        }
+      }
+      &__shipment{
+        &--content{
+          .content{
+            &__description_name{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+          }
+        
+        }
+      }
+      &__price{
+        &--content{
+          .content{
+
+          }
+        }
+        
+      }
+      &__send{
+        &--content{
+          .content{
+
+          }
+        }
+      }  
     }
     .footer{
-      
+      text-align: center;
+      &__logo{
+        &--image{
+          width: 200px;
+          height: 50px;
+        }
+      }
+      &__copy_right{
+        p{
+          
+        }
+      }
     }
   }
 }
