@@ -68,9 +68,55 @@
             }
           }
         }
-        &__detail{
-          &--content{
-            .content{
+      }
+      &__detail{
+        &--content{
+          .content{
+            &__detail_category{
+              p.detail_category{
+
+              }
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+            &__detail_brand{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: gray;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+                
+            }
+            &__detail_condition{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
             }
           }
         }
@@ -78,7 +124,35 @@
       &__shipment{
         &--content{
           .content{
-            &__description_name{
+            &__shipment_fee{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+            &__shipment_region{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+            &__shipment_schedule{
               &--title{
                 label{
                   font-weight: bolder;
@@ -99,14 +173,53 @@
       &__price{
         &--content{
           .content{
+            &__price{
+              p.price_range{
 
+              }
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+              &--tax{
+
+              }
+              &--profit{
+
+              }
+            }
           }
         }
-        
       }
       &__send{
         &--content{
           .content{
+            &__image{
+              &--title{
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 2px;
+                }
+              }
+            }
+          }
+        }
+        &--note{
+          p{
 
           }
         }
