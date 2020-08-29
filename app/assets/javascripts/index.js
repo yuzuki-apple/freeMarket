@@ -2,16 +2,16 @@
 $(function() {
   $('.category').hover(
     function() {
-      $('.displayNone').fadeIn();
+      $('.display-None').fadeIn();
     },
     function() {
-      $('.displayNone').fadeOut();
+      $('.display-None').fadeOut();
     });
   
 });
 
 $(function() {
-  $('.displayNone').hover(
+  $('.display-None').hover(
     function() {
       $('.subcatTree').fadeIn();
     },
