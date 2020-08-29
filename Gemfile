@@ -75,3 +75,5 @@ end
 gem 'jquery-rails'
 
 gem 'ancestry'
+
+gem "haml-rails", ">= 1.0", '<= 2.0.1'
