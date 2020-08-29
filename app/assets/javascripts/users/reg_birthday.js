@@ -20,7 +20,7 @@ $(function(){
           $('#day').val('');
           if(dayValue!=''){
             $('#day').addClass('errBorder');
-            $('#birthday').after('<div class="errMessage">生年月日を入力してください</div>');
+            $('#user_birthday').after('<div class="errMessage">生年月日を入力してください</div>');
             $('#day').parents().children('.errMessage').addClass('errHeight');
           }
           return day=''
@@ -30,7 +30,7 @@ $(function(){
       }
     }
     function firstOptionDisabled(ymd){ymd.prop('disabled',true);}
-    function birthdayValue(year,month,day){$('#birthday').val(year+month+day);}
+    function birthdayValue(year,month,day){$('#user_birthday').val(year+month+day);}
 
     let now = new Date();
     let thisYear=now.getFullYear();

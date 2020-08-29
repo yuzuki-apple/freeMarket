@@ -85,12 +85,12 @@
               = f.label "生年月日"
               %span.formGroup-require 必須
             %span
-              %select#year.selectDefault{name:"user[birth_year]"}
+              %select#year.selectDefault{name:"birth_year"}
             %span
-              %select#month.selectDefault{name:"user[birth_month]"}
+              %select#month.selectDefault{name:"birth_month"}
             %span
-              %select#day.selectDefault{name:"user[birth_day]"}
-            %input#birthday{type:"hidden"}
+              %select#day.selectDefault{name:"birth_day"}
+            = f.hidden_field :birthday
           %p.formGroupInfo ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .submit
             = f.submit "次へ進む"

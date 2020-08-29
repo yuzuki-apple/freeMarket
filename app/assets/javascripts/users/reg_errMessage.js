@@ -183,7 +183,7 @@ $(function(){
         if(!$(this).val()){
           $(this).addClass('errBorder');
           if(!$(this).parents().children('.errMessage').length){
-            $('#birthday').after('<div class="errMessage">生年月日を入力してください</div>');
+            $('#user_birthday').after('<div class="errMessage">生年月日を入力してください</div>');
             $(this).parents().children('.errMessage').addClass('errHeight');
           }
         }
@@ -192,7 +192,7 @@ $(function(){
 
     $('select').change(function(){
       if($(this).attr('name').match(/birth/)){
-        if($('#birthday').val().length==8){
+        if($('#user_birthday').val().length==8){
           $(this).removeClass('errBorder');
           if($(this).parents().children('.errMessage').length){
             $(this).parents().children('.errMessage').addClass('errHeight0');
