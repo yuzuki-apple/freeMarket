@@ -1,5 +1,5 @@
 $(function(){
-  if($('.registration,.session').length){
+  if($('.registration,.session,.address').length){
 
     let displayTime=300;
 
@@ -18,9 +18,9 @@ $(function(){
 
       if(inputField.parents('.formGroup').find('.errMessage:contains("不正")').length){
         if(inputField.attr('id').includes('kanji')){
-          if(inputField.attr('id').includes('family')){name='姓';}else{name='名'}
+          if(inputField.attr('id').includes('family')){name='姓';}else{name='名';}
         }else{
-          if(inputField.attr('id').includes('family')){name='姓カナ';}else{name='名カナ'}
+          if(inputField.attr('id').includes('family')){name='姓かな';}else{name='名かな';}
         }
         inputField.parents('.formGroup').find(`.errMessage:contains('${name} は不正')`).remove();
       }
@@ -97,42 +97,90 @@ $(function(){
         }
       }
 
-      if($(this).attr('id')=='user_family_name_kanji'){
+      if($(this).is('[id*="family_name_kanji"]')){
         if(!$(this).val()){
-          addErrMessageName($("#user_first_name_kanji"),$(this),'姓 を入力してください');
+          addErrMessageName($('input[id*="first_name_kanji"]'),$(this),'姓 を入力してください');
         }else{
           removeErrMessage($(this),".errMessage:contains('姓')");
         }
       }
 
-      if($(this).attr('id')=='user_first_name_kanji'){
+      if($(this).is('[id*="first_name_kanji"]')){
         if(!$(this).val()){
-          addErrMessageName($('#user_first_name_kanji'),$(this),'名 を入力してください');
+          addErrMessageName($('input[id*="first_name_kanji"]'),$(this),'名 を入力してください');
         }else{
           removeErrMessage($(this),".errMessage:contains('名')");
         }
       }
 
-      if($(this).attr('id')=='user_family_name_kana'){
+      if($(this).is('[id*="family_name_kana"]')){
         if(!$(this).val()){
-          addErrMessageName($('#user_first_name_kana'),$(this),'姓カナ を入力してください');
+          addErrMessageName($('input[id*="first_name_kana"]'),$(this),'姓かな を入力してください');
         }else{
           removeErrMessage($(this),".errMessage:contains('姓')");
         }
       }
 
-      if($(this).attr('id')=='user_first_name_kana'){
+      if($(this).is('[id*="first_name_kana"]')){
         if(!$(this).val()){
-          addErrMessageName($('#user_first_name_kana'),$(this),'名カナ を入力してください');
+          addErrMessageName($('input[id*="first_name_kana"]'),$(this),'名かな を入力してください');
         }else{
           removeErrMessage($(this),".errMessage:contains('名')");
+        }
+      }
+
+      if($(this).attr('id')=='address_post_number'){
+        if(!$(this).val()){
+          addErrMessage($(this),'郵便番号を入力してください');
+        }else if($(this).val()!=$(this).val().match(/\d{3}\-\d{4}/)){
+          addErrMessage($(this),'フォーマットが違います。');
+        }else{
+          removeErrMessage($(this),'.errMessage');
+        }
+      }
+
+      if($(this).attr('id')=='address_prefecture'){
+        if(!$(this).val()){
+          addErrMessage($(this),'都道府県を入力してください');
+        }else{
+          removeErrMessage($(this),'.errMessage');
+        }
+      }
+
+      if($(this).attr('id')=='address_city'){
+        if(!$(this).val()){
+          addErrMessage($(this),'市区町村を入力してください');
+        }else{
+          removeErrMessage($(this),'.errMessage');
+        }
+      }
+
+      if($(this).attr('id')=='address_block_number'){
+        if(!$(this).val()){
+          addErrMessage($(this),'番地を入力してください');
+        }else{
+          removeErrMessage($(this),'.errMessage');
+        }
+      }
+
+      if($(this).attr('id')=='address_phone_number'){
+        if(!$(this).val()){
+          removeErrMessage($(this),'.errMessage');
+        }else if($(this).val()!=$(this).val().match(/\d{10,11}/)){
+          addErrMessage($(this),'フォーマットが違います。');
+        }else{
+          removeErrMessage($(this),'.errMessage');
         }
       }
     });
 
+
+
+
+
     $('select').focusout(function(){
-      if($(this).attr('id')=='year'||'month'||'day'){
-        if($(this).val().length<2){
+      if($(this).attr('name').match(/birth/)){
+        if(!$(this).val()){
           $(this).addClass('errBorder');
           if(!$(this).parents().children('.errMessage').length){
             $('#birthday').after('<div class="errMessage">生年月日を入力してください</div>');
@@ -143,7 +191,7 @@ $(function(){
     });
 
     $('select').change(function(){
-      if($(this).attr('id')=='year'||'month'||'day'){
+      if($(this).attr('name').match(/birth/)){
         if($('#birthday').val().length==8){
           $(this).removeClass('errBorder');
           if($(this).parents().children('.errMessage').length){

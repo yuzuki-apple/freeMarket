@@ -54,7 +54,7 @@ body{background:#f5f5f5;}
   background:#3CCACE;
 }
 
-.registration,.session,.address{
+.registration,.session,.address,.regiComplete{
   background:white;
   padding-bottom:10vw;
   &Header {
@@ -163,6 +163,12 @@ body{background:#f5f5f5;}
       .field_with_errors{
         display:inline;
       }
+      &.zipCode{
+        input{
+          width:40vw;
+          margin-left:5vw;
+        }
+      }
     }
     .revealedPassword {
       background:#ccffee;
@@ -197,6 +203,28 @@ body{background:#f5f5f5;}
     margin:2vw 0;
     font-size:3.5vw;
     color:#888;
+  }
+  &__message{
+    padding-top: 10vw;
+    text-align: center;
+    font-size:6vw;
+  }
+  &__note{
+    font-size:4vw;
+    width: 87vw;
+    margin: 10vw auto 0;
+    &+a{
+      margin:10vw auto 0;
+      background:#3CCACE;
+      border:1px solid #3CCACE;
+      color:#fff;
+      display:block;
+      width:90%;
+      line-height:12vw;
+      font-size:4vw;
+      border-radius:1vw;
+      text-align:center;
+    }
   }
 }
 
@@ -263,7 +291,7 @@ body{background:#f5f5f5;}
     top:30px;
   }
 
-  .registration,.session,.address{
+  .registration,.session,.address,.regiComplete{
     width:700px;
     margin:0 auto;
     padding-bottom:24px;
@@ -336,6 +364,12 @@ body{background:#f5f5f5;}
         .field_with_errors{
           display:inline;
         }
+        &.zipCode{
+          input{
+            width:150px;
+            margin-left:10px;
+          }
+        }
       }
       .revealedPassword {
         padding:2px 4px;
@@ -360,6 +394,23 @@ body{background:#f5f5f5;}
     .formGroupInfo{
       margin:10px 0;
       font-size:14px;
+    }
+    &__message{
+      padding-top:50px;
+      font-size:30px;
+    }
+    &__note{
+      font-size:14px;
+      width:80%;
+      margin:50px auto 0;
+      text-align:center;
+      &+a{
+        margin:50px auto 0;
+        width:300px;
+        line-height:48px;
+        font-size:14px;
+        border-radius:4px;
+      }
     }
   }
 
