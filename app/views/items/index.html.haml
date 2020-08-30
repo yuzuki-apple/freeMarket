@@ -7,112 +7,112 @@
           %h1.icon
             =link_to "/" do
               = image_tag "FURIMA_logo.svg"
-    -#       .searchmain
-    -#         %form{"accept-charset": "UTF-8", action: "#", method: "get"}
-    -#           %input{name: "utf8", type: "hidden", value: "✓"}
-    -#           %input#searchInput.searchmain--input{name: "key", placeholder: "キーワードから探す"}
-    -#           %button{type: "submit"}
-    -#             .searchmain__icon
-    -#               = image_tag "icon_search.png"
-    -#           %input{name: "authenticity_token", type: "hidden", value: "rGvQaEoXiWof9CviOMrABrWg8GvnR7RZ5CihIgqhun1x4Av6XJI7jRd8fffRfP5WFLbFT4wp6lPDQB+RLe9aTA=="}
-    -#       %ul.result-Lists
-    -#     .nav
-    -#       %ul.listsLeft
-    -#         %li.listsLeft__item.listsLeft__item--first
-    -#           .category
-    -#             = link_to "#" do
-    -#               カテゴリー
-    -#             .tree.display-None
-    -#               .categoryTree
-    -#                 .categoryTree--item
-    -#                   = link_to "#", id: "#1" do
-    -#                     レディース
-    -#                   .subcatTree
-    -#                     .subcatTree--item
-    -#                       = link_to "#", id: "#1" do
-    -#                         トップス
-    -#                       .itemTree
-    -#                         .itemTree--item
-    -#                           = link_to "#", id: "#1" do
-    -#                             Tシャツ
-    -#                         .itemTree--item
-    -#                           = link_to "#", id: "#2" do
-    -#                             シャツ
-    -#                     .subcatTree--item
-    -#                       = link_to "#", id: "#2" do
-    -#                         シャケット
-    -#         %li.listsLeft__item.listsLeft__item__second
-    -#           = link_to "#", id: "#brandBtn" do
-    -#             ブランド
-    -#           %ul.brandsPulldown.display-None
-    -#       %ul.lists-Right
-    -#         %li.lists-Right__item.lists-Right__item--login
-    -#           = link_to "#" do
-    -#             ログイン
-    -#         %li.lists-Right__item.lists-Right__item--new
-    -#           = link_to "#",class: 'class' do
-    -#             新規会員登録
-    -# .main
-    -#   %section.main-Visual
-    -#     .content
-    -#       %h2.content__sub-title
-    -#         %br/
-    -#         人生を変えるフリマアプリ
-    -#       %p.content__text
-    -#         FURIMAはだれでもかんたんに出品・購入できる
-    -#         %br/
-    -#         フリマアプリです
-    -#       .content__btn
-    -#         = link_to "#",class: 'apple-Btn' do
-    -#           = image_tag "app-store-icon.svg"
-    -#         = link_to "#",class: 'google-Btn' do
-    -#           = image_tag "google-play-icon.svg"
-    -#     .picture
-    -#   %section.top-Introduction
-    -#     %h2.sub-title
-    -#       FURIMAが選ばれる3つの理由
-    -#     %ul.lists
-    -#       %li.list
-    -#         .list__pict
-    -#           %span.number 1
-    -#           = image_tag "pict-reason-1.jpg"
-    -#         %h3.list__text
-    -#           %span 3分
-    -#           ですぐに出品
-    -#         %p.list__description
-    -#           スマホで入力するだけで簡単に出品できる！
-    -#       %li.list
-    -#         .list__pict
-    -#           %span.number 2
-    -#           = image_tag "pict-reason-2.jpg"
-    -#         %h3.list__text
-    -#           %span シンプル
-    -#           で使いやすい
-    -#         %p.list__description
-    -#           めんどくさい入力は必要なく、検索も購入もスムーズ！
-    -#       %li.list.list--last
-    -#         .list__pict
-    -#           %span.number 3
-    -#           = image_tag "pict-reason-3.jpg"
-    -#         %h3.list__text
-    -#           手数料
-    -#           %span 業界最安
-    -#         %p.list__description
-    -#           最大3%でお得に出品&amp;購入！
-    -#   %section.top-MiddleDl
-    -#     .top-MiddleDl__inner
-    -#       %h2.sub-title 会員数日本一位
-    -#       %p.text
-    -#         FURIMAは、フリマアプリで最も人気。
-    -#         %br/
-    -#         出品・購入回数も業界最多です！
-    -#         %br/
-    -#         ほしかったあの商品に出会えるかもしれません。
-    -#       .btn
-    -#         = link_to "#",class: 'apple-Btn' do
-    -#           = image_tag "app-store-icon.svg"
-    -#         = link_to "#",class: 'google-Btn' do
-    -#           = image_tag "google-play-icon.svg"
+          .searchmain
+            %form{"accept-charset": "UTF-8", action: "#", method: "get"}
+              %input{name: "utf8", type: "hidden", value: "✓"}
+              %input#searchInput.searchmain--input{name: "key", placeholder: "キーワードから探す"}
+              %button{type: "submit"}
+                .searchmain__icon
+                  = image_tag "icon_search.png"
+              %input{name: "authenticity_token", type: "hidden", value: "rGvQaEoXiWof9CviOMrABrWg8GvnR7RZ5CihIgqhun1x4Av6XJI7jRd8fffRfP5WFLbFT4wp6lPDQB+RLe9aTA=="}
+          %ul.result-Lists
+        .nav
+          %ul.listsLeft
+            %li.listsLeft__item.listsLeft__item--first
+              .category
+                = link_to "#" do
+                  カテゴリー
+                .tree.display-None
+                  .categoryTree
+                    .categoryTree--item
+                      = link_to "#", id: "#1" do
+                        レディース
+                      .subcatTree
+                        .subcatTree--item
+                          = link_to "#", id: "#1" do
+                            トップス
+                          .itemTree
+                            .itemTree--item
+                              = link_to "#", id: "#1" do
+                                Tシャツ
+                            .itemTree--item
+                              = link_to "#", id: "#2" do
+                                シャツ
+                        .subcatTree--item
+                          = link_to "#", id: "#2" do
+                            シャケット
+            %li.listsLeft__item.listsLeft__item__second
+              = link_to "#", id: "#brandBtn" do
+                ブランド
+              %ul.brandsPulldown.display-None
+          %ul.lists-Right
+            %li.lists-Right__item.lists-Right__item--login
+              = link_to "#" do
+                ログイン
+            %li.lists-Right__item.lists-Right__item--new
+              = link_to "#",class: 'class' do
+                新規会員登録
+    .main
+      %section.main-Visual
+        .content
+          %h2.content__sub-title
+            %br/
+            人生を変えるフリマアプリ
+          %p.content__text
+            FURIMAはだれでもかんたんに出品・購入できる
+            %br/
+            フリマアプリです
+          .content__btn
+            = link_to "#",class: 'apple-Btn' do
+              = image_tag "app-store-icon.svg"
+            = link_to "#",class: 'google-Btn' do
+              = image_tag "google-play-icon.svg"
+        .picture
+      %section.top-Introduction
+        %h2.sub-title
+          FURIMAが選ばれる3つの理由
+        %ul.lists
+          %li.list
+            .list__pict
+              %span.number 1
+              = image_tag "pict-reason-1.jpg"
+            %h3.list__text
+              %span 3分
+              ですぐに出品
+            %p.list__description
+              スマホで入力するだけで簡単に出品できる！
+          %li.list
+            .list__pict
+              %span.number 2
+              = image_tag "pict-reason-2.jpg"
+            %h3.list__text
+              %span シンプル
+              で使いやすい
+            %p.list__description
+              めんどくさい入力は必要なく、検索も購入もスムーズ！
+          %li.list.list--last
+            .list__pict
+              %span.number 3
+              = image_tag "pict-reason-3.jpg"
+            %h3.list__text
+              手数料
+              %span 業界最安
+            %p.list__description
+              最大3%でお得に出品&amp;購入！
+      %section.top-MiddleDl
+        .top-MiddleDl__inner
+          %h2.sub-title 会員数日本一位
+          %p.text
+            FURIMAは、フリマアプリで最も人気。
+            %br/
+            出品・購入回数も業界最多です！
+            %br/
+            ほしかったあの商品に出会えるかもしれません。
+          .btn
+            = link_to "#",class: 'apple-Btn' do
+              = image_tag "app-store-icon.svg"
+            = link_to "#",class: 'google-Btn' do
+              = image_tag "google-play-icon.svg"
     -#   %section.top-KeyFeatures
     -#     %h2.head
     -#       FURIMAの特徴
