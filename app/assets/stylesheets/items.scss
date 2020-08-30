@@ -448,6 +448,12 @@ img {
           overflow: hidden;
           margin: 0;
           z-index: auto;
+          display: block;
+          transition: opacity 0.15s;
+        
+          &:hover {
+            opacity: 0.55;
+          }
         }
         .productList--body {
           background-color: white;
@@ -508,6 +514,12 @@ img {
           overflow: hidden;
           margin: 0;
           z-index: auto;
+          display: block;
+          transition: opacity 0.15s;
+        
+          &:hover {
+            opacity: 0.55;
+          }
         }
         .productList--body {
           background-color: white;
@@ -558,23 +570,14 @@ img {
     display: flex;
     justify-content: center;
     margin: 20px auto 0;
-    .linkIcon_apple-Btn {
+    .apple-Btn, .google-Btn {
       width: 180px;
       display: block;
       transition: opacity 0.15s;
-      
-        &:hover {
-          opacity: 0.55;
-        }
-    }
-    .linkIcon_google-Btn {
-      width: 180px;
-      display: block;
-      transition: opacity 0.15s;
-      
-        &:hover {
-          opacity: 0.55;
-        }
+    
+      &:hover {
+        opacity: 0.55;
+      }
     }
   }
 }
