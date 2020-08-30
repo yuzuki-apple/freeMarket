@@ -7,332 +7,332 @@
           %h1.icon
             =link_to "/" do
               = image_tag "FURIMA_logo.svg"
-          .searchmain
-            %form{"accept-charset": "UTF-8", action: "#", method: "get"}
-              %input{name: "utf8", type: "hidden", value: "✓"}
-              %input#searchInput.searchmain--input{name: "key", placeholder: "キーワードから探す"}
-              %button{type: "submit"}
-                .searchmain__icon
-                  = image_tag "icon_search.png"
-              %input{name: "authenticity_token", type: "hidden", value: "rGvQaEoXiWof9CviOMrABrWg8GvnR7RZ5CihIgqhun1x4Av6XJI7jRd8fffRfP5WFLbFT4wp6lPDQB+RLe9aTA=="}
-          %ul.result-Lists
-        .nav
-          %ul.listsLeft
-            %li.listsLeft__item.listsLeft__item--first
-              .category
-                = link_to "#" do
-                  カテゴリー
-                .tree.display-None
-                  .categoryTree
-                    .categoryTree--item
-                      = link_to "#", id: "#1" do
-                        レディース
-                      .subcatTree
-                        .subcatTree--item
-                          = link_to "#", id: "#1" do
-                            トップス
-                          .itemTree
-                            .itemTree--item
-                              = link_to "#", id: "#1" do
-                                Tシャツ
-                            .itemTree--item
-                              = link_to "#", id: "#2" do
-                                シャツ
-                        .subcatTree--item
-                          = link_to "#", id: "#2" do
-                            シャケット
-            %li.listsLeft__item.listsLeft__item__second
-              = link_to "#", id: "#brandBtn" do
-                ブランド
-              %ul.brandsPulldown.display-None
-          %ul.lists-Right
-            %li.lists-Right__item.lists-Right__item--login
-              = link_to "#" do
-                ログイン
-            %li.lists-Right__item.lists-Right__item--new
-              = link_to "#",class: 'class' do
-                新規会員登録
-    .main
-      %section.main-Visual
-        .content
-          %h2.content__sub-title
-            %br/
-            人生を変えるフリマアプリ
-          %p.content__text
-            FURIMAはだれでもかんたんに出品・購入できる
-            %br/
-            フリマアプリです
-          .content__btn
-            = link_to "#",class: 'apple-Btn' do
-              = image_tag "app-store-icon.svg"
-            = link_to "#",class: 'google-Btn' do
-              = image_tag "google-play-icon.svg"
-        .picture
-      %section.top-Introduction
-        %h2.sub-title
-          FURIMAが選ばれる3つの理由
-        %ul.lists
-          %li.list
-            .list__pict
-              %span.number 1
-              = image_tag "pict-reason-1.jpg"
-            %h3.list__text
-              %span 3分
-              ですぐに出品
-            %p.list__description
-              スマホで入力するだけで簡単に出品できる！
-          %li.list
-            .list__pict
-              %span.number 2
-              = image_tag "pict-reason-2.jpg"
-            %h3.list__text
-              %span シンプル
-              で使いやすい
-            %p.list__description
-              めんどくさい入力は必要なく、検索も購入もスムーズ！
-          %li.list.list--last
-            .list__pict
-              %span.number 3
-              = image_tag "pict-reason-3.jpg"
-            %h3.list__text
-              手数料
-              %span 業界最安
-            %p.list__description
-              最大3%でお得に出品&amp;購入！
-      %section.top-MiddleDl
-        .top-MiddleDl__inner
-          %h2.sub-title 会員数日本一位
-          %p.text
-            FURIMAは、フリマアプリで最も人気。
-            %br/
-            出品・購入回数も業界最多です！
-            %br/
-            ほしかったあの商品に出会えるかもしれません。
-          .btn
-            = link_to "#",class: 'apple-Btn' do
-              = image_tag "app-store-icon.svg"
-            = link_to "#",class: 'google-Btn' do
-              = image_tag "google-play-icon.svg"
-      %section.top-KeyFeatures
-        %h2.head
-          FURIMAの特徴
-          .after
-        .items
-          %section.item
-            %figure.item__img
-              = image_tag "items-icon-01.svg"
-            %h3.item__sub-title 簡単に売り買いできる
-            %p.item__detail
-              スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-          %section.item
-            %figure.item__img
-              = image_tag "items-icon-02.svg"
-            %h3.item__sub-title 売上金は即日振込みに対応
-            %p.item__detail
-              午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
-          %section.item
-            %figure.item__img
-              = image_tag "items-icon-03.svg"
-            %h3.item__sub-title 様々な支払いに対応
-            %p.item__detail
-              お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-      %section.pickupContainer__first
-        .head ピックアップカテゴリー
-        .productBox
-          .productHead
-            = link_to "#" do
-              .title 新規投稿商品
-          .productLists
-            .productList
-              = link_to "/products/9" do
-                %figure.productList--img
-                  = image_tag "beef.jpg", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name テスト
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        1
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/8" do
-                %figure.productList--img
-                  = image_tag "ramen.jpg", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name ee
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 1000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        0
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/3" do
-                %figure.productList--img
-                  = image_tag "fish.png", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name product3
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 30000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        0
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/2" do
-                %figure.productList--img
-                  = image_tag "gyouza.png", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name product2
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 20000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        0
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/1" do
-                %figure.productList--img
-                  = image_tag "curry.png", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name product1
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        1
-                    %div{style: "font-size: 5px;"} (税込)
-      %section.pickupContainer__second
-        .head ピックアップブランド
-        .productBox
-          .productHead
-            = link_to "#" do
-              .title アーカイバ
-          .productLists
-            .productList
-              = link_to "/products/9" do
-                %figure.productList--img
-                  = image_tag "beef.jpeg", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name テスト
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        1
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/8" do
-                %figure.productList--img
-                  = image_tag "ramen.jpeg", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name ee
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 1000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        0
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/3" do
-                %figure.productList--img
-                  = image_tag "fish.png", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name product3
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 30000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        0
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/2" do
-                %figure.productList--img
-                  = image_tag "gyouza.png", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name product2
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 20000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        0
-                    %div{style: "font-size: 5px;"} (税込)
-            .productList
-              = link_to "/products/1" do
-                %figure.productList--img
-                  = image_tag "curry.png", style: "height:150px; width: 220px;"
-                .productList--body
-                  .name product1
-                  .details{style: "font-size: 16px;"}
-                    %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                      %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
-                      %li{style: "list-style: none;"}
-                        %i.fa.fa-star.likeIcon
-                        1
-                    %div{style: "font-size: 5px;"} (税込)
-      %aside.Banner
-        .inner
-          %h2.inner__title
-            だれでもかんたん、人生を変えるフリマアプリ
-          %p.inner__text 今すぐ無料ダウンロード！
-          .inner__icon
-            = link_to "#",class: 'apple-Btn' do
-              = image_tag "app-store-icon.svg"
-            = link_to "#",class: 'google-Btn' do
-              = image_tag "google-play-icon.svg"
-    .footer
-      %ul.contents
-        %li.content
-          %h2.content__head FURIMAについて
-          %ul{style: "list-style: none; padding-right: 40px;"}
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                会社概要（運営会社）
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                プライバシーポリシー
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                FURIMA利用規約
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                ポイントに関する特約
-        %li.content
-          %h2.content__head FURIMAを見る
-          %ul{style: "list-style: none; padding-right: 40px;"}
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                カテゴリー一覧
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                ブランド一覧
-        %li.content
-          %h2.content__head ヘルプ＆ガイド
-          %ul{style: "list-style: none; padding-right: 40px;"}
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              %a{:href => "#"} FURIMAガイド
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                FURIMAロゴ利用ガイドライン
-            %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-              =link_to "#" do
-                お知らせ
-      .footer__logo
-        =link_to "/" do
-          = image_tag "FURIMA-logo-white.svg", style: "width: 100%; vertical-align: bottom;"
-      %p{style: "font-size: 14px;margin: 0;padding: 0;"} © FURIMA
-    =link_to "#" do
-      .purchase-Btn
-        %span.purchase-Btn__text 出品する
-        .purchase-Btn__icon
-        = image_tag "camera.svg"
+    -#       .searchmain
+    -#         %form{"accept-charset": "UTF-8", action: "#", method: "get"}
+    -#           %input{name: "utf8", type: "hidden", value: "✓"}
+    -#           %input#searchInput.searchmain--input{name: "key", placeholder: "キーワードから探す"}
+    -#           %button{type: "submit"}
+    -#             .searchmain__icon
+    -#               = image_tag "icon_search.png"
+    -#           %input{name: "authenticity_token", type: "hidden", value: "rGvQaEoXiWof9CviOMrABrWg8GvnR7RZ5CihIgqhun1x4Av6XJI7jRd8fffRfP5WFLbFT4wp6lPDQB+RLe9aTA=="}
+    -#       %ul.result-Lists
+    -#     .nav
+    -#       %ul.listsLeft
+    -#         %li.listsLeft__item.listsLeft__item--first
+    -#           .category
+    -#             = link_to "#" do
+    -#               カテゴリー
+    -#             .tree.display-None
+    -#               .categoryTree
+    -#                 .categoryTree--item
+    -#                   = link_to "#", id: "#1" do
+    -#                     レディース
+    -#                   .subcatTree
+    -#                     .subcatTree--item
+    -#                       = link_to "#", id: "#1" do
+    -#                         トップス
+    -#                       .itemTree
+    -#                         .itemTree--item
+    -#                           = link_to "#", id: "#1" do
+    -#                             Tシャツ
+    -#                         .itemTree--item
+    -#                           = link_to "#", id: "#2" do
+    -#                             シャツ
+    -#                     .subcatTree--item
+    -#                       = link_to "#", id: "#2" do
+    -#                         シャケット
+    -#         %li.listsLeft__item.listsLeft__item__second
+    -#           = link_to "#", id: "#brandBtn" do
+    -#             ブランド
+    -#           %ul.brandsPulldown.display-None
+    -#       %ul.lists-Right
+    -#         %li.lists-Right__item.lists-Right__item--login
+    -#           = link_to "#" do
+    -#             ログイン
+    -#         %li.lists-Right__item.lists-Right__item--new
+    -#           = link_to "#",class: 'class' do
+    -#             新規会員登録
+    -# .main
+    -#   %section.main-Visual
+    -#     .content
+    -#       %h2.content__sub-title
+    -#         %br/
+    -#         人生を変えるフリマアプリ
+    -#       %p.content__text
+    -#         FURIMAはだれでもかんたんに出品・購入できる
+    -#         %br/
+    -#         フリマアプリです
+    -#       .content__btn
+    -#         = link_to "#",class: 'apple-Btn' do
+    -#           = image_tag "app-store-icon.svg"
+    -#         = link_to "#",class: 'google-Btn' do
+    -#           = image_tag "google-play-icon.svg"
+    -#     .picture
+    -#   %section.top-Introduction
+    -#     %h2.sub-title
+    -#       FURIMAが選ばれる3つの理由
+    -#     %ul.lists
+    -#       %li.list
+    -#         .list__pict
+    -#           %span.number 1
+    -#           = image_tag "pict-reason-1.jpg"
+    -#         %h3.list__text
+    -#           %span 3分
+    -#           ですぐに出品
+    -#         %p.list__description
+    -#           スマホで入力するだけで簡単に出品できる！
+    -#       %li.list
+    -#         .list__pict
+    -#           %span.number 2
+    -#           = image_tag "pict-reason-2.jpg"
+    -#         %h3.list__text
+    -#           %span シンプル
+    -#           で使いやすい
+    -#         %p.list__description
+    -#           めんどくさい入力は必要なく、検索も購入もスムーズ！
+    -#       %li.list.list--last
+    -#         .list__pict
+    -#           %span.number 3
+    -#           = image_tag "pict-reason-3.jpg"
+    -#         %h3.list__text
+    -#           手数料
+    -#           %span 業界最安
+    -#         %p.list__description
+    -#           最大3%でお得に出品&amp;購入！
+    -#   %section.top-MiddleDl
+    -#     .top-MiddleDl__inner
+    -#       %h2.sub-title 会員数日本一位
+    -#       %p.text
+    -#         FURIMAは、フリマアプリで最も人気。
+    -#         %br/
+    -#         出品・購入回数も業界最多です！
+    -#         %br/
+    -#         ほしかったあの商品に出会えるかもしれません。
+    -#       .btn
+    -#         = link_to "#",class: 'apple-Btn' do
+    -#           = image_tag "app-store-icon.svg"
+    -#         = link_to "#",class: 'google-Btn' do
+    -#           = image_tag "google-play-icon.svg"
+    -#   %section.top-KeyFeatures
+    -#     %h2.head
+    -#       FURIMAの特徴
+    -#       .after
+    -#     .items
+    -#       %section.item
+    -#         %figure.item__img
+    -#           = image_tag "items-icon-01.svg"
+    -#         %h3.item__sub-title 簡単に売り買いできる
+    -#         %p.item__detail
+    -#           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+    -#       %section.item
+    -#         %figure.item__img
+    -#           = image_tag "items-icon-02.svg"
+    -#         %h3.item__sub-title 売上金は即日振込みに対応
+    -#         %p.item__detail
+    -#           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+    -#       %section.item
+    -#         %figure.item__img
+    -#           = image_tag "items-icon-03.svg"
+    -#         %h3.item__sub-title 様々な支払いに対応
+    -#         %p.item__detail
+    -#           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+    -#   %section.pickupContainer__first
+    -#     .head ピックアップカテゴリー
+    -#     .productBox
+    -#       .productHead
+    -#         = link_to "#" do
+    -#           .title 新規投稿商品
+    -#       .productLists
+    -#         .productList
+    -#           = link_to "/products/9" do
+    -#             %figure.productList--img
+    -#               = image_tag "beef.jpg", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name テスト
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     1
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/8" do
+    -#             %figure.productList--img
+    -#               = image_tag "ramen.jpg", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name ee
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 1000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     0
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/3" do
+    -#             %figure.productList--img
+    -#               = image_tag "fish.png", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name product3
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 30000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     0
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/2" do
+    -#             %figure.productList--img
+    -#               = image_tag "gyouza.png", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name product2
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 20000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     0
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/1" do
+    -#             %figure.productList--img
+    -#               = image_tag "curry.png", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name product1
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     1
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#   %section.pickupContainer__second
+    -#     .head ピックアップブランド
+    -#     .productBox
+    -#       .productHead
+    -#         = link_to "#" do
+    -#           .title アーカイバ
+    -#       .productLists
+    -#         .productList
+    -#           = link_to "/products/9" do
+    -#             %figure.productList--img
+    -#               = image_tag "beef.jpeg", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name テスト
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     1
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/8" do
+    -#             %figure.productList--img
+    -#               = image_tag "ramen.jpeg", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name ee
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 1000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     0
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/3" do
+    -#             %figure.productList--img
+    -#               = image_tag "fish.png", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name product3
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 30000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     0
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/2" do
+    -#             %figure.productList--img
+    -#               = image_tag "gyouza.png", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name product2
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 20000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     0
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#         .productList
+    -#           = link_to "/products/1" do
+    -#             %figure.productList--img
+    -#               = image_tag "curry.png", style: "height:150px; width: 220px;"
+    -#             .productList--body
+    -#               .name product1
+    -#               .details{style: "font-size: 16px;"}
+    -#                 %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+    -#                   %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
+    -#                   %li{style: "list-style: none;"}
+    -#                     %i.fa.fa-star.likeIcon
+    -#                     1
+    -#                 %div{style: "font-size: 5px;"} (税込)
+    -#   %aside.Banner
+    -#     .inner
+    -#       %h2.inner__title
+    -#         だれでもかんたん、人生を変えるフリマアプリ
+    -#       %p.inner__text 今すぐ無料ダウンロード！
+    -#       .inner__icon
+    -#         = link_to "#",class: 'apple-Btn' do
+    -#           = image_tag "app-store-icon.svg"
+    -#         = link_to "#",class: 'google-Btn' do
+    -#           = image_tag "google-play-icon.svg"
+    -# .footer
+    -#   %ul.contents
+    -#     %li.content
+    -#       %h2.content__head FURIMAについて
+    -#       %ul{style: "list-style: none; padding-right: 40px;"}
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             会社概要（運営会社）
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             プライバシーポリシー
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             FURIMA利用規約
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             ポイントに関する特約
+    -#     %li.content
+    -#       %h2.content__head FURIMAを見る
+    -#       %ul{style: "list-style: none; padding-right: 40px;"}
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             カテゴリー一覧
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             ブランド一覧
+    -#     %li.content
+    -#       %h2.content__head ヘルプ＆ガイド
+    -#       %ul{style: "list-style: none; padding-right: 40px;"}
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           %a{:href => "#"} FURIMAガイド
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             FURIMAロゴ利用ガイドライン
+    -#         %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+    -#           =link_to "#" do
+    -#             お知らせ
+    -#   .footer__logo
+    -#     =link_to "/" do
+    -#       = image_tag "FURIMA-logo-white.svg", style: "width: 100%; vertical-align: bottom;"
+    -#   %p{style: "font-size: 14px;margin: 0;padding: 0;"} © FURIMA
+    -# =link_to "#" do
+    -#   .purchase-Btn
+    -#     %span.purchase-Btn__text 出品する
+    -#     .purchase-Btn__icon
+    -#     = image_tag "camera.svg"
