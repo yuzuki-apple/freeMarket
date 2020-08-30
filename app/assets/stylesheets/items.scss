@@ -516,7 +516,7 @@ img {
           z-index: auto;
           display: block;
           transition: opacity 0.15s;
-        
+
           &:hover {
             opacity: 0.55;
           }
@@ -549,11 +549,11 @@ img {
   position: relative;
   background-size: cover;
   background-position: center;
-  background-image: url(/assets/banner-background.jpg);
+  background-image: image-url(banner-background.jpg);
   .inner {
     color: #fff;
     text-align: center;
-    
+
     .inner__title {
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 24px;
