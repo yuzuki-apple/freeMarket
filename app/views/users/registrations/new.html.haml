@@ -1,12 +1,5 @@
-%header.single-header
-  %h1
-    = link_to image_tag("logo.svg"), root_path
-  - if params[:controller]=="users/registrations"&&params[:action]=="new"
-    %nav.regiNavi
-      %ul
-        %li.active 会員情報
-        %li 送付先情報
-        %li 完了
+= render partial:"header"
+
 .registration
   %main
     %section
@@ -94,15 +87,5 @@
           %p.formGroupInfo ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .submit
             = f.submit "次へ進む"
-%footer.single-footer
-  %nav
-    %ul
-      %li
-        %a{href:"/"} プライバシーポリシー
-      %li
-        %a{href:"/"} メルカリ利用規約
-      %li
-        %a{href:"/"} 特定商取引に関する表記
-  = link_to image_tag("logo-white.svg"),root_path
-  %p
-    %small © FURIMA
+
+= render partial:"footer"

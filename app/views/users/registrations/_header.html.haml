@@ -1,0 +1,8 @@
+%header.registrationHeader
+  %h1
+    = link_to image_tag("logo.svg"), root_path
+  %nav.regiNavi
+    %ul
+      %li{class:"#{'active' if params[:controller]=='users/registrations'&&params[:action]=='new'}"} 会員情報
+      %li{class:"#{'active' if params[:controller]=='users/registrations'&&params[:action]=='create'}"} 送付先情報
+      %li{class:"#{'active' if params[:controller]=='users/registrations'&&params[:action]=='create_address'}"} 完了

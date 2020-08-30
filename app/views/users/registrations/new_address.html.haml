@@ -1,13 +1,5 @@
+= render partial:"header"
 
-%header.single-header
-  %h1
-    = link_to image_tag("logo.svg"), root_path
-  - if params[:controller]=="users/registrations"&&params[:action]=="create"
-    %nav.regiNavi
-      %ul
-        %li 会員情報
-        %li.active 送付先情報
-        %li 完了
 .address
   %main
     %section
@@ -78,15 +70,5 @@
             = f.telephone_field :phone_number, placeholder:"ハイフン不要", class:"inputDefault"
           .submit
             = f.submit "完了する"
-%footer.single-footer
-  %nav
-    %ul
-      %li
-        %a{href:"/"} プライバシーポリシー
-      %li
-        %a{href:"/"} メルカリ利用規約
-      %li
-        %a{href:"/"} 特定商取引に関する表記
-  = link_to image_tag("logo-white.svg"),root_path
-  %p
-    %small © FURIMA
+
+= render partial:"footer"
