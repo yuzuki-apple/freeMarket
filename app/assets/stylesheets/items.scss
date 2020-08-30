@@ -199,7 +199,7 @@ body {
 .main .main-Visual {
   width: 100%;
   height: 560px;
-  background-image: url(/assets/Main-top-view.jpg);
+  background-image: image-url("Main-top-view.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -310,7 +310,7 @@ img {
 
 .main {
   .top-MiddleDl {
-    background-image: url(/assets/Main-top-view2.jpg);
+    background-image: image-url("Main-top-view2.jpg");
     background-position: bottom right;
     height: 400px;
     width: 100%;
