@@ -1,0 +1,5 @@
+ja:
+  recaptcha:
+    errors:
+      verification_failed: 'reCAPTCHA チェックが入っていない恐れがあります。'
+      recaptcha_unreachable: 'reCAPTCHA 認証に失敗しました。'

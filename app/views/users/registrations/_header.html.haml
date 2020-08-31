@@ -1,0 +1,8 @@
+%header.registrationHeader
+  %h1= link_to image_tag("logo.svg"), root_path
+  -if params[:controller]=='users/registrations'
+    %nav.regiNavi
+      %ul
+        %li{class:"#{'active' if !@address}"} 会員情報
+        %li{class:"#{'active' if session["devise.regist_data"]}"} 送付先情報
+        %li{class:"#{'active' if @address&&!session["devise.regist_data"]}"} 完了
