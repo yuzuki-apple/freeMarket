@@ -80,6 +80,7 @@
   &Content {
     width:92vw;
     margin:0 auto;
+    font-size:0;
     form#new_user{
       overflow:hidden;
     }
@@ -167,10 +168,16 @@
         display:inline;
       }
       &.zipCode {
-        input {
-          width:40vw;
-          margin-left:5vw;
-        }
+        display:inline-block;
+        vertical-align:top;
+        width:49%;
+        margin-left:0;
+      }
+      &.prefecture {
+        display:inline-block;
+        vertical-align:top;
+        width:49%;
+        margin-left:2%;
       }
     }
     .revealedPassword {

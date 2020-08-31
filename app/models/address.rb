@@ -3,4 +3,7 @@ class Address < ApplicationRecord
   validates :family_name_kanji,:first_name_kanji,:family_name_kana,:first_name_kana,:post_number,:prefecture,:city,:block_number,presence:true
   validates :family_name_kanji,:first_name_kanji,format:{with:/[^\x01-\x7E]+/}
   validates :family_name_kana,:first_name_kana,format:{with:/[ぁ-ん]+/}
+  validates :post_number,format:{with:/\d{3}\-\d{4}/}
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
 end
