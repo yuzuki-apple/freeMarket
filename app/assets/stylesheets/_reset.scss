@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
   margin:0;
   padding:0;
@@ -5,4 +7,13 @@
   text-decoration:none;
   list-style:none;
   color:black;
+}
+
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
