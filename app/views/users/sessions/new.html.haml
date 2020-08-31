@@ -1,12 +1,8 @@
-%header.single-header
-  %h1
-    = link_to image_tag("logo.svg"), root_path
+= render "users/registrations/header"
+
 .session
   %main
     %section
-      .sessionHeader
-        %p アカウントをお持ちでない方はこちら
-        = link_to "新規会員登録",new_user_registration_path
       .sessionContent
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .formGroup
@@ -27,17 +23,10 @@
           = flash[:recaptcha_error]
           = recaptcha_tags
           .submit
-            = f.submit "Log in"
+            = f.submit "ログイン"
       %a{href:"/users/password/new"} パスワードをお忘れの方
-%footer.single-footer
-  %nav
-    %ul
-      %li
-        %a{href:"/"} プライバシーポリシー
-      %li
-        %a{href:"/"} メルカリ利用規約
-      %li
-        %a{href:"/"} 特定商取引に関する表記
-  = link_to image_tag("logo-white.svg"),root_path
-  %p
-    %small © FURIMA
+      .toRegistration
+        %p アカウントをお持ちでない方はこちら
+        = link_to "新規会員登録",new_user_registration_path
+
+= render "users/registrations/footer"

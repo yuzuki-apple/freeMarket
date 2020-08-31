@@ -1,7 +1,7 @@
 .registrationHeader {
   text-align: center;
   h1 {
-    padding-top: 3vw;
+    padding: 3vw;
     img {
       width: 35vw;
     }
@@ -80,6 +80,9 @@
   &Content {
     width:92vw;
     margin:0 auto;
+    form#new_user{
+      overflow:hidden;
+    }
     .formGroup {
       font-size:0;
       margin:10vw 0 0;
@@ -221,6 +224,24 @@
       text-align:center;
     }
   }
+  .toRegistration {
+    padding-top:6vw;
+    margin-top:6vw;
+    text-align:center;
+    overflow:hidden;
+    border-top:1px solid #eee;
+    a{
+      margin:5vw auto 0;
+      background:#3CCACE;
+      border:1px solid #3CCACE;
+      color:#fff;
+      display:block;
+      width:90%;
+      line-height:12vw;
+      font-size:4vw;
+      border-radius:1vw;
+      text-align:center;}
+  }
 }
 
 .registrationFooter {
@@ -306,6 +327,9 @@
     }
     &Content {
       width:340px;
+      form#new_user{
+        padding-top:30px;
+      }
       .formGroup {
         margin:24px 0 0;
         label,h3 {
@@ -403,6 +427,17 @@
         border-radius:4px;
       }
     }
+    .toRegistration {
+      padding-top:30px;
+      margin-top:30px;
+      a{
+        margin:25px auto;
+        width:300px;
+        line-height:48px;
+        font-size:14px;
+        border-radius:4px;
+      }
+    }
   }
 
   .registrationFooter {
@@ -412,12 +447,14 @@
     font-size: 12px;
     ul {
       display: flex;
+      flex-wrap:wrap;
       justify-content: center;
       margin-bottom: 30px;
     }
     li {
       width: 160px;
       margin: 10px;
+      &:last-child{width:300px;}
     }
     img {
       width: 160px;
