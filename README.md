@@ -55,7 +55,7 @@ Things you may want to cover:
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |post_number|string|null: false|
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |block_number|string|null: false|
 |apartment_name|string||
