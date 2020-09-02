@@ -1,49 +1,49 @@
 .registrationHeader {
-  text-align: center;
+  text-align:center;
   h1 {
-    padding: 3vw;
+    padding:3vw;
     img {
-      width: 35vw;
+      width:35vw;
     }
   }
   .regiNavi {
-    padding: 3vw 0 7vw;
-    border-top: 1px solid #eee;
-    font-size: 0;
+    padding:3vw 0 7vw;
+    border-top:1px solid #eeeeee;
+    font-size:0;
     li {
-      display: inline-block;
-      width: 20vw;
-      margin: 0 1vw;
-      position: relative;
-      font-size: 3vw;
-      color: #888;
+      display:inline-block;
+      width:20vw;
+      margin:0 1vw;
+      position:relative;
+      font-size:3vw;
+      color:#888888;
       &::before {
-        content: '';
-        background: #ccc;
-        display: inline-block;
-        width: 2.5vw;
-        height: 2.5vw;
-        position: absolute;
-        top: 5vw;
-        left: 45%;
-        border-radius: 50%;
-        z-index: 1;
+        content:'';
+        background:#cccccc;
+        display:inline-block;
+        width:2.5vw;
+        height:2.5vw;
+        position:absolute;
+        top:5vw;
+        left:45%;
+        border-radius:50%;
+        z-index:1;
       }
       &:nth-last-of-type(n+2)::after {
-        content: '';
-        background: #ccc;
-        display: inline-block;
-        width: 20vw;
-        height: 2px;
-        position: absolute;
-        top: 6vw;
-        left: 55%;
+        content:'';
+        background:#cccccc;
+        display:inline-block;
+        width:20vw;
+        height:2px;
+        position:absolute;
+        top:6vw;
+        left:55%;
       }
       &.active {
-        font-weight: 600;
-        color: #3CCACE;
+        font-weight:600;
+        color:#3CCACE;
         &::before {
-          background: #3CCACE;
+          background:#3CCACE;
         }
       }
     }
@@ -51,7 +51,7 @@
 }
 
 .registration,.session,.address,.regiComplete {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
   padding-bottom:10vw;
   h2 {
     background:#f5f5f5;
@@ -59,7 +59,7 @@
     position:sticky;
     top:0;
     padding:4vw;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid #eeeeee;
     text-align:center;
     font-size:5vw;
     p {
@@ -98,7 +98,7 @@
         height:12vw;
         padding:1vw 4vw;
         border-radius:1vw;
-        border:1px solid #ccc;
+        border:1px solid #cccccc;
         font-size:4vw;
         &:focus {
           border:2px solid #3CCACE;
@@ -199,25 +199,25 @@
       border-radius:1vw;
     }
     &+a {
-      display: block;
-      width: 80vw;
-      margin: 10vw auto 0;
-      font-size: 4vw;
+      display:block;
+      width:80vw;
+      margin:10vw auto 0;
+      font-size:4vw;
     }
     div[data-sitekey] {
       margin-top:10vw;
-      div {margin: 0 auto;}
+      div {margin:0 auto;}
     }
   }
   .formGroupInfo {
     margin:2vw 0;
     font-size:3.5vw;
-    color:#888;
+    color:#888888;
   }
   &__note {
     font-size:4vw;
-    width: 87vw;
-    margin: 10vw auto 0;
+    width:87vw;
+    margin:10vw auto 0;
     &+a {
       margin:10vw auto 0;
       background:#3CCACE;
@@ -236,7 +236,7 @@
     margin-top:6vw;
     text-align:center;
     overflow:hidden;
-    border-top:1px solid #eee;
+    border-top:1px solid #eeeeee;
     a{
       margin:5vw auto 0;
       background:#3CCACE;
@@ -252,25 +252,25 @@
 }
 
 .registrationFooter {
-  background: #272727;
-  padding: 10vw;
-  text-align: center;
-  font-size: 3vw;
+  background:#272727;
+  padding:10vw;
+  text-align:center;
+  font-size:3vw;
   ul {
-    margin-bottom: 10vw;
+    margin-bottom:10vw;
   }
   li {
-    margin: 3vw;
+    margin:3vw;
     a {
-      color: white;
+      color:white;
     }
   }
   img {
-    width: 30vw;
+    width:30vw;
   }
   small {
-    font-size: 4vw;
-    color: white;
+    font-size:4vw;
+    color:white;
   }
 }
 
@@ -281,34 +281,34 @@
 @media screen and (min-width:768px) {
 
   .registrationHeader {
-    display: flex;
-    width: 700px;
-    padding: 30px 0;
-    margin: 0 auto;
-    justify-content: space-evenly;
+    display:flex;
+    width:700px;
+    padding:30px 0;
+    margin:0 auto;
+    justify-content:space-evenly;
     h1 {
-      padding: 0;
+      padding:0;
       img {
-        width: 185px;
+        width:185px;
       }
     }
     .regiNavi {
-      padding: 0;
-      font-size: 0;
-      border-top: 0;
+      padding:0;
+      font-size:0;
+      border-top:0;
       li {
-        width: 100px;
-        margin: 0 5px;
-        font-size: 12px;
+        width:100px;
+        margin:0 5px;
+        font-size:12px;
         &::before {
-          width: 12px;
-          height: 12px;
-          top: 25px;
-          left: 43%;
+          width:12px;
+          height:12px;
+          top:25px;
+          left:43%;
         }
         &:nth-last-of-type(n+2)::after {
-          width: 100px;
-          top: 30px;
+          width:100px;
+          top:30px;
         }
       }
     }
@@ -400,9 +400,9 @@
         border-radius:4px;
       }
       &+a {
-        width: 50%;
-        margin: 40px auto 0;
-        font-size: 14px;
+        width:50%;
+        margin:40px auto 0;
+        font-size:14px;
       }
     }
     div[data-sitekey] {
@@ -439,26 +439,26 @@
   }
 
   .registrationFooter {
-    margin: 0 auto;
-    width: 700px;
-    padding: 30px;
-    font-size: 12px;
+    margin:0 auto;
+    width:700px;
+    padding:30px;
+    font-size:12px;
     ul {
-      display: flex;
+      display:flex;
       flex-wrap:wrap;
-      justify-content: center;
-      margin-bottom: 30px;
+      justify-content:center;
+      margin-bottom:30px;
     }
     li {
-      width: 160px;
-      margin: 10px;
+      width:160px;
+      margin:10px;
       &:last-child{width:300px;}
     }
     img {
-      width: 160px;
+      width:160px;
     }
     small {
-      font-size: 16px;
+      font-size:16px;
     }
   }
 }
