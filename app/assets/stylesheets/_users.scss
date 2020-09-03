@@ -180,12 +180,23 @@
         margin-left:2%;
       }
     }
+    @keyframes vealOpen {0% {height:0;padding:0 3vw;}100% {height:12vw;padding:3vw;}}
+    @keyframes vealClose {0% {height:12vw;padding:3vw;}100% {height:0;padding:0 3vw;}}
     .revealedPassword {
       background:#ccffee;
+      height:0;
       padding:0 3vw;
       border-radius:1vw;
       font-size:4vw;
       overflow:hidden;
+      &__open {
+        animation:vealOpen 0.3s;
+        height:12vw;
+        padding:3vw;
+      }
+      &__close {
+        animation:vealClose 0.3s;
+      }
     }
     .submit input {
       margin:10vw auto 0;
@@ -388,10 +399,17 @@
           }
         }
       }
+      @keyframes vealOpen {0% {height:0;padding:0 14px;}100% {height:48px;padding:10px 14px;}}
+      @keyframes vealClose {0% {height:48px;padding:10px 14px;}100% {height:0;padding:0 14px;}}
       .revealedPassword {
-        padding:2px 4px;
+        padding:0 14px;
         border-radius:4px;
         font-size:16px;
+        line-height:28px;
+        &__open {
+          height:48px;
+          padding:10px 14px;
+        }
       }
       .submit input {
         margin:24px auto 0;

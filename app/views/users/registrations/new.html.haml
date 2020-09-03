@@ -25,7 +25,7 @@
             %p.formGroupInfo ※ 英字と数字の両方を含めて設定してください
             %input#reveal_password{type:"checkbox"}/
             %label.formGroupInfo{for:"reveal_password"} パスワードを表示する
-            .revealedPassword{style:"display: none;"}
+            .revealedPassword
           .formGroup
             = f.label :password_confirmation,"パスワード：確認用"
             %span.formGroup-require 必須
