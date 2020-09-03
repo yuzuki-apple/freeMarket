@@ -20,6 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     session["devise.regist_data"]["user"].clear
+    resource.remember_me = true
     sign_in(:user, @user)
   end
 

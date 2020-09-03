@@ -17,6 +17,7 @@ $(function(){
                 }
               });
               $('#address_city').val(addressData[2]+addressData[3]);
+              $('#address_city').blur();
             }
           });
         });
