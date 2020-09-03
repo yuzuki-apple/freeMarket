@@ -1,9 +1,9 @@
 $(function(){
   if($('.address').length){
 
-    $('#address_post_number').keyup(function(){
-      if($(this).val()==$(this).val().match(/\d{3}\-\d{4}/)){
-        let zipcode=Number($(this).val().replace('-',''));
+    function addZipcode(thisZipcode){
+      if(thisZipcode.val()==thisZipcode.val().match(/\d{3}\-\d{4}/)){
+        let zipcode=Number(thisZipcode.val().replace('-',''));
         $.get('/zipcode.csv',function(data){
           let zipArray=data.split('\n');
           let searchZip=new RegExp('^' + zipcode + ',');
@@ -13,6 +13,7 @@ $(function(){
               $('#address_prefecture_id option').each(function(i,elm){
                 if(elm.text==addressData[1]){
                   $(elm).prop('selected',true);
+                  $('#address_prefecture_id').blur();
                 }
               });
               $('#address_city').val(addressData[2]+addressData[3]);
@@ -20,6 +21,17 @@ $(function(){
           });
         });
       }
+    }
+
+
+
+
+    $('#address_post_number').keyup(function(){
+      addZipcode($(this));
+    });
+
+    $('#address_post_number').focusout(function(){
+      addZipcode($(this));
     });
 
   }

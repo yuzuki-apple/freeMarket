@@ -130,7 +130,6 @@ $(function(){
       }
 
       if($(this).attr('id')=='address_post_number'){
-        $('#address_prefecture_id').blur();
         if(!$(this).val()){
           addErrMessage($(this),'〒を入力してください');
         }else if($(this).val()!=$(this).val().match(/\d{3}\-\d{4}/)){
