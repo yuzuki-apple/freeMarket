@@ -131,17 +131,9 @@ $(function(){
 
       if($(this).attr('id')=='address_post_number'){
         if(!$(this).val()){
-          addErrMessage($(this),'郵便番号を入力してください');
+          addErrMessage($(this),'〒を入力してください');
         }else if($(this).val()!=$(this).val().match(/\d{3}\-\d{4}/)){
-          addErrMessage($(this),'フォーマットが違います。');
-        }else{
-          removeErrMessage($(this),'.errMessage');
-        }
-      }
-
-      if($(this).attr('id')=='address_prefecture'){
-        if(!$(this).val()){
-          addErrMessage($(this),'都道府県を入力してください');
+          addErrMessage($(this),'フォーマットが違います');
         }else{
           removeErrMessage($(this),'.errMessage');
         }
@@ -188,6 +180,11 @@ $(function(){
           }
         }
       }
+      if($(this).attr('id')=='address_prefecture_id'){
+        if(!$(this).val()){
+          addErrMessage($(this),'入力してください');
+        }
+      }
     });
 
     $('select').change(function(){
@@ -200,6 +197,11 @@ $(function(){
           }
         }else{
           $(this).removeClass('errBorder');
+        }
+      }
+      if($(this).attr('id')=='address_prefecture_id'){
+        if($(this).val()){
+          removeErrMessage($(this),'.errMessage');
         }
       }
     });

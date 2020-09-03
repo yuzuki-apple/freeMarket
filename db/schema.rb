@@ -12,6 +12,23 @@
 
 ActiveRecord::Schema.define(version: 2020_08_28_102308) do
 
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "family_name_kanji", default: "", null: false
+    t.string "first_name_kanji", default: "", null: false
+    t.string "family_name_kana", default: "", null: false
+    t.string "first_name_kana", default: "", null: false
+    t.string "post_number", default: "", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", default: "", null: false
+    t.string "block_number", default: "", null: false
+    t.string "apartment_name", default: "", null: false
+    t.string "phone_number", default: "", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
@@ -28,28 +45,6 @@ ActiveRecord::Schema.define(version: 2020_08_28_102308) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name_kanji", default: "", null: false
-    t.string "first_name_kanji", default: "", null: false
-    t.string "family_name_kana", default: "", null: false
-    t.string "first_name_kana", default: "", null: false
-    t.string "post_number", default: "", null: false
-    t.string "prefecture", default: "", null: false
-    t.string "city", default: "", null: false
-    t.string "block_number", default: "", null: false
-    t.string "apartment_name", default: "", null: false
-    t.string "phone_number", default: "", null: false
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
