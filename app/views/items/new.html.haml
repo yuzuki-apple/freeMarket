@@ -1,11 +1,11 @@
-.body
-  .container
-    .header
-      = link_to root_path, class: "header__logo" do
-        = image_tag "logo.png", class: "header__logo--image"
-    .form
-      .form__image
-        .form__image--content
+.bodyNew
+  .containerNew
+    .headerNew
+      = link_to root_path, class: "headerNew__logo" do
+        = image_tag "logo.png", class: "headerNew__logo--image"
+    .formNew
+      .formNew__image
+        .formNew__image--content
           .content
             .content__image
               .content__image--title
@@ -18,8 +18,8 @@
                   %p= icon("fas", "camera", class: "image_select__icon")
                   %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
               %p.image_note 画像がありません
-      .form__description
-        .form__description--content
+      .formNew__description
+        .formNew__description--content
           .content
             .content__description_name
               .content__description_name--title
@@ -34,8 +34,8 @@
               %textarea.content__description_text--textarea{:placeholder => "商品の説明", :rows => 7}
               %p.character_count 0/1000
               %p.description_text_note 入力してください
-      .form__detail
-        .form__detail--content
+      .formNew__detail
+        .formNew__detail--content
           .content
             .content__detail_category
               %p.detail_category 商品の詳細
@@ -44,10 +44,10 @@
                 %label カテゴリー
                 %span 必須
               %select.content__detail_category--select
-                %option{:value => "0"} 選択してください
-                %option{:value => "1"}メンズ
-                %option{:value => "2"}レディース
-                %option{:value => "3"}ベビーズ・キッズ
+                %option{value: "0"} 選択してください
+                %option{value: "1"}メンズ
+                %option{value: "2"}レディース
+                %option{value: "3"}ベビーズ・キッズ
               %p.detail_category_note 選択してください
             .content__detail_brand
               .content__detail_brand--title
@@ -59,13 +59,13 @@
                 %label 商品の状態
                 %span 必須
               %select.content__detail_condition--select
-                %option{:value => "0"} 新品
-                %option{:value => "1"} 未使用に近い
-                %option{:value => "2"} 目立った傷や汚れなし
-                %option{:value => "3"} やや傷や汚れあり
+                %option{value: "0"} 新品
+                %option{value: "1"} 未使用に近い
+                %option{value: "2"} 目立った傷や汚れなし
+                %option{value: "3"} やや傷や汚れあり
               %p.detail_condition_note 選択してください
-      .form__shipment
-        .form__shipment--content
+      .formNew__shipment
+        .formNew__shipment--content
           .content
             .content__shipment_fee
               %p.shipment_fee 配送について
@@ -73,33 +73,32 @@
                 %label 配送料の負担
                 %span 必須
               %select.content__shipment_fee--select
-                %option{:value => "0"} 新品
-                %option{:value => "1"} 未使用に近い
-                %option{:value => "2"} 目立った傷や汚れなし
-                %option{:value => "3"} やや傷や汚れあり
+                %option{value: "0"} 選択してください
+                %option{value: "1"} 送料込み（出品者負担）
+                %option{value: "2"} 着払い（購入者負担）
               %p.shipment_fee_note 選択してください
             .content__shipment_region
               .content__shipment_region--title
                 %label 発送元の地域
                 %span 必須
               %select.content__shipment_region--select
-                %option{:value => "0"} 新品
-                %option{:value => "1"} 未使用に近い
-                %option{:value => "2"} 目立った傷や汚れなし
-                %option{:value => "3"} やや傷や汚れあり
+                %option{value: "0"} 選択してください
+                %option{value: "1"} 北海道
+                %option{value: "2"} 青森
+                %option{value: "3"} 岩手
               %p.shipment_region_note 選択してください
             .content__shipment_schedule
               .content__shipment_schedule--title
                 %label 発送までの日数
                 %span 必須
               %select.content__shipment_schedule--select
-                %option{:value => "0"} 新品
-                %option{:value => "1"} 未使用に近い
-                %option{:value => "2"} 目立った傷や汚れなし
-                %option{:value => "3"} やや傷や汚れあり
+                %option{value: "0"} 選択してください
+                %option{value: "1"} １~２日で発送
+                %option{value: "2"} ２~３日で発送
+                %option{value: "3"} ４~７日で発送
               %p.shipment_shedule_note 選択してください
-      .form__price
-        .form__price--content
+      .formNew__price
+        .formNew__price--content
           .content
             .content__price
               %p.content__price--range 価格（¥300〜9,999,999）
@@ -115,17 +114,17 @@
               .content__price--profit
                 %p 販売利益
                 %span ---
-      .form__send
-        .form__send--content
+      .formNew__send
+        .formNew__send--content
           .content
             .content__send
               %button.content__send--button 出品する
               = link_to "戻る", "#", class: "content__send--back"
 
-        .form__send--note
+        .formNew__send--note
           %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-    .footer
-      = link_to root_path, class: "footer__logo" do
-        = image_tag "logo.png", class: "footer__logo--image"
-      .footer__copy_right
+    .footerNew
+      = link_to root_path, class: "footerNew__logo" do
+        = image_tag "logo.png", class: "footerNew__logo--image"
+      .footerNew__copy_right
         %p © FURIMA, Inc

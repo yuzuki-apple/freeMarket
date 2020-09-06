@@ -2,10 +2,10 @@
   box-sizing: border-box;
 }
 
-.body{
-  .container{
+.bodyNew{
+  .containerNew{
     background-color: #eeeeee;
-    .header{
+    .headerNew{
       text-align: center;
       height: 150px;
       &__logo{
@@ -16,7 +16,7 @@
         }
       }
     }
-    .form{
+    .formNew{
       margin: 0 auto;
       width: 700px;
       background-color: #ffffff;
@@ -68,7 +68,7 @@
               }
               p.image_note{
                 color: red;
-                display: none;
+                // display: none;
               }
             }
           }
@@ -103,7 +103,7 @@
                 padding: 0px 16px;
               }
               p.description_name_note{
-                display: none;
+                // display: none;
                 color: red;
               }
             }
@@ -135,7 +135,7 @@
                 margin: 0px;
               }
               p.description_text_note{
-                display: none;
+                // display: none;
                 color: red;
               }
             }
@@ -175,7 +175,7 @@
                 }
               }
               p.detail_category_note{
-                display: none;
+                // display: none;
                 color: red;
               }
             }
@@ -227,7 +227,7 @@
                 }
               }
               p.detail_condition_note{
-                display: none;
+                // display: none;
                 color: red;
               }
             }
@@ -265,7 +265,7 @@
                 }
               }
               p.shipment_fee_note{
-                display: none;
+                // display: none;
                 color: red;
               }
             }
@@ -295,7 +295,7 @@
                 }
               }
               p.shipment_region_note{
-                display: none;
+                // display: none;
                 color: red;
               }
             }
@@ -325,7 +325,7 @@
                 }
               }
               p.shipment_shedule_note{
-                display: none;
+                // display: none;
                 color: red;
               }
             }
@@ -372,7 +372,7 @@
                 }
               }
               &--note{
-                display: none;
+                // display: none;
                 color: red;
                 text-align: right;
               }
@@ -438,7 +438,7 @@
         }
       }  
     }
-    .footer{
+    .footerNew{
       height: 220px;
       text-align: center;
       &__logo{
