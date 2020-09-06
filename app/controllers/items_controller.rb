@@ -4,4 +4,8 @@ class ItemsController < ApplicationController
 
   def new
   end
+
+  def show
+    @item 
+  end
 end
