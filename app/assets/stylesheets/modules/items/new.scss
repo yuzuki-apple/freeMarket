@@ -42,7 +42,7 @@
                 }
               }
               p.image_title{
-                
+                font-size: 14px;
               }
               &--select{
                 background-color: #eeeeee;
@@ -68,7 +68,6 @@
               }
               p.image_note{
                 color: red;
-                // display: none;
               }
             }
           }
@@ -103,7 +102,6 @@
                 padding: 0px 16px;
               }
               p.description_name_note{
-                // display: none;
                 color: red;
               }
             }
@@ -135,7 +133,6 @@
                 margin: 0px;
               }
               p.description_text_note{
-                // display: none;
                 color: red;
               }
             }
@@ -175,7 +172,6 @@
                 }
               }
               p.detail_category_note{
-                // display: none;
                 color: red;
               }
             }
@@ -227,7 +223,6 @@
                 }
               }
               p.detail_condition_note{
-                // display: none;
                 color: red;
               }
             }
@@ -265,7 +260,6 @@
                 }
               }
               p.shipment_fee_note{
-                // display: none;
                 color: red;
               }
             }
@@ -295,7 +289,6 @@
                 }
               }
               p.shipment_region_note{
-                // display: none;
                 color: red;
               }
             }
@@ -325,7 +318,6 @@
                 }
               }
               p.shipment_shedule_note{
-                // display: none;
                 color: red;
               }
             }
@@ -372,9 +364,9 @@
                 }
               }
               &--note{
-                // display: none;
                 color: red;
                 text-align: right;
+                font-size: 14px;
               }
               &--tax{
                 display: flex;
