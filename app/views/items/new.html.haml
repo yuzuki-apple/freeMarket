@@ -1,8 +1,8 @@
 .bodyNew
   .containerNew
     .headerNew
-      = link_to root_path, class: "headerNew__logo" do
-        = image_tag "logo.png", class: "headerNew__logo--image"
+      = link_to root_path do
+        = image_tag "logo.png", class: "headerNew__logo"
     .formNew
       .formNew__image
         .formNew__image--content
@@ -124,7 +124,6 @@
         .formNew__send--note
           %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
     .footerNew
-      = link_to root_path, class: "footerNew__logo" do
-        = image_tag "logo.png", class: "footerNew__logo--image"
-      .footerNew__copy_right
+      = link_to root_path do
+        = image_tag "logo.png", class: "footerNew__logo"
         %p © FURIMA, Inc

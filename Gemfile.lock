@@ -312,9 +312,9 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  font-awesome-sass
   devise
   factory_bot_rails
+  font-awesome-sass
   haml-rails (~> 2.0)
   jbuilder (~> 2.5)
   jquery-rails

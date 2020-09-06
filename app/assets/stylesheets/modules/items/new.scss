@@ -1,19 +1,13 @@
-* {
-  box-sizing: border-box;
-}
-
 .bodyNew{
   .containerNew{
     background-color: #eeeeee;
     .headerNew{
       text-align: center;
       height: 150px;
+      padding: 50px 0px;
       &__logo{
-        line-height: 170px;
-        &--image{
-          width: 170px;
-          height: 50px;
-        }
+        width: 170px;
+        height: 50px;
       }
     }
     .formNew{
@@ -49,6 +43,7 @@
                 width: 620px;
                 height: 150px;
                 margin: 0 auto;
+                padding: 45px 0px;
                 border: dotted 1px;
                 label.image_select{
                   text-align: center;
@@ -58,7 +53,6 @@
                   .image_select__icon{
                     font-size: 1.6em;
                     margin: 0 auto;
-                    padding-top: 24px;
                   }
                   p.image_select__text{
                     text-align: center;
@@ -68,6 +62,7 @@
               }
               p.image_note{
                 color: red;
+                padding-top: 12px;
               }
             }
           }
@@ -103,6 +98,7 @@
               }
               p.description_name_note{
                 color: red;
+                padding-top: 12px;
               }
             }
             &__description_text{
@@ -172,6 +168,7 @@
                 }
               }
               p.detail_category_note{
+                padding-top: 12px;
                 color: red;
               }
             }
@@ -224,6 +221,7 @@
               }
               p.detail_condition_note{
                 color: red;
+                padding-top: 12px;
               }
             }
           }
@@ -261,6 +259,7 @@
               }
               p.shipment_fee_note{
                 color: red;
+                padding-top: 12px;
               }
             }
             &__shipment_region{
@@ -290,6 +289,7 @@
               }
               p.shipment_region_note{
                 color: red;
+                padding-top: 12px;
               }
             }
             &__shipment_schedule{
@@ -319,6 +319,7 @@
               }
               p.shipment_shedule_note{
                 color: red;
+                padding-top: 12px;
               }
             }
           }
@@ -433,17 +434,13 @@
     .footerNew{
       height: 220px;
       text-align: center;
+      padding: 85px 0px;
       &__logo{
-        line-height: 170px;
-        &--image{
-          width: 170px;
-          height: 50px;
-        }
+        width: 170px;
+        height: 50px;
       }
-      &__copy_right{
-        p{
-          font-size: 6px;
-        }
+      p{
+        font-size: 6px;
       }
     }
   }
