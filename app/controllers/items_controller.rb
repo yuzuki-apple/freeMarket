@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.includes(:images).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
