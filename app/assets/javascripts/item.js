@@ -7,7 +7,10 @@ $(function(){
 
 $(function() {
   $(".price").on("keyup", function() {
-    let input = $(".price").val();
-    console.log(input);
+    var x = $(".price").val();
+    var result = x * 0.10;
+    document.getElementById("tax").innerText = result;
+    var y = x - result;
+    document.getElementById("profit").innerText = y;
   });
 });
