@@ -9,8 +9,8 @@ $(function() {
   $(".price").on("keyup", function() {
     var x = $(".price").val();
     var result = x * 0.10;
-    document.getElementById("tax").innerText = result;
+    document.getElementById("tax").innerText = Math.floor(result);
     var y = x - result;
-    document.getElementById("profit").innerText = y;
+    document.getElementById("profit").innerText = Math.ceil(y);
   });
 });
