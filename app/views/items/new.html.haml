@@ -4,7 +4,7 @@
       = link_to root_path do
         = image_tag "logo.png", class: "headerNew__logo"
     .formNew
-      = form_for []
+      = form_for @items do |f|
         .formNew__image
           .formNew__image--content
             .content
