@@ -9,11 +9,15 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @items = Item.new
+    @item = Item.new
   end
 
   def create
-    Item.create(item_params)
+    @item = Item.new(item_params)
+    if @item.save
+    else
+      render "new"
+    end
   end
 
   def show
@@ -27,4 +31,10 @@ class ItemsController < ApplicationController
 
   def destroy
   end
+  
+  private
+  def item_params
+    params.require(:item).permit(:name, :description, :category, :condition, :shipment_fee, :shipment_region, :shipment_schedule, :price)
+  end
+
 end

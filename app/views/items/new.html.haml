@@ -4,7 +4,7 @@
       = link_to root_path do
         = image_tag "logo.png", class: "headerNew__logo"
     .formNew
-      = form_for @items do |f|
+      = form_for @item do |f|
         .formNew__image
           .formNew__image--content
             .content
@@ -15,6 +15,7 @@
                 %p.image_title 最大10枚までアップロードできます
                 .content__image--select
                   %label.image_select
+                    = f.file_field :image, {}
                     %input.image_select__input{type: "file"}
                     %p= icon("fas", "camera", class: "image_select__icon")
                     %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
@@ -26,12 +27,14 @@
                 .content__description_name--title
                   %label 商品名
                   %span 必須
-                %input.content__description_name--input{:placeholder => "40字まで", :type => "text"}
-                %p.description_name_note 入力してください
+                = f.text_field :name, {class: "content__description_name--input"}
+                -# %input.content__description_name--input{:placeholder => "40字まで", :type => "text"}
+                %p.description_name_note
               .content__description_text
                 .content__description_text--title
                   %label 商品の説明
                   %span 必須
+                = f.text_area method, {}
                 %textarea.content__description_text--textarea{:placeholder => "商品の説明", :rows => 7}
                 %p.character_count 0/1000
                 %p.description_text_note 入力してください
@@ -44,6 +47,7 @@
                 
                   %label カテゴリー
                   %span 必須
+                = f.collection_select method, [{id: 0, name:"選択してください"},{id: 0, name: "メンズ"}],:id, :name, {}, {}
                 %select.content__detail_category--select
                   %option{value: "0"} 選択してください
                   %option{value: "1"}メンズ
@@ -119,6 +123,7 @@
           .formNew__send--content
             .content
               .content__send
+                = f.submit "出品する"
                 %button.content__send--button 出品する
                 = link_to "戻る", "#", class: "content__send--back"
 
