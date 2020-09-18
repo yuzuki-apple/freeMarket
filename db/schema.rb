@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_102308) do
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
     t.string "category", default: "", null: false
+    t.string "brand"
     t.string "condition", default: "", null: false
     t.string "shipment_fee", default: "", null: false
     t.string "shipment_region", default: "", null: false

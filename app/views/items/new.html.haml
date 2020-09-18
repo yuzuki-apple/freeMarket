@@ -15,9 +15,9 @@
                 %p.image_title 最大10枚までアップロードできます
                 .content__image--select
                   %label.image_select
-                    = f.file_field :image, {}
-                    %input.image_select__input{type: "file"}
-                    %p= icon("fas", "camera", class: "image_select__icon")
+                    = f.file_field :image, {class: "image_select__input", type: "file"}
+                    -# %input.image_select__input{type: "file"}
+                    -# %p= icon("fas", "camera", class: "image_select__icon")
                     %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
                 %p.image_note 画像がありません
         .formNew__description
@@ -27,15 +27,15 @@
                 .content__description_name--title
                   %label 商品名
                   %span 必須
-                = f.text_field :name, {class: "content__description_name--input"}
+                = f.text_field :name, {class: "content__description_name--input", placeholder: "40字まで", type: "text"}
                 -# %input.content__description_name--input{:placeholder => "40字まで", :type => "text"}
                 %p.description_name_note
               .content__description_text
                 .content__description_text--title
                   %label 商品の説明
                   %span 必須
-                = f.text_area method, {}
-                %textarea.content__description_text--textarea{:placeholder => "商品の説明", :rows => 7}
+                = f.text_area :description, {class: "content__description_text--textarea", placeholder: "商品の説明", rows: 1000}
+                -# %textarea.content__description_text--textarea{:placeholder => "商品の説明", :rows => 7}
                 %p.character_count 0/1000
                 %p.description_text_note 入力してください
         .formNew__detail
@@ -47,27 +47,29 @@
                 
                   %label カテゴリー
                   %span 必須
-                = f.collection_select method, [{id: 0, name:"選択してください"},{id: 0, name: "メンズ"}],:id, :name, {}, {}
-                %select.content__detail_category--select
-                  %option{value: "0"} 選択してください
-                  %option{value: "1"}メンズ
-                  %option{value: "2"}レディース
-                  %option{value: "3"}ベビーズ・キッズ
+                = f.select :category, [{class: "content__detail_category--select"},{id: 0, name:"選択してください"},{id: 1, name: "メンズ"},{id: 2, name: "レディース"},{id: 3, name: "ベビーズ・キッズ"}]
+                -#%select.content__detail_category--select
+                -#  %option{value: "0"} 選択してください
+                -#  %option{value: "1"}メンズ
+                -#  %option{value: "2"}レディース
+                -#  %option{value: "3"}ベビーズ・キッズ
                 %p.detail_category_note 選択してください
               .content__detail_brand
                 .content__detail_brand--title
                   %label ブランド
                   %span 任意
-                %input.content__detail_brand--input{:placeholder => "例）ユニクロ", :type => "text"}
+                = f.text_field :brand, {class: "content__detail_brand--input", placeholder: "例）ユニクロ", type: "text"}
+                -#%input.content__detail_brand--input{:placeholder => "例）ユニクロ", :type => "text"}
               .content__detail_condition
                 .content__detail_condition--title
                   %label 商品の状態
                   %span 必須
-                %select.content__detail_condition--select
-                  %option{value: "0"} 新品
-                  %option{value: "1"} 未使用に近い
-                  %option{value: "2"} 目立った傷や汚れなし
-                  %option{value: "3"} やや傷や汚れあり
+                = f.select :condition, [{class: "content__detail_condition--select"},{id: 0, name:"新品"},{id: 1, name: "未使用に近い"},{id: 2, name: "目立った傷や汚れなし"},{id: 3, name: "やや傷や汚れあり"}]
+                -# %select.content__detail_condition--select
+                  -# %option{value: "0"} 新品
+                  -# %option{value: "1"} 未使用に近い
+                  -# %option{value: "2"} 目立った傷や汚れなし
+                  -# %option{value: "3"} やや傷や汚れあり
                 %p.detail_condition_note 選択してください
         .formNew__shipment
           .formNew__shipment--content
@@ -77,30 +79,33 @@
                 .content__shipment_fee--title
                   %label 配送料の負担
                   %span 必須
-                %select.content__shipment_fee--select
-                  %option{value: "0"} 選択してください
-                  %option{value: "1"} 送料込み（出品者負担）
-                  %option{value: "2"} 着払い（購入者負担）
+                = f.select :shipment_fee, [{class: "select.content__shipment_fee--select"},{id: 0, name:"選択してください"},{id: 1, name: "送料込み（出品者負担)"},{id: 2, name: "着払い（購入者負担)"}]
+                -# %select.content__shipment_fee--select
+                  -# %option{value: "0"} 選択してください
+                  -# %option{value: "1"} 送料込み（出品者負担）
+                  -# %option{value: "2"} 着払い（購入者負担）
                 %p.shipment_fee_note 選択してください
               .content__shipment_region
                 .content__shipment_region--title
                   %label 発送元の地域
                   %span 必須
-                %select.content__shipment_region--select
-                  %option{value: "0"} 選択してください
-                  %option{value: "1"} 北海道
-                  %option{value: "2"} 青森
-                  %option{value: "3"} 岩手
+                = f.select :shipment_region, [{class: "content__shipment_region--select"},{id: 0, name:"選択してください"},{id: 1, name: "北海道"},{id: 2, name: "青森"},{id: 3, name: "岩手"}]
+                -# %select.content__shipment_region--select
+                  -# %option{value: "0"} 選択してください
+                  -# %option{value: "1"} 北海道
+                  -# %option{value: "2"} 青森
+                  -# %option{value: "3"} 岩手
                 %p.shipment_region_note 選択してください
               .content__shipment_schedule
                 .content__shipment_schedule--title
                   %label 発送までの日数
                   %span 必須
-                %select.content__shipment_schedule--select
-                  %option{value: "0"} 選択してください
-                  %option{value: "1"} １~２日で発送
-                  %option{value: "2"} ２~３日で発送
-                  %option{value: "3"} ４~７日で発送
+                = f.select :shipment_schedule, [{class: "content__shipment_schedule--select"},{id: 0, name:"選択してください"},{id: 1, name: "１~２日で発送"},{id: 2, name: "２~３日で発送"},{id: 3, name: "４~７日で発送"}]
+                -# %select.content__shipment_schedule--select
+                  -# %option{value: "0"} 選択してください
+                  -# %option{value: "1"} １~２日で発送
+                  -# %option{value: "2"} ２~３日で発送
+                  -# %option{value: "3"} ４~７日で発送
                 %p.shipment_shedule_note 選択してください
         .formNew__price
           .formNew__price--content
@@ -111,7 +116,8 @@
                   %label 販売価格
                   %span.must 必須
                   %span.enn ￥
-                  %input.price{:placeholder => 0, :type => "number"}
+                  = f.file_field :price, {class: "price", placeholder: 0,type: "number"}
+                  -#%input.price{:placeholder => 0, :type => "number"}
                 %p.content__price--note 300以上9999999以下で入力してください
                 .content__price--tax  
                   %p 販売手数料（10%）
@@ -123,8 +129,8 @@
           .formNew__send--content
             .content
               .content__send
-                = f.submit "出品する"
-                %button.content__send--button 出品する
+                = f.submit "出品する", {class: "content__send--button"}
+                -#%button.content__send--button 出品する
                 = link_to "戻る", "#", class: "content__send--back"
 
           .formNew__send--note
