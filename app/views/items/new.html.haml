@@ -19,7 +19,7 @@
                     -# %input.image_select__input{type: "file"}
                     -# %p= icon("fas", "camera", class: "image_select__icon")
                     %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
-                %p.image_note 画像がありません
+                %p.image_note
         .formNew__description
           .formNew__description--content
             .content
@@ -37,7 +37,7 @@
                 = f.text_area :description, {class: "content__description_text--textarea", placeholder: "商品の説明", rows: 1000}
                 -# %textarea.content__description_text--textarea{:placeholder => "商品の説明", :rows => 7}
                 %p.character_count 0/1000
-                %p.description_text_note 入力してください
+                %p.description_text_note
         .formNew__detail
           .formNew__detail--content
             .content
@@ -53,7 +53,7 @@
                 -#  %option{value: "1"}メンズ
                 -#  %option{value: "2"}レディース
                 -#  %option{value: "3"}ベビーズ・キッズ
-                %p.detail_category_note 選択してください
+                %p.detail_category_note
               .content__detail_brand
                 .content__detail_brand--title
                   %label ブランド
@@ -70,7 +70,7 @@
                   -# %option{value: "1"} 未使用に近い
                   -# %option{value: "2"} 目立った傷や汚れなし
                   -# %option{value: "3"} やや傷や汚れあり
-                %p.detail_condition_note 選択してください
+                %p.detail_condition_note
         .formNew__shipment
           .formNew__shipment--content
             .content
@@ -84,7 +84,7 @@
                   -# %option{value: "0"} 選択してください
                   -# %option{value: "1"} 送料込み（出品者負担）
                   -# %option{value: "2"} 着払い（購入者負担）
-                %p.shipment_fee_note 選択してください
+                %p.shipment_fee_note
               .content__shipment_region
                 .content__shipment_region--title
                   %label 発送元の地域
@@ -95,7 +95,7 @@
                   -# %option{value: "1"} 北海道
                   -# %option{value: "2"} 青森
                   -# %option{value: "3"} 岩手
-                %p.shipment_region_note 選択してください
+                %p.shipment_region_note
               .content__shipment_schedule
                 .content__shipment_schedule--title
                   %label 発送までの日数
@@ -106,7 +106,7 @@
                   -# %option{value: "1"} １~２日で発送
                   -# %option{value: "2"} ２~３日で発送
                   -# %option{value: "3"} ４~７日で発送
-                %p.shipment_shedule_note 選択してください
+                %p.shipment_shedule_note
         .formNew__price
           .formNew__price--content
             .content
@@ -118,7 +118,7 @@
                   %span.enn ￥
                   = f.file_field :price, {class: "price", placeholder: 0,type: "number"}
                   -#%input.price{:placeholder => 0, :type => "number"}
-                %p.content__price--note 300以上9999999以下で入力してください
+                %p.content__price--note
                 .content__price--tax  
                   %p 販売手数料（10%）
                   %span#tax ---
