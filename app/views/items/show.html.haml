@@ -148,9 +148,10 @@
               = link_to href: "#",style: "padding: 6px 10px; margin-top: 10px; display: inline-block; border-radius: 4px; color: #333; border: 1px solid #333; text-decoration: none; font-size: normal;" do
                 %i.fa.fa-flag{style: "display: inline-block;font: normal normal normal 14px/1 FontAwesome; text-rendering: auto; -webkit-font-smoothing: antialiased;"}
                   不適切な商品の通報
-        .edit_deletebox
-          = link_to '編集', "#", method: :get, class: "#"
-          = link_to '削除', item_path(@item.id), method: :delete, class: "#"
+        - if user_signed_in? && current_user.id == @item.user_id
+          .edit_deletebox
+            = link_to '編集', "#", method: :get, class: "#"
+            = link_to '削除', item_path(@item.id), method: :delete, class: "#"
         .commentbox
           %div.commentcontents
           %form#new_comment.new_comment{"accept-charset" => "UTF-8", action: "#", method: "post"}
