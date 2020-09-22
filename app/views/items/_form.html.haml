@@ -1,0 +1,141 @@
+.bodyNew
+  .containerNew
+    .headerNew
+      = link_to root_path do
+        = image_tag "logo.png", class: "headerNew__logo"
+    .formNew
+      = form_for @item do |f|
+        .formNew__image
+          .formNew__image--content
+            .content
+              .content__image
+                .content__image--title
+                  %label 出品画像
+                  %span 必須
+                %p.image_title 最大10枚までアップロードできます
+                .content__image--select
+                  %label.image_select
+                    = f.file_field :image, {class: "image_select__input", type: "file"}
+                    -# %input.image_select__input{type: "file"}
+                    -# %p= icon("fas", "camera", class: "image_select__icon")
+                    %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
+                %p.image_note
+        .formNew__description
+          .formNew__description--content
+            .content
+              .content__description_name
+                .content__description_name--title
+                  %label 商品名
+                  %span 必須
+                = f.text_field :name, {class: "content__description_name--input", placeholder: "40字まで", type: "text"}
+                -# %input.content__description_name--input{:placeholder => "40字まで", :type => "text"}
+                %p.description_name_note
+              .content__description_text
+                .content__description_text--title
+                  %label 商品の説明
+                  %span 必須
+                = f.text_area :description, {class: "content__description_text--textarea", placeholder: "商品の説明", rows: 1000}
+                -# %textarea.content__description_text--textarea{:placeholder => "商品の説明", :rows => 7}
+                %p.character_count 0/1000
+                %p.description_text_note
+        .formNew__detail
+          .formNew__detail--content
+            .content
+              .content__detail_category
+                %p.detail_category 商品の詳細
+                .content__detail_category--title
+                
+                  %label カテゴリー
+                  %span 必須
+                = f.select :category, [["選択してください", 0],["メンズ", 1],["レディース", 2],["ベビーズ・キッズ", 3]], {},class: "content__detail_category--select"
+                -#%select.content__detail_category--select
+                -#  %option{value: "0"} 選択してください
+                -#  %option{value: "1"}メンズ
+                -#  %option{value: "2"}レディース
+                -#  %option{value: "3"}ベビーズ・キッズ
+                %p.detail_category_note
+              .content__detail_brand
+                .content__detail_brand--title
+                  %label ブランド
+                  %span 任意
+                = f.text_field :brand, {class: "content__detail_brand--input", placeholder: "例）ユニクロ", type: "text"}
+                -#%input.content__detail_brand--input{:placeholder => "例）ユニクロ", :type => "text"}
+              .content__detail_condition
+                .content__detail_condition--title
+                  %label 商品の状態
+                  %span 必須
+                = f.select :condition, [["新品", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3]], {},class: "content__detail_condition--select"
+                -# %select.content__detail_condition--select
+                  -# %option{value: "0"} 新品
+                  -# %option{value: "1"} 未使用に近い
+                  -# %option{value: "2"} 目立った傷や汚れなし
+                  -# %option{value: "3"} やや傷や汚れあり
+                %p.detail_condition_note
+        .formNew__shipment
+          .formNew__shipment--content
+            .content
+              .content__shipment_fee
+                %p.shipment_fee 配送について
+                .content__shipment_fee--title
+                  %label 配送料の負担
+                  %span 必須
+                = f.select :shipment_fee, [["選択してください", 0],["送料込み（出品者負担)", 1],["着払い（購入者負担", 2]], {},class: "content__shipment_fee--select"
+                -# %select.content__shipment_fee--select
+                  -# %option{value: "0"} 選択してください
+                  -# %option{value: "1"} 送料込み（出品者負担）
+                  -# %option{value: "2"} 着払い（購入者負担）
+                %p.shipment_fee_note
+              .content__shipment_region
+                .content__shipment_region--title
+                  %label 発送元の地域
+                  %span 必須
+                = f.select :shipment_region, [["選択してください", 0],["北海道", 1],["青森", 2],["岩手", 3],["宮城県", 4],["秋田県", 5],["山形県", 6],["福島県", 7],["茨城県", 8],["栃木県", 9],["群馬県", 10],["埼玉県", 11],["千葉県", 12],["東京都", 13],["神奈川県", 14],["新潟県", 15],["富山県", 16],["石川県", 17],["福井県", 18],["山梨県", 19],["長野県", 20],["岐阜県", 21],["静岡県", 22],["愛知県", 23],["三重県", 24],["滋賀県", 25],["京都府", 26],["大阪府", 27],["兵庫県", 28],["奈良県", 29],["和歌山県", 30],["鳥取県", 31],["島根県", 32],["岡山県", 33],["広島県", 34],["山口県", 35],["徳島県", 36],["香川県", 37],["愛媛県", 38],["高知県", 39],["福岡県", 40],["佐賀県", 41],["長崎県", 42],["熊本県", 43],["大分県", 44],["宮崎県", 45],["鹿児島県", 46],["沖縄県", 47]], {},class: "content__shipment_region--select"
+                -# %select.content__shipment_region--select
+                  -# %option{value: "0"} 選択してください
+                  -# %option{value: "1"} 北海道
+                  -# %option{value: "2"} 青森
+                  -# %option{value: "3"} 岩手
+                %p.shipment_region_note
+              .content__shipment_schedule
+                .content__shipment_schedule--title
+                  %label 発送までの日数
+                  %span 必須
+                = f.select :shipment_schedule, [["選択してください", 0],["１~２日で発送", 1],["２~３日で発送", 2],["４~７日で発送", 3]], {},class: "content__shipment_schedule--select"
+                -# %select.content__shipment_schedule--select
+                  -# %option{value: "0"} 選択してください
+                  -# %option{value: "1"} １~２日で発送
+                  -# %option{value: "2"} ２~３日で発送
+                  -# %option{value: "3"} ４~７日で発送
+                %p.shipment_shedule_note
+        .formNew__price
+          .formNew__price--content
+            .content
+              .content__price
+                %p.content__price--range 価格（¥300〜9,999,999）
+                .content__price--title
+                  %label 販売価格
+                  %span.must 必須
+                  %span.enn ￥
+                  = f.file_field :price, {class: "price", placeholder: 0,type: "number"}
+                  -#%input.price{:placeholder => 0, :type => "number"}
+                %p.content__price--note
+                .content__price--tax  
+                  %p 販売手数料（10%）
+                  %span#tax ---
+                .content__price--profit
+                  %p 販売利益
+                  %span#profit ---
+        .formNew__send
+          .formNew__send--content
+            .content
+              .content__send
+                = f.submit "出品する", {class: "content__send--button"}
+                -#%button.content__send--button 出品する
+                = link_to "戻る", "#", class: "content__send--back"
+
+          .formNew__send--note
+            %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+      .footerNew
+        = link_to root_path do
+          = image_tag "logo.png", class: "footerNew__logo"
+          %p © FURIMA, Inc
