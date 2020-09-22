@@ -10,4 +10,5 @@ class Item < ApplicationRecord
   validates_inclusion_of :price, in: 300..9_999_999, message: "300以上9999999以下で入力してください"
 
   has_many :images
+  accepts_nested_attributes_for :images, allow_destroy: true
 end

@@ -15,7 +15,8 @@
                 %p.image_title 最大10枚までアップロードできます
                 .content__image--select
                   %label.image_select
-                    = f.file_field :image, {class: "image_select__input", type: "file"}
+                    = f.file_field :images, {class: "image_select__input", type: "file"} do
+                      = i.file_field :src
                     -# %input.image_select__input{type: "file"}
                     -# %p= icon("fas", "camera", class: "image_select__icon")
                     %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
@@ -142,5 +143,4 @@
         = link_to root_path do
           = image_tag "logo.png", class: "footerNew__logo"
           %p © FURIMA, Inc
-
 -# = form_for Item.new do |f|    --->　editファイルみるなら7行目これ！！！！

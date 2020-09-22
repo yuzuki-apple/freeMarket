@@ -11,6 +11,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :shipment_region,  null: false, default: ""
       t.string :shipment_schedule,  null: false, default: ""
       t.string :price,  null: false, default: ""
+      t.string :images,  null: false, default: ""
       t.timestamps
     end
   end
