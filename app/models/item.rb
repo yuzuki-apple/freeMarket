@@ -8,4 +8,6 @@ class Item < ApplicationRecord
   validates :shipment_region, presence: true
   validates :shipment_schedule, presence: true
   validates_inclusion_of :price, in: 300..9_999_999, message: "300以上9999999以下で入力してください"
+
+  has_many :images
 end

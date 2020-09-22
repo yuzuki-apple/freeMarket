@@ -33,6 +33,9 @@ class ItemsController < ApplicationController
   def destroy
   end
   
+  def buy
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :category, :condition, :shipment_fee, :shipment_region, :shipment_schedule, :price)
