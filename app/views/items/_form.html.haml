@@ -16,7 +16,8 @@
                 .content__image--select
                   %label.image_select
                     = f.file_field :images, {class: "image_select__input", type: "file"} do
-                      = i.file_field :src
+                      .js-file_group{"data-index": "#{image.index}"}
+                        = i.file_field :src, class: 'js-file'
                     -# %input.image_select__input{type: "file"}
                     -# %p= icon("fas", "camera", class: "image_select__icon")
                     %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード

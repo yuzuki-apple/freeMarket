@@ -29,6 +29,11 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -42,4 +47,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :category, :condition, :shipment_fee, :shipment_region, :shipment_schedule, :price,  images_attributes: [:src])
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
