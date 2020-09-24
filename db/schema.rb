@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2020_09_22_080904) do
     t.string "shipment_region", default: "", null: false
     t.string "shipment_schedule", default: "", null: false
     t.string "price", default: "", null: false
-    t.string "images", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
