@@ -35,7 +35,8 @@ $(document).on('turbolinks:load', ()=> {
 
   $('.hidden-destroy').hide();
 
-  $('#image-box').on('change', '.js-file', function(e) {
+  $('#item_images_attributes_${num}_src').on('change', '.js-file', function(e) {
+    console.log("test");
     const targetIndex = $(this).parent().data('index');
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
@@ -44,13 +45,14 @@ $(document).on('turbolinks:load', ()=> {
       img.setAttribute('src', blobUrl);
     } else {
       $('#previews').append(buildImg(targetIndex, blobUrl));
-      $('#image-box').append(buildFileField(fileIndex[0]));
+      console.log(buildImg);
+      $('#item_images_attributes_${num}_src').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
 
-  $('#image-box').on('click', '.js-remove', function() {
+  $('#item_images_attributes_${num}_src').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
