@@ -1,0 +1,5 @@
+"item"=>
+  {"images_attributes"=>
+    {"0"=>{"src"=>#<ActionDispatch::Http::UploadedFile:0x00007feebcef9400 @tempfile=#<Tempfile:/var/folders/63/m66kq4s910l153ftzfl26s4r0000gn/T/RackMultipart20200927-75101-1j9qjam.heic>, @original_filename="1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic", @content_type="image/heic", @headers="Content-Disposition: form-data; name=\"item[images_attributes][0][src]\"; filename=\"1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic\"\r\nContent-Type: image/heic\r\n">}, 
+     "1"=>{"src"=>#<ActionDispatch::Http::UploadedFile:0x00007feebcef92c0 @tempfile=#<Tempfile:/var/folders/63/m66kq4s910l153ftzfl26s4r0000gn/T/RackMultipart20200927-75101-wyi7s5.heic>, @original_filename="1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic", @content_type="image/heic", @headers="Content-Disposition: form-data; name=\"item[images_attributes][1][src]\"; filename=\"1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic\"\r\nContent-Type: image/heic\r\n">}}, 
+  "name"=>"", "description"=>"", "category"=>"0", "brand"=>"", "condition"=>"0", "shipment_fee"=>"0", "shipment_region"=>"0", "shipment_schedule"=>"0", "price"=>""}, "commit"=>"登録する"}
