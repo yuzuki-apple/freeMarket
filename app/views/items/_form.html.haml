@@ -4,30 +4,44 @@
       = link_to root_path do
         = image_tag "logo.png", class: "headerNew__logo"
     .formNew
-      = form_for @item do |f|
+      = form_with model:@item, local:true do |f|
         .formNew__image
           .formNew__image--content
             .content
               .content__image
-                .content__image--title
+                .content__image__title
                   %label 出品画像
                   %span 必須
                 %p.image_title 最大10枚までアップロードできます
-                .content__image--select
-                  %label.image_select
-                    #previews
-                      - if @item.persisted?
-                        - @item.images.each_with_index do |image, i|
-                          = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
-                    = f.fields_for :images, {class: "image_select__input", type: "file"} do |image|
-                      .js-file_group{"data-index": "#{image.index}"}
-                        = image.file_field :src, class: 'js-file'
+                .content__image__select
+                  .post__drop__box__container
+                    .prev-content
+                    .label-content
+                      %label.image_select
+                      %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
+                        %p.image_select__text{style: "text-align: center; font-size: 10px;"} ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
+                    .hidden-content
+                      = f.fields_for  :images, {class: "image_select__input", type: "file"} do |i|
+                        = i.file_field :src, class: "hidden-field"
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image"}
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image"}
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image"}
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image"}
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][5][image]", id: "item_images_attributes_5_image"}
+                  -#  %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
+                  -#  #previews
+                    -#  - if @item.persisted?
+                    -#    - @item.images.each_with_index do |image, i|
+                    -#      = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+                    -#= f.fields_for :images, {class: "image_select__input", type: "file"} do |image|
+                      -#.js-file_group{"data-index": "#{image.index}"}
+                      -#  = image.file_field :src, class: 'js-file'
                     -# = f.file_field :images, {class: "image_select__input", type: "file"} do |image|
                     -#   .js-file_group{"data-index": "#{image.index}"}
                     -#     = i.file_field :src, class: 'js-file'
                     -# %input.image_select__input{type: "file"}
                     -# %p= icon("fas", "camera", class: "image_select__icon")
-                    %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
+                  -#  %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
                 %p.image_note
         .formNew__description
           .formNew__description--content

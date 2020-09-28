@@ -1,5 +1,34 @@
-"item"=>
-  {"images_attributes"=>
-    {"0"=>{"src"=>#<ActionDispatch::Http::UploadedFile:0x00007feebcef9400 @tempfile=#<Tempfile:/var/folders/63/m66kq4s910l153ftzfl26s4r0000gn/T/RackMultipart20200927-75101-1j9qjam.heic>, @original_filename="1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic", @content_type="image/heic", @headers="Content-Disposition: form-data; name=\"item[images_attributes][0][src]\"; filename=\"1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic\"\r\nContent-Type: image/heic\r\n">}, 
-     "1"=>{"src"=>#<ActionDispatch::Http::UploadedFile:0x00007feebcef92c0 @tempfile=#<Tempfile:/var/folders/63/m66kq4s910l153ftzfl26s4r0000gn/T/RackMultipart20200927-75101-wyi7s5.heic>, @original_filename="1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic", @content_type="image/heic", @headers="Content-Disposition: form-data; name=\"item[images_attributes][1][src]\"; filename=\"1AAB48D8-1D13-4B89-BF87-BEAA921B6F76.heic\"\r\nContent-Type: image/heic\r\n">}}, 
-  "name"=>"", "description"=>"", "category"=>"0", "brand"=>"", "condition"=>"0", "shipment_fee"=>"0", "shipment_region"=>"0", "shipment_schedule"=>"0", "price"=>""}, "commit"=>"登録する"}
+.main
+%section.main__block
+  = form_with model:@item, local:true do |f|
+    %h2.sell__block__head
+      商品の情報を入力
+    .sell__block__form
+      .sell__block__form__upload
+        %h3.sell__block__form__upload__head
+          出品画像
+          %span.require 必須
+        %p 最大5枚までアップロードできます
+        .post__drop__box__container
+          .prev-content
+          .label-content
+            %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+          .hidden-content
+            = f.fields_for :images do |i|
+              = i.file_field :image, class: "hidden-field"
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+      .sell__block__form__name
+        .form-group__name
+          %label
+            商品名
+            %span.require 必須
+          %div
+            = f.text_field :name, placeholder:"商品名（必須 40文字まで)",class: "form__group__name"
+
+      .sell__block__form__btn
+        %div
+          = f.submit "出品する",class: "btn-default__btn-red"
