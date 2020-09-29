@@ -47,6 +47,9 @@ $(function(){
       //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
       var prevContent = $('.label-content').prev();
       labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+      console.log($(prevContent).css('width'));
+      console.log($(prevContent).css('width').replace(/[^0-9]/g, ''));
+      console.log(labelWidth);
       $('.label-content').css('width', labelWidth);
     }
 
@@ -65,7 +68,7 @@ $(function(){
       //読み込み時に発火するイベント
       reader.onload = function() {
         var image = this.result;
-        console.log($(`#preview-box__${id}`).length);
+        // console.log($(`#preview-box__${id}`).length);
         //プレビューが元々なかった場合はhtmlを追加
         if ($(`#preview-box__${id}`).length == 0) {
           var count = $('.preview-box').length;
