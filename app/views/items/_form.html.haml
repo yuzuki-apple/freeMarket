@@ -47,12 +47,12 @@
                 .content__image__select
                   .post__drop__box__container
                     .prev-content
-                    .image-content
+                    .label-content
                       %label.image__select
-                      %label{for: "item_images_attributes_0_image", class: "abel-box", id: "image-box--0"}
-                        %pre.image-box__select__text{style: "text-align: center; font-size: 3px; margin-left: 220px;"} クリックしてファイルをアップロード
+                      %label{for: "item_images_attributes_0_src", class: "label-box", id: "label-box--0", style: "background-color: #eeeeee; width: 620px; height: 150px; margin: 0 auto; padding: 45px 0px; border: dotted 1px;"}
+                        %pre.label-box__select__text{style: "text-align: center; font-size: 3px;"} クリックしてファイルをアップロード
                     .hidden-content
-                      = f.fields_for  :images, {class: "image_select__input", type: "file"} do |i|
+                      = f.fields_for  :images, {class: "image__select__input", type: "file"} do |i|
                         = i.file_field :src, class: "hidden-field"
                         %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][src]", id: "item_images_attributes_1_src"}
                         %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][src]", id: "item_images_attributes_2_src"}

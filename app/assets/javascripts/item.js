@@ -15,7 +15,13 @@ $(function() {
   });
 });
 
-$(document).on('turbolinks:load', function(){
+
+// 商品出品機能の複数枚画像投稿  //
+
+// $(document).on('turbolinks:load', function(){
+// $(document).on('load', function(){
+// document.addEventListener('load', function(){
+$(function(){
   $(function(){
 
     //プレビューのhtmlを定義
@@ -39,9 +45,9 @@ $(document).on('turbolinks:load', function(){
     // ラベルのwidth操作
     function setLabel() {
       //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
-      var prevContent = $('.image-content').prev();
+      var prevContent = $('.label-content').prev();
       labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
-      $('.image-content').css('width', labelWidth);
+      $('.label-content').css('width', labelWidth);
     }
 
     // プレビューの追加
@@ -50,7 +56,7 @@ $(document).on('turbolinks:load', function(){
       //hidden-fieldのidの数値のみ取得
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       //labelボックスのidとforを更新
-      $('.image__select__text').attr({id: `image-box--${id}`,for: `item_images_attributes_${id}_image`});
+      $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_src`});
       //選択したfileのオブジェクトを取得
       var file = this.files[0];
       var reader = new FileReader();
@@ -59,12 +65,13 @@ $(document).on('turbolinks:load', function(){
       //読み込み時に発火するイベント
       reader.onload = function() {
         var image = this.result;
+        console.log($(`#preview-box__${id}`).length);
         //プレビューが元々なかった場合はhtmlを追加
         if ($(`#preview-box__${id}`).length == 0) {
           var count = $('.preview-box').length;
           var html = buildHTML(id);
           //ラベルの直前のプレビュー群にプレビューを追加
-          var prevContent = $('.image-content').prev();
+          var prevContent = $('.label-content').prev();
           $(prevContent).append(html);
         }
         //イメージを追加
@@ -72,7 +79,7 @@ $(document).on('turbolinks:load', function(){
         var count = $('.preview-box').length;
         //プレビューが5個あったらラベルを隠す 
         if (count == 5) { 
-          $('.image-content').hide();
+          $('.label-content').hide();
         }
 
         //ラベルのwidth操作
@@ -80,7 +87,7 @@ $(document).on('turbolinks:load', function(){
         //ラベルのidとforの値を変更
         if(count < 5){
           //プレビューの数でラベルのオプションを更新する
-          $('.image-box').attr({id: `image-box--${count}`,for: `item_images_attributes_${count}_image`});
+          $('.label-box').attr({id: `label-box--${count}`,for: `item_images_attributes_${count}_src`});
         }
       }
     });
@@ -95,19 +102,19 @@ $(document).on('turbolinks:load', function(){
       $(`#preview-box__${id}`).remove();
       console.log("new")
       //フォームの中身を削除 
-      $(`#item_images_attributes_${id}_image`).val("");
+      $(`#item_images_attributes_${id}_src`).val("");
 
       //削除時のラベル操作
       var count = $('.preview-box').length;
       //5個めが消されたらラベルを表示
       if (count == 4) {
-        $('.image-content').show();
+        $('.label-content').show();
       }
       setLabel(count);
 
       if(id < 5){
         //削除された際に、空っぽになったfile_fieldをもう一度入力可能にする
-        $('.image-box').attr({id: `image-box--${id}`,for: `item_images_attributes_${id}_image`});
+        $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_src`});
       }
     });
   });
