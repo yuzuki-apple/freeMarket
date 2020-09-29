@@ -21,6 +21,7 @@
           .content{
             &__image{
               &__title{
+                font-size: 16px;
                 display: flex;
                 align-items: center;
                 label{
@@ -33,6 +34,7 @@
                   border-radius: 5px;
                   padding: 3px;
                   font-size: 12px;
+                  margin-left: 10px;
                 }
               }
               p.image_title{
