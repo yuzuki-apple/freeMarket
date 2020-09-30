@@ -7,10 +7,11 @@
       %section.formNew__block
       = form_with model:@item, local:true do |f|
         - if @item.errors.any?
-          %h2= "#{@item.errors.full_messages.count}件のエラーが発生しました。"
-          %ul
-            - @item.errors.full_messages.each do |message|
-              %li= message
+          .formNew__alert
+            %h2= "#{@item.errors.full_messages.count}件のエラーが発生しました。"
+            %ul
+              - @item.errors.full_messages.each do |message|
+                %li= message
         .formNew__image
           .formNew__image--content
             .content

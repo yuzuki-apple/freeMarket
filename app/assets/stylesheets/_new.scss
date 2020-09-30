@@ -14,6 +14,13 @@
       margin: 0 auto;
       width: 700px;
       background-color: #ffffff;
+      &__alert{
+        color:#262626; 
+        background:#FFEBE8;
+        text-align: center;
+        border:2px solid #990000;
+        padding:12px; font-weight:850;
+      }
       &__image{
         padding: 40px;
         border-bottom: solid 1px #eeeeee;
