@@ -209,31 +209,3 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-
-    models:
-      item: 商品
-    attributes:
-      item:
-        name: 商品名
-        description: 商品の説明
-        # category:
-        # condition:
-        # shipment_fee:
-        # shipment_region:
-        # shipment_schedule:　選択する以外を選択してください
-        # price:　300~9,999,999円いないでお願いします
-  # items:
-  #   _forms:
-  #     errors:
-  #       messages:
-  #         name: 商品名を入力してください
-  #         description: 商品の説明を入力してください
-  #         category: 選択する以外を選択してください
-  #         condition:　選択する以外を選択してください
-  #         shipment_fee:　選択する以外を選択してください
-  #         shipment_region:　選択する以外を選択してください
-  #         shipment_schedule:　選択する以外を選択してください
-  #         price:　300~9,999,999円いないでお願いします
-  #       template:
-  #         header:
-  #           one: "%{model}にエラーが発生しました"
