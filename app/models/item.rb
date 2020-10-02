@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-  validates :user_id,:name,:description,:category,:condition,:shipment_fee,:shipment_region,:shipment_schedule,presence: true
+  validates :user_id,:images,:name,:description,:category,:condition,:shipment_fee,:shipment_region,:shipment_schedule,presence: true
+  validates :images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
   validates :category, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}

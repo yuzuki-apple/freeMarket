@@ -4,6 +4,7 @@ ja:
       item: 商品
     attributes:
       item:
+        images: 出品画像
         name: 商品名
         description: 商品の説明
         category: カテゴリー：
