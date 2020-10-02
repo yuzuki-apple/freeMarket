@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
     @item.valid?
     if @item.save
       redirect_to root_path controller: :items, action: :index
