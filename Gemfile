@@ -84,3 +84,5 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'font-awesome-sass'
 gem "font-awesome-rails"
+gem 'carrierwave'
+gem 'mini_magick'
