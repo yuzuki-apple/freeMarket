@@ -1,6 +1,5 @@
 $(function(){
   $('#content__send--button').on('submit', function(e){
-    console.log('hoge');
     e.preventDefault()
   });
 });
@@ -47,9 +46,6 @@ $(function(){
       //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
       var prevContent = $('.label-content').prev();
       labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
-      console.log($(prevContent).css('width'));
-      console.log($(prevContent).css('width').replace(/[^0-9]/g, ''));
-      console.log(labelWidth);
       $('.label-content').css('width', labelWidth);
     }
 
@@ -103,7 +99,6 @@ $(function(){
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       //取得したidに該当するプレビューを削除
       $(`#preview-box__${id}`).remove();
-      console.log("new")
       //フォームの中身を削除 
       $(`#item_images_attributes_${id}_src`).val("");
 
