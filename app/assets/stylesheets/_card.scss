@@ -4,19 +4,35 @@
     display:flex;
     flex-wrap:wrap;
     align-items:center;
-    width: 390px;
+    width: 100vw;
     height: 100px;
     margin: 0 auto;
     padding: 10px;
+    overflow:scroll;
     &--input{
-      width:100%;
+      background:#ffffff;
+      min-width:370px;
+      padding:5px;
     }
     &--errMessage{
       width:80%;
       height:30px;
+      color:#ff0000;
     }
     &--submit{
       margin:0 0 0 auto;
+    }
+  }
+}
+
+
+
+
+
+@media screen and (min-width:768px) {
+  #cardNew{
+    &__form {
+      width: 390px;
     }
   }
 }
