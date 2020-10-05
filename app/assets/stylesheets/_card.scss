@@ -1,0 +1,22 @@
+#cardNew{
+  &__form {
+    background: #eeeeee;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    width: 390px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    &--input{
+      width:100%;
+    }
+    &--errMessage{
+      width:80%;
+      height:30px;
+    }
+    &--submit{
+      margin:0 0 0 auto;
+    }
+  }
+}

@@ -81,3 +81,5 @@ gem 'rails-i18n'
 gem "recaptcha"
 gem 'ancestry'
 gem 'active_hash'
+gem 'payjp'
+gem 'gon'
