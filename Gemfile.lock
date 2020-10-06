@@ -337,6 +337,9 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   factory_bot_rails
+  fog-aws
+  font-awesome-rails
+  font-awesome-sass
   gon
   haml-rails (~> 2.0)
   jbuilder (~> 2.5)
