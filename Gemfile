@@ -83,3 +83,8 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'payjp'
 gem 'gon'
+gem 'font-awesome-sass'
+gem "font-awesome-rails"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
