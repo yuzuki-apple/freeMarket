@@ -5,10 +5,6 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root 'items#index'
-  # resource :users, only: [:show] do
-  # end
-  # resource :credits, only: [:index] do
-  # end
   resources :users, only: [:show] do
     member do
       get :out
