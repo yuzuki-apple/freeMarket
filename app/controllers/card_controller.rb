@@ -18,7 +18,6 @@ class CardController < ApplicationController
         card_id: customer.default_card
       )
       if @card.save
-        binding.pry
         redirect_to new_card_path
       else
         render :new
