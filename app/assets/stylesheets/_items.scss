@@ -789,3 +789,166 @@ img {
   }
 }
 
+// マイページ
+
+.contents{
+  margin: 0 auto;
+  width: 1000px;
+  height: 1200px;
+  display: flex;
+  &__right{
+    width: 700px;
+    height: 100%;
+   
+    &__user{
+      height: 430px;
+      background-color: yellowgreen;
+    }
+    &__items{
+      height: 350px;
+      background-color: yellowgreen;
+      margin-top: 20px;
+    }
+  }
+  &__rightt{
+    height: 530px;
+    width: 700px;
+    background-color: yellowgreen;
+    &__head{
+      height: 100px;
+      line-height: 100px;
+      border-bottom: 2px solid green;
+      font-size: 20px;
+      text-align: center;
+    }
+    &__body{
+      padding-top: 20px;
+      padding-left: 150px;
+      border-radius: 4px;
+      &-require{
+        color: white;
+        background-color: red;
+        border-radius: 2px;
+      }
+      &-inputDefault{
+        margin-top: 15px;
+        display: block;
+        font-size: 20px;
+        font-family: inherit;
+        box-sizing: border-box;
+        font-size: inherit;
+        width: 300px;
+        height: 40px;
+      }
+      &-img{
+        margin-bottom: 20px;
+      }
+      &-month{
+        margin: 0 10px 0 10px;
+        display: flex;
+        height: 40px;
+        width: 90px;
+      }
+      &-year{
+        margin: 0 10px 0 10px;
+        height: 40px;
+        width: 90px;
+        margin-bottom: 20px;
+      }
+      &-inputcard{
+        margin-top: 15px;
+        display: block;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: inherit;
+        width: 300px;
+        height: 40px;
+      }
+      &-ym{
+        display: flex;
+      }
+      &-span{
+        display: flex;
+        line-height: 40px;
+      }
+      &-btn{
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: white;
+        background-color: red;
+        width: 300px;
+        text-align: center;
+        height: 30px;
+        margin-top: 15px;
+        line-height: 30px;
+      }
+      &-back{
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 300px;
+        text-align: center;
+        height: 30px;
+        margin-top: 15px;
+        line-height: 30px;
+        color: #0095ee;
+        font-size: 15px;
+      }
+    }
+  }
+  &__righttt{
+    width: 700px;
+    height: 100px;
+    background-color: yellowgreen;
+    &__out{
+      background-color: crimson;
+      height: 20px;
+      width: 100px;
+      margin: 0 auto;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      h5{
+        text-align: center;
+        line-height: 20px;
+        height: 20px;
+        color: white;
+      }
+    }
+  }
+  &__left{
+    width: 280px;
+    height: 100%;
+    margin-right: 20px;
+    &__one{
+      margin-bottom: 20px;
+      li {
+        &:hover {
+          color: white;
+        }
+        border: 1px solid mistyrose;
+        padding: 10px;
+        background-color: yellowgreen;
+      }
+    }
+    &__two{
+      margin-bottom: 20px;
+      li {
+        &:hover {
+          color: white;
+        }
+        border: 1px solid mistyrose;
+        padding: 10px;
+        background-color: yellowgreen;
+      }
+    }
+    &__three{
+      li {
+        &:hover {
+          color: white;
+        }
+        border: 1px solid bisque;
+        padding: 10px;
+        background-color: yellowgreen;
+      }
+    }
+  }
+}
