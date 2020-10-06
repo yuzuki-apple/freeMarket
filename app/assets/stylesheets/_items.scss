@@ -81,12 +81,12 @@
 
     .header__all .header__all__main .nav .listsLeft__item {
       line-height: 38px;
-      //padding: 0 0 0 16px;//
+      padding: 0 0 0 16px;
       list-style: none;
       a {
         color: #333;
         text-decoration: none;
-        //padding-right: 80px;//
+        padding-right: 80px;
       }
 }
 
@@ -141,11 +141,11 @@
   a {
     color: #333;
     text-decoration: none;
-    //padding-right: 80px;//
+    padding-right: 80px;
   }
 
   line-height: 38px;
-  //padding: 0 0 0 16px;//
+  padding: 0 0 0 16px;
   list-style: none;
 }
 
@@ -625,167 +625,3 @@ img {
     width: 60%;
   }
 } 
-
-// show　商品詳細ページ　//
-.breadcrumbs {
-  height: 55px;
-  width: 100%;
-  border-top: 1px solid #eee;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  position: relative;
-  padding: 0 60px;
-}
-
-.main {
-  background-color: #f8f8f8;
-  .showmain {
-    padding: 40px;
-    margin:0 auto;
-    .contentleftqq{
-      margin: 0;
-      padding: 0;
-    }
-    .contentright {
-      width: 700px;
-      margin: 0 auto;
-      .topcontent {
-        margin: 0;
-        padding: 0;
-        .itembox {
-          background-color: #fff;
-          padding: 24px 40px 40px;
-          .itembox__name {
-            text-align: center;
-            font-weight: bold;
-            font-size: 24px;
-            font-family: "Source Sans Pro",Helvetica,Arial,"遊ゴシック体","YuGothic","メイリオ","Meiryo",sans-serif;
-          }
-          .itembox__body {
-            margin: 16px 0 0;
-          }
-          .itembox__price {
-            margin: 24px 0 24px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            .itembox__price-price {
-              font-size: 46px;
-              font-weight: bold;
-              margin: 0 10px 0 0;
-              font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
-            }
-            .itembox__price-detail {
-              font-size: 16px;
-            }
-          }
-          .itemdetail {
-            line-height: 1.5;
-            font-size: 18px;
-            margin-bottom: 30px;
-            font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
-          }
-          .table {
-            margin-bottom: 20px;
-          }
-          .optionalarea {
-            justify-content: space-between;
-            display: flex;
-            list-style: none;
-            .optional {
-              margin: 10px 0 0;
-              display: flex;
-              .optionalbtn {
-                font-size: 14px;
-              }
-            }
-          }
-        }
-        .commentbox {
-          padding: 24px 12px;
-          background-color: #fff;
-          margin: 10px 0;
-          text-align: center;
-          .commentcontents {
-            margin: 0;
-            padding: 0;
-          }
-          .new_comment {
-            margin: 0;
-            padding: 0;
-            .comment_body {
-              width: 100%;
-              min-height: 104px;
-              padding: 10px;
-            }
-            .noticemsg {
-              padding: 8px;
-              font-size: 14px;
-              background-color: #f8f8f8;
-              margin: 10px 0;
-              text-align: left;
-            }
-            .commentbtn {
-              line-height: 48px;
-              background: #3ccace;
-              border: 1px solid #3ccace;
-              color: #fff;
-              width: 60%;
-              font-size: 18px;
-              border-radius: 100px;
-              .fa-comment {
-                display: inline-block;
-                color: #fff;
-                font: normal normal normal 14px/1 FontAwesome;
-                font-size: inherit;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-              }
-            }
-          }
-        }
-      }
-      .links {
-        list-style: none;
-        .links__a {
-          float: left;
-        }
-        .links__b {
-          float: right;
-        }
-      }
-      .relateditems {
-        margin: 0;
-        padding: 0;
-        .productlists {
-          margin: 0;
-          padding: 0;
-          .productlist {
-            margin: 0 0 10px;
-            width: 30%;
-            .productlist--img {
-              background-color: #fff;
-            }
-            .productlist--body {
-              background-color: white;
-              color: #333;
-              padding: 16px;
-              width: 232px;
-              .name {
-                overflow: hidden;
-                line-height: 1.5;
-                font-size: 16px;
-                font-weight: normal;
-                text-align: left;
-              }
-              .details {
-                font-size: 16px;
-                font-weight: bold;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
