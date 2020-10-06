@@ -144,71 +144,23 @@
         = link_to "#" do
           .title 新規投稿商品
       .productLists
-        .productList
-          = link_to "/items/9" do
-            %figure.productList--img
-              = image_tag "beef.jpg", style: "height:150px; width: 220px;"
-            .productList--body
-              .name テスト
-              .details{style: "font-size: 16px;"}
-                %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                  %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
-                  %li{style: "list-style: none;"}
-                    %i.fa.fa-star.likeIcon
-                    1
-                %div{style: "font-size: 5px;"} (税込)
-        .productList
-          = link_to "/items/8" do
-            %figure.productList--img
-              = image_tag "ramen.jpg", style: "height:150px; width: 220px;"
-            .productList--body
-              .name ee
-              .details{style: "font-size: 16px;"}
-                %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                  %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 1000円
-                  %li{style: "list-style: none;"}
-                    %i.fa.fa-star.likeIcon
-                    0
-                %div{style: "font-size: 5px;"} (税込)
-        .productList
-          = link_to "/items/3" do
-            %figure.productList--img
-              = image_tag "fish.png", style: "height:150px; width: 220px;"
-            .productList--body
-              .name product3
-              .details{style: "font-size: 16px;"}
-                %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                  %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 30000円
-                  %li{style: "list-style: none;"}
-                    %i.fa.fa-star.likeIcon
-                    0
-                %div{style: "font-size: 5px;"} (税込)
-        .productList
-          = link_to "/items/2" do
-            %figure.productList--img
-              = image_tag "gyouza.png", style: "height:150px; width: 220px;"
-            .productList--body
-              .name product2
-              .details{style: "font-size: 16px;"}
-                %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                  %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 20000円
-                  %li{style: "list-style: none;"}
-                    %i.fa.fa-star.likeIcon
-                    0
-                %div{style: "font-size: 5px;"} (税込)
-        .productList
-          = link_to "/items/1" do
-            %figure.productList--img
-              = image_tag "curry.png", style: "height:150px; width: 220px;"
-            .productList--body
-              .name product1
-              .details{style: "font-size: 16px;"}
-                %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                  %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"} 10000円
-                  %li{style: "list-style: none;"}
-                    %i.fa.fa-star.likeIcon
-                    1
-                %div{style: "font-size: 5px;"} (税込)
+        - @items.each do |item|
+          .productList
+            = link_to item_path(item.id) do
+              %figure.productList--img
+                = image_tag item.images[0].src.url, style: "height:150px; width: 220px;"
+              .productList--body
+                .name
+                  = item.name
+                .details{style: "font-size: 16px;"}
+                  %div{style: "justify-content: space-between; align-items: center; display: flex;"}
+                    %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"}
+                      = item.price
+                      %span 円
+                    %li{style: "list-style: none;"}
+                      %i.fa.fa-star.likeIcon
+                      1
+                  %div{style: "font-size: 5px;"} (税込)
   %section.pickupContainer__second
     .head ピックアップブランド
     .productBox
