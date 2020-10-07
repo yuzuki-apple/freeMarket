@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :brand
       t.string :condition,  null: false, default: ""
       t.string :shipment_fee,  null: false, default: ""
-      t.string :shipment_region,  null: false, default: ""
+      t.string :shipment_region_id,  null: false, default: ""
       t.string :shipment_schedule,  null: false, default: ""
       t.string :price,  null: false, default: ""
       t.timestamps
