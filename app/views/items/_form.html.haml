@@ -93,7 +93,7 @@
                 .content__shipment_schedule--title
                   %label 発送までの日数
                   %span 必須
-                = f.select :shipment_schedule, [["選択してください", 0],["１~２日で発送", 1],["２~３日で発送", 2],["４~７日で発送", 3]], {},class: "content__shipment_schedule--select"
+                = f.collection_select :shipment_schedule_id, ShipmentRegion.all, :id, :name, {},class: "content__shipment_schedule--select"
                 %p.shipment_shedule_note
         .formNew__price
           .formNew__price--content
