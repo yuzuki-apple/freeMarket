@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_080904) do
     t.string "category", default: "", null: false
     t.string "brand"
     t.string "condition", default: "", null: false
-    t.string "shipment_fee", default: "", null: false
+    t.string "shipment_fee_id", default: "", null: false
     t.string "shipment_region_id", default: "", null: false
     t.string "shipment_schedule", default: "", null: false
     t.string "price", default: "", null: false
