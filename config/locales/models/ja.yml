@@ -9,7 +9,8 @@ ja:
         description: 商品の説明
         category: カテゴリー：
         condition: 商品の状態：
-        shipment_fee: 配送料の負担：
+        shipment_fee_id: 配送料の負担：
         shipment_region: 発送元の地域：
         shipment_schedule: 発送までの日数：
         price: 販売価格：
+        stock: 在庫数：

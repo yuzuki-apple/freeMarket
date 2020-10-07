@@ -1,41 +1,54 @@
 .cardNew
-  = form_with url: card_index_path,local:true,id:"cardNew__form" do |f|
-    %input#cardNew__form--inputHidden{type:"hidden",name:"card_token"}
-    #cardNew__form--input
-    #cardNew__form--errMessage
-    = f.submit "登録する",id:"cardNew__form--submit"
+  - if current_user.card
+    #cardNew__form
+      #cardNew__form--type= @card.brand.upcase
+      #cardNew__form--num= "**** **** **** #{@card.last4}"
+      #cardNew__form--name= @card.name
+      =form_with url:"/card/#{current_user.card.id}", method:"delete", id:"cardNew__form--delete",local: true do |f|
+        =f.submit "削除"
+  - else
+    = form_with url: card_index_path,local:true,id:"cardNew__form" do |f|
+      %input#cardNew__form--inputHidden{type:"hidden",name:"payjp-token"}
+      #cardNew__form--input
+      #cardNew__form--errMessage
+      = f.submit "登録する",id:"cardNew__form--submit"
+
+
 
 %script{src: "https://js.pay.jp/v2/pay.js", type: "text/javascript"}
 
 :javascript
-  const style = {
-    base: {
-      backgroundColor:'#ffffff',
-      '::placeholder': {
-        color: '#bbbbbb',
-      }
-    },
-    invalid: {
-      color: 'red',
-    }
-  }
+  if(typeof gon != 'undefined'){
 
-  let payjp = Payjp(gon.api_key);
-  let elements = payjp.elements();
-  let cardElement = elements.create('card', {style: style});
-
-  cardElement.mount('#cardNew__form--input');
-
-  $(".cardNew").on("click","#cardNew__form--submit",
-    function(e){
-      e.preventDefault();
-      payjp.createToken(cardElement).then(function(response){
-        if(response.error){
-          $('#cardNew__form--errMessage').text(response.error.message);
-        }else{
-          $("#cardNew__form--inputHidden").attr("value",response.id);
-          $("#cardNew__form").submit();
+    const style = {
+      base: {
+        backgroundColor:'#ffffff',
+        '::placeholder': {
+          color: '#bbbbbb',
         }
-      });
+      },
+      invalid: {
+        color: 'red',
+      }
     }
-  );
+
+    let payjp = Payjp(gon.api_key);
+    let elements = payjp.elements();
+    let cardElement = elements.create('card', {style: style});
+
+    cardElement.mount('#cardNew__form--input');
+
+    $(".cardNew").on("click","#cardNew__form--submit",
+      function(e){
+        e.preventDefault();
+        payjp.createToken(cardElement).then(function(response){
+          if(response.error){
+            $('#cardNew__form--errMessage').text(response.error.message);
+          }else{
+            $("#cardNew__form--inputHidden").attr("value",response.id);
+            $("#cardNew__form").submit();
+          }
+        });
+      }
+    );
+  }

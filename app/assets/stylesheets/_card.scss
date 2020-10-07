@@ -24,6 +24,27 @@
     &--submit{
       margin:0 0 0 auto;
     }
+    &--type,&--num,&--name,&--delete{
+      width: 100%;
+      margin: 0;
+      font-size: 16px;
+      text-align: right;
+    }
+    &--type{
+      text-align: left;
+    }
+    &--num{
+      font-size: 18px;
+    }
+    &--delete{
+      input{
+        width: 20%;
+        margin:5px 0 0;
+        font-size: 12px;
+        border: solid 1px;
+        border-radius: 5px;
+      }
+    }
   }
 }
 

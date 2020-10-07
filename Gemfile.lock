@@ -380,9 +380,6 @@ DEPENDENCIES
   font-awesome-rails
   font-awesome-sass
   gon
-  fog-aws
-  font-awesome-rails
-  font-awesome-sass
   haml-rails (~> 2.0)
   jbuilder (~> 2.5)
   jquery-rails

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_073746) do
+ActiveRecord::Schema.define(version: 2020_10_06_143941) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name_kanji", default: "", null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
     t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_cards_on_user_id"
+    t.index ["user_id"], name: "index_cards_on_user_id", unique: true
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,12 +53,24 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
     t.string "category", default: "", null: false
     t.string "brand"
     t.string "condition", default: "", null: false
-    t.string "shipment_fee", default: "", null: false
+    t.integer "shipment_fee_id", null: false
     t.string "shipment_region", default: "", null: false
     t.string "shipment_schedule", default: "", null: false
-    t.string "price", default: "", null: false
+    t.integer "price", null: false
+    t.integer "stock", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "charge_id", null: false
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.integer "quantity", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_payments_on_item_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -81,4 +93,6 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "payments", "items"
+  add_foreign_key "payments", "users"
 end
