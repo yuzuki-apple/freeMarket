@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
     t.string "family_name_kana", default: "", null: false
     t.string "first_name_kana", default: "", null: false
     t.string "post_number", default: "", null: false
-    t.integer "prefecture_id", null: false
+    t.string "prefecture", default: "", null: false
     t.string "city", default: "", null: false
     t.string "block_number", default: "", null: false
     t.string "apartment_name", default: "", null: false
@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "user_id", default: "", null: false
-    t.string "name", default: "", null: false
-    t.string "description", default: "", null: false
-    t.string "category", default: "", null: false
+    t.bigint "user_id"
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.text "description", null: false
     t.string "brand"
     t.string "condition", default: "", null: false
     t.integer "shipment_fee_id", null: false
