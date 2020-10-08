@@ -81,12 +81,10 @@
 
     .header__all .header__all__main .nav .listsLeft__item {
       line-height: 38px;
-      //padding: 0 0 0 16px;//
       list-style: none;
       a {
         color: #333;
         text-decoration: none;
-        //padding-right: 80px;//
       }
 }
 
@@ -100,17 +98,14 @@
         width: 250px;
         position: fixed;
         z-index: 1;
-      
         .categoryTree {
-          background-color: red;
+          background-color: #ff0000;
           flex-direction: column;
           position: relative;
-        
           li {
             position: relative;
             list-style: none;
           }
-        
           .subcatTree {
             display: none;
             position: absolute;
@@ -119,7 +114,6 @@
             width: 250px;
             list-style: none;
             background-color: blue;
-        
             .itemTree {
               display: none;
               position: absolute;
@@ -141,11 +135,9 @@
   a {
     color: #333;
     text-decoration: none;
-    //padding-right: 80px;//
   }
 
   line-height: 38px;
-  //padding: 0 0 0 16px;//
   list-style: none;
 }
 
@@ -167,7 +159,6 @@
         text-decoration: none;
         line-height: 32px;
       }
-  
       color: #333;
       line-height: 38px;
       padding: 0 0 0 16px;
@@ -222,7 +213,6 @@
       width: 180px;
       display: block;
       transition: opacity 0.15s;
-    
       &:hover {
         opacity: 0.55;
       }
@@ -322,7 +312,6 @@ img {
       width: 180px;
       display: block;
       transition: opacity 0.15s;
-    
         &:hover {
           opacity: 0.55;
         }
@@ -408,10 +397,8 @@ img {
     a {
       text-decoration: none;
     }
-    
     .productHead{
       text-align: center;
-      
       .title {
         font-size: 24px;
         font-weight: bold;
@@ -426,7 +413,6 @@ img {
       .productList {
         width: 220px;
         display: inline-block;
-        
         .productList--img {
           position: relative;
           overflow: hidden;
@@ -434,7 +420,6 @@ img {
           z-index: auto;
           display: block;
           transition: opacity 0.15s;
-        
           &:hover {
             opacity: 0.55;
           }
@@ -558,7 +543,6 @@ img {
       width: 180px;
       display: block;
       transition: opacity 0.15s;
-    
       &:hover {
         opacity: 0.55;
       }
@@ -610,7 +594,6 @@ img {
   padding: 15px;
   display: block;
   transition: opacity 0.15s;
-      
         &:hover {
           opacity: 0.55;
         }
@@ -624,7 +607,7 @@ img {
   .purchase-Btn__icon {
     width: 60%;
   }
-} 
+}
 
 // show　商品詳細ページ　//
 .breadcrumbs {
@@ -793,112 +776,76 @@ img {
 
 .contents{
   margin: 0 auto;
-  width: 1000px;
-  height: 1200px;
+  padding:0 20px;
+  max-width: 1040px;
+  width:100%;
   display: flex;
   &__right{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     width: 700px;
     height: 100%;
-   
     &__user{
       height: 430px;
-      background-color: yellowgreen;
     }
     &__items{
       height: 350px;
-      background-color: yellowgreen;
       margin-top: 20px;
     }
   }
   &__rightt{
-    height: 530px;
-    width: 700px;
-    background-color: yellowgreen;
+    height: 600px;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     &__head{
       height: 100px;
       line-height: 100px;
-      border-bottom: 2px solid green;
+      border-bottom: 1px solid #3ccace;
       font-size: 20px;
       text-align: center;
     }
     &__body{
-      padding-top: 20px;
-      padding-left: 150px;
-      border-radius: 4px;
+      padding: 50px 0;
+      width:300px;
+      margin: 0 auto;
+      .payjs-outer{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        margin: 5px 0 25px;
+        padding: 5px;
+        border: solid 1px;
+        border-radius: 5px;
+      }
+      #cardNew__form--errMessage{
+        color:#ff0000;
+      }
+      .card{
+        &--brand,&--num,&--name{font-size: 24px;margin: 0 0 30px;}
+      }
       &-require{
         color: white;
-        background-color: red;
+        background-color: #ff0000;
         border-radius: 2px;
-      }
-      &-inputDefault{
-        margin-top: 15px;
-        display: block;
-        font-size: 20px;
-        font-family: inherit;
-        box-sizing: border-box;
-        font-size: inherit;
-        width: 300px;
-        height: 40px;
-      }
-      &-img{
-        margin-bottom: 20px;
-      }
-      &-month{
-        margin: 0 10px 0 10px;
-        display: flex;
-        height: 40px;
-        width: 90px;
-      }
-      &-year{
-        margin: 0 10px 0 10px;
-        height: 40px;
-        width: 90px;
-        margin-bottom: 20px;
-      }
-      &-inputcard{
-        margin-top: 15px;
-        display: block;
-        box-sizing: border-box;
-        font-family: inherit;
-        font-size: inherit;
-        width: 300px;
-        height: 40px;
-      }
-      &-ym{
-        display: flex;
-      }
-      &-span{
-        display: flex;
-        line-height: 40px;
+        padding: 3px;
       }
       &-btn{
+        display:block;
+        border:solid 1px #ff0000;
         border-radius: 4px;
-        box-sizing: border-box;
         color: white;
-        background-color: red;
+        background: #ff0000;
         width: 300px;
+        height: 50px;
+        margin-top: 20px;
+        line-height: 50px;
         text-align: center;
-        height: 30px;
-        margin-top: 15px;
-        line-height: 30px;
-      }
-      &-back{
-        border-radius: 4px;
-        box-sizing: border-box;
-        width: 300px;
-        text-align: center;
-        height: 30px;
-        margin-top: 15px;
-        line-height: 30px;
-        color: #0095ee;
-        font-size: 15px;
       }
     }
   }
   &__righttt{
     width: 700px;
     height: 100px;
-    background-color: yellowgreen;
     &__out{
       background-color: crimson;
       height: 20px;
@@ -915,39 +862,38 @@ img {
     }
   }
   &__left{
-    width: 280px;
-    height: 100%;
+    width: 220px;
     margin-right: 20px;
+    font-size:12px;
     &__one{
       margin-bottom: 20px;
+      border-bottom: 1px solid #3ccace;
       li {
         &:hover {
-          color: white;
+          color: #ffffff;
+          background: #3ccace;
         }
-        border: 1px solid mistyrose;
         padding: 10px;
-        background-color: yellowgreen;
       }
     }
     &__two{
       margin-bottom: 20px;
+      border-bottom: 1px solid #3ccace;
       li {
         &:hover {
-          color: white;
+          color: #ffffff;
+          background: #3ccace;
         }
-        border: 1px solid mistyrose;
         padding: 10px;
-        background-color: yellowgreen;
       }
     }
     &__three{
       li {
         &:hover {
-          color: white;
+          color: #ffffff;
+          background: #3ccace;
         }
-        border: 1px solid bisque;
         padding: 10px;
-        background-color: yellowgreen;
       }
     }
   }

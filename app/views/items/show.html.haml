@@ -46,8 +46,6 @@
       %ul.lists-Right
         - if user_signed_in?
           %li.lists-Right__item
-            = link_to "サインアウト(仮置)",destroy_user_session_path,method: :delete
-          %li.lists-Right__item
             = link_to "マイページ", root_path
         - else
           %li.lists-Right__item
