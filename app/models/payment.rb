@@ -4,6 +4,7 @@ class Payment < ApplicationRecord
   validate  :qtty_max
 
   belongs_to :item
+  belongs_to :user
 
   private
   def qtty_max
