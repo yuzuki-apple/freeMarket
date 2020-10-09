@@ -1,0 +1,109 @@
+require 'rails_helper'
+describe Item do
+
+  before do
+    @item = build(:item)
+  end
+
+  describe "商品を出品する" do
+    context '出品がうまくいくとき' do
+      it "必須項目（すべて）があれば登録できる" do
+        expect(@item).to be_valid
+      end
+      it "userがあれば登録できる" do
+        @item.user_id =""
+        expect(@item).to be_valid
+      end
+      it "出品画像があれば登録できる" do
+        @item.images =""
+        expect(@item).to be_valid
+      end
+      it "商品名があれば登録できる" do
+        @item.name ="本"
+        expect(@item).to be_valid
+      end
+      it "商品の説明があれば登録できる" do
+        @item.description ="参考書になります"
+        expect(@item).to be_valid
+      end
+      it "カテゴリーを選択すれば登録できる" do
+        @item.category ="1"
+        expect(@item).to be_valid
+      end
+      it "商品の状態を選択すれば登録できる" do
+        @item.condition ="1"
+        expect(@item).to be_valid
+      end
+      it "配送料の負担を選択すれば登録できる" do
+        @item.shipment_fee_id ="1"
+        expect(@item).to be_valid
+      end
+      it "発送元の地域を選択すれば登録できる" do
+        @item.shipment_region_id ="1"
+        expect(@item).to be_valid
+      end
+      it "発送までの日数を選択すれば登録できる" do
+        @item.shipment_schedule_id ="1"
+        expect(@item).to be_valid
+      end
+      it "価格を入力すれば登録できる" do
+        @item.price ="9999"
+        expect(@item).to be_valid
+      end
+    end
+
+    context '出品がうまくいかないとき' do
+      it "userが無いと登録できない" do
+        @item.user_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Userを入力してください")
+      end
+      it "出品画像が無いと登録できない" do
+        @item.images = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("出品画像を入力してください")
+      end
+      it "商品名が無いと登録できない" do
+        @item.name = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("商品名を入力してください")
+      end
+      it "商品の説明が無いと登録できない" do
+        @item.description = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("商品の説明を入力してください")
+      end
+      it "カテゴリーを選択していないと登録できない" do
+        @item.category = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("カテゴリーを選択してください")
+      end
+      it "商品の状態を選択していないと登録できない" do
+        @item.condition = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("商品の状態を選択してください")
+      end
+      it "配送料の負担を選択していないと登録できない" do
+        @item.shipment_fee_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("配送料の負担を選択してください")
+      end
+      it "発送元の地域を選択していないと登録できない" do
+        @item.shipment_region_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("発送元の地域を選択してください")
+      end
+      it "発送までの日数を選択していないと登録できない" do
+        @item.shipment_schedule_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("発送までの日数を選択してください")
+      end
+      it "販売価格が無いと登録できない" do
+        @item.price = ''
+        @item.valid?
+        expect(@itemr.errors.full_messages).to include("販売価格を入力してください")
+      end
+    end
+  end
+
+end
