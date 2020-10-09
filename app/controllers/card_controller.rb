@@ -1,7 +1,7 @@
 class CardController < ApplicationController
 
   def new
-    if current_user.card
+    if current_user&.card
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       customer = Payjp::Customer.retrieve(current_user.card.customer_id)
       @card = customer.cards.retrieve(current_user.card.card_id)
