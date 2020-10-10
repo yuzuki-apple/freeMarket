@@ -76,7 +76,7 @@ describe Item do
       it "カテゴリーを選択していないと登録できない" do
         @item.category = '１'
         @item.valid?
-        expect(@item.errors[:item]).to include("カテゴリーを選択してください")
+        expect(@item.errors[:category]).to include("「選択してください」以外を選択してください")
       end
       it "商品の状態を選択していないと登録できない" do
         @item.condition = '１'
