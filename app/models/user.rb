@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :family_name_kana,:first_name_kana,format:{with:/[ぁ-ん]+/}
   validates :birthday,format:{with:/\d{4}\-\d{2}\-\d{2}/}
   has_one :address
+
+  has_many :items
 end

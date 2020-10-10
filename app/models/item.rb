@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   validates :category, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   validates :condition, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   extend ActiveHash::Associations::ActiveRecordExtensions
-    belongs_to :user, optional: true
+    belongs_to :user
     belongs_to_active_hash :shipment_fee
     validates :shipment_fee_id, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
     belongs_to_active_hash :shipment_region
@@ -18,4 +18,5 @@ class Item < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  belongs_to :buyer, class_name: "User", foreign_key: "buyer_id", optional: true
 end

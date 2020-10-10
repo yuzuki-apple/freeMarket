@@ -2,6 +2,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
       t.string :user_id,  null: false, default: ""
+      t.references :buyer, foreign_key: { to_table: :users }
       t.string :name,  null: false, default: ""
       t.string :description,  null: false, default: ""
       t.string :category,  null: false, default: ""

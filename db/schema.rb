@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_080904) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_id", default: "", null: false
+    t.bigint "buyer_id"
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
     t.string "category", default: "", null: false
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_080904) do
     t.string "price", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,4 +73,5 @@ ActiveRecord::Schema.define(version: 2020_09_22_080904) do
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "items", "users", column: "buyer_id"
 end
