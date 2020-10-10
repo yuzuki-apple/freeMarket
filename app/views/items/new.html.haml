@@ -43,11 +43,9 @@
               
                 %label カテゴリー
                 %span 必須
-              %select.content__detail_category--select
-                %option{value: "0"} 選択してください
-                %option{value: "1"}メンズ
-                %option{value: "2"}レディース
-                %option{value: "3"}ベビーズ・キッズ
+              = form_with model: @items do |form|
+                .content__detail_category--form
+                  = form.collection_select :category, @parent_category, :id, :name, {prompt: "選択してください"}, {class: "content__detail_category--select"}
               %p.detail_category_note 選択してください
             .content__detail_brand
               .content__detail_brand--title

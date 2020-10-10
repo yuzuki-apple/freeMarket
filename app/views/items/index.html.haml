@@ -17,27 +17,24 @@
       %ul.listsLeft
         %li.listsLeft__item.listsLeft__item--first
           .category
-            = link_to "#" do
+            = link_to "#", class: "category__search search__btn" do
               カテゴリー
-            .tree.display-None
-              .categoryTree
-                .categoryTree--item
-                  = link_to "#", id: "#1" do
-                    レディース
-                  .subcatTree
-                    .subcatTree--item
-                      = link_to "#", id: "#1" do
-                        トップス
-                      .itemTree
-                        .itemTree--item
-                          = link_to "#", id: "#1" do
-                            Tシャツ
-                        .itemTree--item
-                          = link_to "#", id: "#2" do
-                            シャツ
-                    .subcatTree--item
-                      = link_to "#", id: "#2" do
-                        シャケット
+            %ul.category__parent.category__list
+              - @parents.each do |parent|
+                %li
+                  = link_to "#", class: "category__parent--name" do
+                    = parent.name
+                  %ul.category__child.category__list
+                    - parent.children.each do |child|
+                      %li.category_list2
+                        = link_to "#", class: "category__child--name" do
+                          = child.name
+                        %ul.category__grandchild.category__list
+                          - child.children.each do |grandchild|
+                            %li.category_list3
+                              = link_to "#", class: " category__child--name" do
+                                = grandchild.name 
+
         %li.listsLeft__item.listsLeft__item__second
           = link_to "#", id: "#brandBtn" do
             ブランド
