@@ -6,11 +6,15 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-
-  resources :card,only: [:new,:create,:destroy]
-
-  resources :items,except: :index do
-    resources :payments,only: [:new,:create]
+  resources :users, only: [:show] do
+  end
+  
+  resources :credits, only: [:index] 
+  
+  resources :items, only: [:index, :show, :new, :edit, :create, :update, :destroy] do
+    member do
+      get :buy
+    end
   end
 
   get '/users/out', to: 'users#out'

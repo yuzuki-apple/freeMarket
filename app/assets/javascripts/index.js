@@ -7,7 +7,7 @@ $(function() {
     function() {
       $('.display-None').fadeOut();
     });
-
+  
 });
 
 $(function() {
@@ -18,7 +18,7 @@ $(function() {
     function() {
       $('.subcatTree').fadeOut();
     });
-
+  
 });
 
 $(function() {
@@ -29,5 +29,5 @@ $(function() {
     function() {
       $('.itemTree').fadeOut();
     });
-
+  
 });

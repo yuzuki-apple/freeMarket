@@ -1,0 +1,44 @@
+%header.registrationHeader
+  %h1= link_to image_tag("logo.svg"), root_path
+.registration-purchase
+  %main
+    %section
+      %h2.registrationHeader 購入内容の確認
+    %section.sc-dpiBDp.SAiFk
+      .sc-cLxPOX.efbWnq
+        .sc-ekHBYt.fsbOhM
+          %figure.style_thumbnail__1zhSo.style_xlarge__353oT
+            = image_tag "gyouza.png"
+            -# %img{alt: "レディース  レギンスパンツ　トレンカ　UV", src: "https://static.mercdn.net/item/detail/orig/photos/m90812767290_1.jpg?1599273967"}/
+        .sc-eTyWNx.bNqXFI
+          %p.sc-ccXozh.gebseu チーム７７（福岡）究極の餃子
+          %p.sc-bsVVwV.koOPFW
+            %span.sc-kbGplQ.eWeUEu 送料込み (税込)
+            %span.sc-exdmVY.eutxfJ ¥550
+    %section.sc-dpiBDp.SAiFk
+      .sc-evWYkj.dKVbEv
+        %span.sc-idjmjb.ctwLHp 支払い金額
+        %span.sc-idjmjb.ctwRHp ¥550
+    %section.sc-dpiBDp.SAiFk
+      .sc-fHlXLc.fkCXKj
+        .sc-iKpIOp.gKHlhI
+          %h3.sc-AqAhp.ctJKRl 支払い方法
+        %a.sc-cClmTo.ekeVpy{data_test: "transaction-buy-method-registering-link", href: "/jp/transaction/payment_method/m90812767290/"}
+          %svg{aria_hidden: "true", fill: "#0095EE", fill_rule: "evenodd", height: "16", viewbox: "0 0 24 24", width: "16"}
+            %path{d: "M17.51,11.3H12.7v-5a.7.7,0,0,0-1.4,0v5h-5a.7.7,0,0,0,0,1.4h5v4.81a.7.7,0,0,0,1.4,0V12.7h4.81a.7.7,0,0,0,0-1.4Z"}
+            %path{d: "M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18.6A8.6,8.6,0,1,1,20.6,12,8.61,8.61,0,0,1,12,20.6Z"}
+          %span.sc-hZhUor.fqVTFs 登録してください
+    %section.sc-dpiBDp.SAiFk
+      .sc-fHlXLc.fkCXKj
+        .sc-iysEgW.iFWqCI
+          %h3.sc-fxgLge.lcQHnG 配送先
+        %a.sc-hDgvsY.lkRoMl{href: "/jp/transaction/address/m90812767290/"}
+          %svg{aria_hidden: "true", fill: "#0095EE", fill_rule: "evenodd", height: "16", viewbox: "0 0 24 24", width: "16"}
+            %path{d: "M17.51,11.3H12.7v-5a.7.7,0,0,0-1.4,0v5h-5a.7.7,0,0,0,0,1.4h5v4.81a.7.7,0,0,0,1.4,0V12.7h4.81a.7.7,0,0,0,0-1.4Z"}
+            %path{d: "M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18.6A8.6,8.6,0,1,1,20.6,12,8.61,8.61,0,0,1,12,20.6Z"}
+          %span.sc-fyjYeE.bOdMkh 登録してください
+    %section.sc-dpiBDp.SAiFk
+      .sc-ixltIz.gSqzXb
+        %p.sc-kvkilB.dIxAuG 配送先と支払い方法の入力を完了してください。
+        %button.style_button__3yWFH.common_fontFamily{data_test: "transaction-buy-purchase", disabled: "disabled", tabindex: "-1", type: "button"} 購入する
+= render partial: 'users/registrations/footer'

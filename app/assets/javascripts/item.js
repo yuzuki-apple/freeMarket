@@ -14,7 +14,12 @@ $(function() {
   });
 });
 
+
 // 商品出品機能の複数枚画像投稿  //
+
+// $(document).on('turbolinks:load', function(){
+// $(document).on('load', function(){
+// document.addEventListener('load', function(){
 $(function(){
   $(function(){
 
@@ -71,8 +76,8 @@ $(function(){
         //イメージを追加
         $(`#preview-box__${id} img`).attr('src', `${image}`);
         var count = $('.preview-box').length;
-        //プレビューが5個あったらラベルを隠す
-        if (count == 5) {
+        //プレビューが5個あったらラベルを隠す 
+        if (count == 5) { 
           $('.label-content').hide();
         }
 
@@ -94,7 +99,7 @@ $(function(){
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       //取得したidに該当するプレビューを削除
       $(`#preview-box__${id}`).remove();
-      //フォームの中身を削除
+      //フォームの中身を削除 
       $(`#item_images_attributes_${id}_src`).val("");
 
       //削除時のラベル操作

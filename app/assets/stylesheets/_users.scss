@@ -53,14 +53,29 @@
 .registration,.session,.address,.regiComplete {
   box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
   padding-bottom:10vw;
-  &Heading {
+  h2 {
     background:#f5f5f5;
+    position:-webkit-sticky;
     position:sticky;
     top:0;
     padding:4vw;
     border-bottom:1px solid #eeeeee;
     text-align:center;
     font-size:5vw;
+    p {
+      font-size:3.5vw;
+    }
+    a {
+      margin:10vw auto 0;
+      background:#3CCACE;
+      border:1px solid #3CCACE;
+      color:#fff;
+      display:block;
+      width:90%;
+      line-height:12vw;
+      font-size:4vw;
+      border-radius:1vw;
+    }
   }
   &Content {
     width:92vw;
@@ -72,7 +87,7 @@
     .formGroup {
       font-size:0;
       margin:10vw 0 0;
-      label,.identification {
+      label,h3 {
         display:inline-block;
         font-weight:600;
         font-size:4vw;
@@ -194,6 +209,12 @@
       font-size:4vw;
       border-radius:1vw;
     }
+    &+a {
+      display:block;
+      width:80vw;
+      margin:10vw auto 0;
+      font-size:4vw;
+    }
     div[data-sitekey] {
       margin-top:10vw;
       div {margin:0 auto;}
@@ -246,23 +267,21 @@
   padding:10vw;
   text-align:center;
   font-size:3vw;
-  &__items {
+  ul {
     margin-bottom:10vw;
-    &--li {
-      margin:3vw;
-      a {
-        color:white;
-        img {
-          width:30vw;
-        }
-      }
-    }
   }
-  .company{
-    small{
-      font-size:4vw;
+  li {
+    margin:3vw;
+    a {
       color:white;
     }
+  }
+  img {
+    width:30vw;
+  }
+  small {
+    font-size:4vw;
+    color:white;
   }
 }
 
@@ -310,9 +329,19 @@
     width:700px;
     margin:0 auto;
     padding-bottom:24px;
-    &Heading {
+    h2 {
       padding:32px;
       font-size:22px;
+      p {
+        font-size:14px;
+      }
+      a {
+        margin:8px auto 0;
+        width:48%;
+        line-height:48px;
+        font-size:14px;
+        border-radius:4px;
+      }
     }
     &Content {
       width:340px;
@@ -321,7 +350,7 @@
       }
       .formGroup {
         margin:24px 0 0;
-        label,.identification {
+        label,h3 {
           font-size:14px;
         }
         .inputDefault,.selectDefault {
@@ -388,6 +417,11 @@
         font-size:14px;
         border-radius:4px;
       }
+      &+a {
+        width:50%;
+        margin:40px auto 0;
+        font-size:14px;
+      }
     }
     div[data-sitekey] {
       margin-top:24px;
@@ -427,28 +461,22 @@
     width:700px;
     padding:30px;
     font-size:12px;
-    &__items {
+    ul {
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
       margin-bottom:30px;
-      &--li {
-        width:160px;
-        margin:10px;
-        a {
-          img {
-            width:160px;
-          }
-        }
-        &:last-child{
-          width:300px;
-        }
-      }
     }
-    .company{
-      small{
-        font-size:16px;
-      }
+    li {
+      width:160px;
+      margin:10px;
+      &:last-child{width:300px;}
+    }
+    img {
+      width:160px;
+    }
+    small {
+      font-size:16px;
     }
   }
 }

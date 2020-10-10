@@ -74,6 +74,7 @@ group :production do
   gem 'unicorn'
 end
 
+gem 'font-awesome-sass'
 gem 'devise'
 gem "haml-rails", "~> 2.0"
 gem "jquery-rails"
@@ -81,11 +82,8 @@ gem 'rails-i18n'
 gem "recaptcha"
 gem 'ancestry'
 gem 'active_hash'
-gem 'payjp'
-gem 'gon'
 gem 'font-awesome-sass'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
-gem 'active_hash'
