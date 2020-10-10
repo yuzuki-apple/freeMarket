@@ -6,9 +6,6 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :users, only: [:show] do
-    member do
-      get :out
-    end
   end
   
   resources :credits, only: [:index] 
