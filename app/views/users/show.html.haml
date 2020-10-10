@@ -1,95 +1,13 @@
-.box 
-  %header.header__all
-    .header__all__main
-      .mainHeader
-        %h1.icon
-          =link_to "/" do
-            = image_tag "FURIMA_logo.svg"
-        .searchmain
-          %form{"accept-charset": "UTF-8", action: "#", method: "get"}
-            %input{name: "utf8", type: "hidden", value: "✓"}
-            %input#searchInput.searchmain--input{name: "key", placeholder: "キーワードから探す"}
-            %button{type: "submit"}
-              .searchmain__icon
-                = image_tag "icon_search.png"
-            %input{name: "authenticity_token", type: "hidden", value: "rGvQaEoXiWof9CviOMrABrWg8GvnR7RZ5CihIgqhun1x4Av6XJI7jRd8fffRfP5WFLbFT4wp6lPDQB+RLe9aTA=="}
-        %ul.result-Lists
-      .nav
-        %ul.listsLeft
-          %li.listsLeft__item.listsLeft__item--first
-            .category
-              = link_to "#" do
-                カテゴリー
-              .tree.display-None
-                .categoryTree
-                  .categoryTree--item
-                    = link_to "#", id: "#1" do
-                      レディース
-                    .subcatTree
-                      .subcatTree--item
-                        = link_to "#", id: "#1" do
-                          トップス
-                        .itemTree
-                          .itemTree--item
-                            = link_to "#", id: "#1" do
-                              Tシャツ
-                          .itemTree--item
-                            = link_to "#", id: "#2" do
-                              シャツ
-                      .subcatTree--item
-                        = link_to "#", id: "#2" do
-                          シャケット
-          %li.listsLeft__item.listsLeft__item__second
-            = link_to "#", id: "#brandBtn" do
-              ブランド
-            %ul.brandsPulldown.display-None
-        %ul.lists-Right
-          - if user_signed_in?
-            %li.lists-Right__item
-              = link_to "サインアウト(仮置)",destroy_user_session_path,method: :delete
-            %li.lists-Right__item
-              = link_to "マイページ", user_path
-          - else
-            %li.lists-Right__item
-              = link_to "新規会員登録",new_user_registration_path
-            %li.lists-Right__item
-              = link_to "ログイン",new_user_session_path
-  .contents
-    .contents__left
-      .contents__left__one
-        %ul
-          %li マイページ
-          %li お知らせ
-          %li やることリスト
-          %li いいね！一覧
-          %li 出品する
-          %li 下書き一覧
-          %li 出品した商品ー出品中
-          %li 出品した商品ー取引中
-          %li 出品した商品ー売却済み
-          %li 購入した商品ー取引中
-          %li ニュース一覧
-          %li ガイド
-          %li お問い合わせ
-      .contents__left__two
-        %h3 メルペイ
-        %ul 
-          %li 売り上げ・振り込み申請
-          %li ポイント
-      .contents__left__three
-        %h3 設定
-        %ul
-          %li プロフィール
-          %li 発送元・お届け先住所変更
-          %li 
-            = link_to "クレジット登録", credits_path
-          %li メール/パスワード
-          %li 本人情報
-          %li 電話番号の確認
-          %li 
-            = link_to "ログアウト", destroy_user_session_path,method: :delete
-    .contents__right
-      .contents__right__user
-        木村太郎
-      .contents__right__items
-        購入した商品
+= render "common/main_header"
+
+.contents
+  = render "common/left_side_menu"
+  .contents__right
+    .contents__right__user
+      木村太郎
+      お知らせ
+      やることリスト
+    .contents__right__items
+      購入した商品
+      取引中
+      過去の取引

@@ -57,7 +57,6 @@
               .content__detail_category
                 %p.detail_category 商品の詳細
                 .content__detail_category--title
-                
                   %label カテゴリー
                   %span 必須
                 = f.select :category, [["選択してください", 0],["メンズ", 1],["レディース", 2],["ベビーズ・キッズ", 3]], {},class: "content__detail_category--select"
@@ -73,6 +72,12 @@
                   %span 必須
                 = f.select :condition, [["選択してください", 0],["新品", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4]], {},class: "content__detail_condition--select"
                 %p.detail_condition_note
+              .content__detail_stock
+                .content__detail_stock--title
+                  %label 在庫数
+                  %span 必須
+                = f.number_field :stock,placeholder:"1〜9,999",min:"1",max:"9999",step:"1",class:"content__detail_stock--input"
+                %p.detail_stock_note
         .formNew__shipment
           .formNew__shipment--content
             .content
@@ -81,7 +86,7 @@
                 .content__shipment_fee--title
                   %label 配送料の負担
                   %span 必須
-                = f.select :shipment_fee, [["選択してください", 0],["送料込み（出品者負担)", 1],["着払い（購入者負担", 2]], {},class: "content__shipment_fee--select"
+                = f.collection_select :shipment_fee_id,ShipmentFee.all,:id,:name,{prompt:"選択してください"},{class:"content__shipment_fee--select"}
                 %p.shipment_fee_note
               .content__shipment_region
                 .content__shipment_region--title
@@ -106,7 +111,7 @@
                   %span.enn ￥
                   = f.number_field :price, {class: "price", placeholder: 0}
                 %p.content__price--note
-                .content__price--tax  
+                .content__price--tax
                   %p 販売手数料（10%）
                   %span#tax ---
                 .content__price--profit
@@ -129,4 +134,3 @@
         = link_to root_path do
           = image_tag "logo.png", class: "footerNew__logo"
           %p © FURIMA, Inc
--# = form_for Item.new do |f|    --->　editファイルみるなら7行目これ！！！！
