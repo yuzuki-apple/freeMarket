@@ -103,6 +103,16 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("販売価格：300〜9,999,999円以内で入力してください")
       end
+      it "販売価格は300円以上で無いと登録できない" do
+        @item.price = '299'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("販売価格：300〜9,999,999円以内で入力してください")
+      end
+      it "販売価格は10'000'000円で無いと登録できない" do
+        @item.price = '10000001'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("販売価格：300〜9,999,999円以内で入力してください")
+      end
     end
   end
 
