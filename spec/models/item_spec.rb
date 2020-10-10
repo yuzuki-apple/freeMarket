@@ -84,17 +84,17 @@ describe Item do
         expect(@item.errors.full_messages).to include("商品の状態：「選択してください」以外を選択してください")
       end
       it "配送料の負担を選択していないと登録できない" do
-        @item.shipment_fee_id = '１'
+        @item.shipment_fee_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment fee「選択してください」以外を選択してください")
       end
       it "発送元の地域を選択していないと登録できない" do
-        @item.shipment_region_id = '１'
+        @item.shipment_region_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment region「選択してください」以外を選択してください")
       end
       it "発送までの日数を選択していないと登録できない" do
-        @item.shipment_schedule_id = '１'
+        @item.shipment_schedule_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment schedule「選択してください」以外を選択してください")
       end
