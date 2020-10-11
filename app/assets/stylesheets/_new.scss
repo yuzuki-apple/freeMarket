@@ -15,7 +15,7 @@
       width: 700px;
       background-color: #ffffff;
       &__alert{
-        color:#262626; 
+        color:#262626;
         background:#FFEBE8;
         text-align: center;
         border:2px solid #990000;
@@ -276,7 +276,6 @@
                 height: 48px;
                 margin: 16px 0px 0px;
               }
-              
             }
             &__detail_condition{
               &--title{
@@ -299,11 +298,36 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.detail_condition_note{
+                color: red;
+                padding-top: 12px;
+              }
+            }
+            &__detail_stock{
+              &--title{
+                display: flex;
+                align-items: center;
+                margin-top: 46px;
+                label{
+                  font-weight: bolder;
+                  padding-right: 10px;
+                }
+                span{
+                  background-color: red;
+                  color: #ffffff;
+                  border-radius: 5px;
+                  padding: 3px;
+                  font-size: 12px;
+                }
+              }
+              &--input{
+                width: 620px;
+                height: 58px;
+                margin-top: 16px;
+                text-align: right;
+              }
+              p.detail_stock_note{
                 color: red;
                 padding-top: 12px;
               }
@@ -337,9 +361,6 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.shipment_fee_note{
                 color: red;
@@ -367,9 +388,6 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.shipment_region_note{
                 color: red;
@@ -397,9 +415,6 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.shipment_shedule_note{
                 color: red;
@@ -407,7 +422,6 @@
               }
             }
           }
-          
         }
       }
       &__price{
@@ -503,7 +517,6 @@
                 text-align: center;
                 text-decoration: none;
                 margin-bottom: 48px;
-                
               }
             }
           }
@@ -513,7 +526,7 @@
             font-size: small;
           }
         }
-      }  
+      }
     }
     .footerNew{
       height: 220px;

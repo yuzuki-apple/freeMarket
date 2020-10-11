@@ -5,18 +5,10 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root 'items#index'
-  resources :users, only: [:show] do
-    member do
-      get :out
-    end
-  end
-  
-  resources :credits, only: [:index] 
-  
-  resources :items, only: [:index, :show, :new, :edit, :create, :update, :destroy] do
-    member do
-      get :buy
-    end
+
+  resources :card,only: [:new,:create,:destroy]
+
+  resources :items,except: :index do
+    resources :payments,only: [:new,:create]
   end
 end
-# /ites/edit(id)
