@@ -822,6 +822,7 @@ img {
       text-align: center;
     }
     &__body{
+      width:450px;
       padding-top: 20px;
       padding-left: 150px;
       border-radius: 4px;
@@ -829,47 +830,6 @@ img {
         color: white;
         background-color: red;
         border-radius: 2px;
-      }
-      &-inputDefault{
-        margin-top: 15px;
-        display: block;
-        font-size: 20px;
-        font-family: inherit;
-        box-sizing: border-box;
-        font-size: inherit;
-        width: 300px;
-        height: 40px;
-      }
-      &-img{
-        margin-bottom: 20px;
-      }
-      &-month{
-        margin: 0 10px 0 10px;
-        display: flex;
-        height: 40px;
-        width: 90px;
-      }
-      &-year{
-        margin: 0 10px 0 10px;
-        height: 40px;
-        width: 90px;
-        margin-bottom: 20px;
-      }
-      &-inputcard{
-        margin-top: 15px;
-        display: block;
-        box-sizing: border-box;
-        font-family: inherit;
-        font-size: inherit;
-        width: 300px;
-        height: 40px;
-      }
-      &-ym{
-        display: flex;
-      }
-      &-span{
-        display: flex;
-        line-height: 40px;
       }
       &-btn{
         border-radius: 4px;
@@ -881,17 +841,13 @@ img {
         height: 30px;
         margin-top: 15px;
         line-height: 30px;
+        display: block;
       }
-      &-back{
-        border-radius: 4px;
-        box-sizing: border-box;
-        width: 300px;
-        text-align: center;
-        height: 30px;
-        margin-top: 15px;
-        line-height: 30px;
-        color: #0095ee;
-        font-size: 15px;
+      .card{
+        &--brand,&--num{
+          margin:0 0 20px;
+          font-size:24px;
+        }
       }
     }
   }

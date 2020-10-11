@@ -11,13 +11,9 @@ describe Item do
         expect(@item).to be_valid
       end
       it "userがあれば登録できる" do
-        @item.user_id ="1"
+        @item.user = build(:user)
         expect(@item).to be_valid
       end
-      # it "出品画像があれば登録できる" do
-      #   @item.images = nil
-      #   expect(@item).to be_valid
-      # end
       it "商品名があれば登録できる" do
         @item.name ="本"
         expect(@item).to be_valid
@@ -53,11 +49,6 @@ describe Item do
     end
 
     context '出品がうまくいかないとき' do
-      it "userが無いと登録できない" do
-        @item.user_id = ''
-        @item.valid?
-        expect(@item.errors.full_messages).to include("Userを入力してください")
-      end
       it "出品画像が無いと登録できない" do
         @item.images.clear
         @item.valid?
@@ -86,7 +77,7 @@ describe Item do
       it "配送料の負担を選択していないと登録できない" do
         @item.shipment_fee_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment fee「選択してください」以外を選択してください")
+        expect(@item.errors.full_messages).to include("配送料の負担：「選択してください」以外を選択してください")
       end
       it "発送元の地域を選択していないと登録できない" do
         @item.shipment_region_id = 0
