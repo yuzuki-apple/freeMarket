@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :family_name_kanji,:first_name_kanji,format:{with:/[^\x01-\x7E]+/}
   validates :family_name_kana,:first_name_kana,format:{with:/[ぁ-ん]+/}
   validates :birthday,format:{with:/\d{4}\-\d{2}\-\d{2}/}
+
   has_many  :items,   dependent: :destroy
   has_many  :payments, dependent: :destroy
   has_one   :address, dependent: :destroy
