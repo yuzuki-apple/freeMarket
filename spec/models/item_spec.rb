@@ -2,7 +2,8 @@ require 'rails_helper'
 describe Item do
 
   before do
-    @item = build(:item)
+    @user = create(:user)
+    @item = build(:item, user_id: @user.id)
   end
 
   describe "商品を出品する" do
@@ -11,7 +12,7 @@ describe Item do
         expect(@item).to be_valid
       end
       it "userがあれば登録できる" do
-        @item.user_id ="1"
+        # @item.user_id ="1"
         expect(@item).to be_valid
       end
       # it "出品画像があれば登録できる" do
@@ -50,6 +51,10 @@ describe Item do
         @item.price ="600"
         expect(@item).to be_valid
       end
+      it "在庫数を入力すれば登録できる" do
+        @item.stock ="10"
+        expect(@item).to be_valid
+      end
     end
 
     context '出品がうまくいかないとき' do
@@ -86,7 +91,7 @@ describe Item do
       it "配送料の負担を選択していないと登録できない" do
         @item.shipment_fee_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment fee「選択してください」以外を選択してください")
+        expect(@item.errors.full_messages).to include("配送料の負担：「選択してください」以外を選択してください")
       end
       it "発送元の地域を選択していないと登録できない" do
         @item.shipment_region_id = 0
