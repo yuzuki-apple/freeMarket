@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+
+  belongs_to :category
+
   validates :images,:name,:description,:category,:condition,:shipment_fee_id,:shipment_region_id,:shipment_schedule_id,:stock,presence: true
   validates :images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
@@ -21,3 +24,4 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
 
 end
+

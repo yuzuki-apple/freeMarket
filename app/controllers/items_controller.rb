@@ -2,6 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
+    @parents = Category.where(ancestry: nil)
+  end
+
+  def new
+    @parent_category = Category.where(ancestry: nil)
+
     @items = Item.all
     @items = Item.includes(:images).order('created_at DESC')
     respond_to do |format|
@@ -31,6 +37,21 @@ class ItemsController < ApplicationController
   def edit
   end
 
+
+  def get_children
+    @categories = Category.where(ancestry: params[:category_id])
+    respond_to do |format|
+      format.json
+    end
+  end
+
+  def get_grand_children
+    @children_categories = Category.where(ancestry: params[:category_id])
+    respond_to do |format|
+      format.json
+    end
+  end
+
   def update
     if @item.update(item_params)
       redirect_to root_path
@@ -56,6 +77,7 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
 
 end
 

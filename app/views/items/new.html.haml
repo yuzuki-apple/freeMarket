@@ -1,2 +1,132 @@
+
+.bodyNew
+  .containerNew
+    .headerNew
+      = link_to root_path do
+        = image_tag "logo.png", class: "headerNew__logo"
+    .formNew
+      .formNew__image
+        .formNew__image--content
+          .content
+            .content__image
+              .content__image--title
+                %label 出品画像
+                %span 必須
+              %p.image_title 最大10枚までアップロードできます
+              .content__image--select
+                %label.image_select
+                  %input.image_select__input{type: "file"}
+                  %p= icon("fas", "camera", class: "image_select__icon")
+                  %p.image_select__text ドラックアンドドロップ<br>またはクリックしてファイルをアップロード
+              %p.image_note 画像がありません
+      .formNew__description
+        .formNew__description--content
+          .content
+            .content__description_name
+              .content__description_name--title
+                %label 商品名
+                %span 必須
+              %input.content__description_name--input{:placeholder => "40字まで", :type => "text"}
+              %p.description_name_note 入力してください
+            .content__description_text
+              .content__description_text--title
+                %label 商品の説明
+                %span 必須
+              %textarea.content__description_text--textarea{:placeholder => "商品の説明", :rows => 7}
+              %p.character_count 0/1000
+              %p.description_text_note 入力してください
+      .formNew__detail
+        .formNew__detail--content
+          .content
+            .content__detail_category
+              %p.detail_category 商品の詳細
+              .content__detail_category--title
+              
+                %label カテゴリー
+                %span 必須
+              = form_with model: @items do |form|
+                .content__detail_category--form
+                  = form.collection_select :category, @parent_category, :id, :name, {prompt: "選択してください"}, {class: "content__detail_category--select"}
+              %p.detail_category_note 選択してください
+            .content__detail_brand
+              .content__detail_brand--title
+                %label ブランド
+                %span 任意
+              %input.content__detail_brand--input{:placeholder => "例）ユニクロ", :type => "text"}
+            .content__detail_condition
+              .content__detail_condition--title
+                %label 商品の状態
+                %span 必須
+              %select.content__detail_condition--select
+                %option{value: "0"} 新品
+                %option{value: "1"} 未使用に近い
+                %option{value: "2"} 目立った傷や汚れなし
+                %option{value: "3"} やや傷や汚れあり
+              %p.detail_condition_note 選択してください
+      .formNew__shipment
+        .formNew__shipment--content
+          .content
+            .content__shipment_fee
+              %p.shipment_fee 配送について
+              .content__shipment_fee--title
+                %label 配送料の負担
+                %span 必須
+              %select.content__shipment_fee--select
+                %option{value: "0"} 選択してください
+                %option{value: "1"} 送料込み（出品者負担）
+                %option{value: "2"} 着払い（購入者負担）
+              %p.shipment_fee_note 選択してください
+            .content__shipment_region
+              .content__shipment_region--title
+                %label 発送元の地域
+                %span 必須
+              %select.content__shipment_region--select
+                %option{value: "0"} 選択してください
+                %option{value: "1"} 北海道
+                %option{value: "2"} 青森
+                %option{value: "3"} 岩手
+              %p.shipment_region_note 選択してください
+            .content__shipment_schedule
+              .content__shipment_schedule--title
+                %label 発送までの日数
+                %span 必須
+              %select.content__shipment_schedule--select
+                %option{value: "0"} 選択してください
+                %option{value: "1"} １~２日で発送
+                %option{value: "2"} ２~３日で発送
+                %option{value: "3"} ４~７日で発送
+              %p.shipment_shedule_note 選択してください
+      .formNew__price
+        .formNew__price--content
+          .content
+            .content__price
+              %p.content__price--range 価格（¥300〜9,999,999）
+              .content__price--title
+                %label 販売価格
+                %span.must 必須
+                %span.enn ￥
+                %input.price{:placeholder => 0, :type => "number"}
+              %p.content__price--note 300以上9999999以下で入力してください
+              .content__price--tax  
+                %p 販売手数料（10%）
+                %span ---
+              .content__price--profit
+                %p 販売利益
+                %span ---
+      .formNew__send
+        .formNew__send--content
+          .content
+            .content__send
+              %button.content__send--button 出品する
+              = link_to "戻る", "#", class: "content__send--back"
+
+        .formNew__send--note
+          %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+    .footerNew
+      = link_to root_path do
+        = image_tag "logo.png", class: "footerNew__logo"
+        %p © FURIMA, Inc
+
 = render partial: 'form'
 = render 'layouts/error_messages', model: @item
+
