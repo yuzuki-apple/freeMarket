@@ -1,59 +1,5 @@
-!!!
-%header.header__all
-  .header__all__main
-    .mainHeader
-      %h1.icon
-        =link_to "/" do
-          = image_tag "FURIMA_logo.svg"
-      .searchmain
-        %form{"accept-charset": "UTF-8", action: "#", method: "get"}
-          %input{name: "utf8", type: "hidden", value: "✓"}
-          %input#searchInput.searchmain--input{name: "key", placeholder: "キーワードから探す"}
-          %button{type: "submit"}
-            .searchmain__icon
-              = image_tag "icon_search.png"
-          %input{name: "authenticity_token", type: "hidden", value: "rGvQaEoXiWof9CviOMrABrWg8GvnR7RZ5CihIgqhun1x4Av6XJI7jRd8fffRfP5WFLbFT4wp6lPDQB+RLe9aTA=="}
-      %ul.result-Lists
-    .nav
-      %ul.listsLeft
-        %li.listsLeft__item.listsLeft__item--first
-          .category
-            = link_to "#" do
-              カテゴリー
-            .tree.display-None
-              .categoryTree
-                .categoryTree--item
-                  = link_to "#", id: "#1" do
-                    レディース
-                  .subcatTree
-                    .subcatTree--item
-                      = link_to "#", id: "#1" do
-                        トップス
-                      .itemTree
-                        .itemTree--item
-                          = link_to "#", id: "#1" do
-                            Tシャツ
-                        .itemTree--item
-                          = link_to "#", id: "#2" do
-                            シャツ
-                    .subcatTree--item
-                      = link_to "#", id: "#2" do
-                        シャケット
-        %li.listsLeft__item.listsLeft__item__second
-          = link_to "#", id: "#brandBtn" do
-            ブランド
-          %ul.brandsPulldown.display-None
-      %ul.lists-Right
-        - if user_signed_in?
-          %li.lists-Right__item
-            = link_to "サインアウト(仮置)",destroy_user_session_path,method: :delete
-          %li.lists-Right__item
-            = link_to "マイページ", root_path
-        - else
-          %li.lists-Right__item
-            = link_to "新規会員登録",new_user_registration_path
-          %li.lists-Right__item
-            = link_to "ログイン",new_user_session_path
+= render "common/main_header"
+
 %nav.breadcrumbs
   %ul{style: "padding: 17px 0 16px; width: 100%; max-width: 1040px; font-size: 14px; margin: 0 auto; list-style: none;"}
     %li{style: "padding: 0 10px 0 0; float: left;"}
@@ -148,6 +94,12 @@
               = link_to href: "#",style: "padding: 6px 10px; margin-top: 10px; display: inline-block; border-radius: 4px; color: #333; border: 1px solid #333; text-decoration: none; font-size: normal;" do
                 %i.fa.fa-flag{style: "display: inline-block;font: normal normal normal 14px/1 FontAwesome; text-rendering: auto; -webkit-font-smoothing: antialiased;"}
                   不適切な商品の通報
+        - if user_signed_in? && current_user.id == @item.user_id
+          .edit_deletebox{style: "background-color: #fff; margin: 24px 0px; padding: 20px 10px; height: 160px;"}
+            %p.editbox
+              = link_to '編集の編集', "#", method: :get, class: "editbox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #ea352d; border-radius: 10px;"
+            .deletebox
+              = link_to 'この商品を削除する', item_path(@item.id), method: :delete, class: "deletebox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; margin-top:20px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #aaaaaa; border-radius: 10px;"
         .commentbox
           %div.commentcontents
           %form#new_comment.new_comment{"accept-charset" => "UTF-8", action: "#", method: "post"}

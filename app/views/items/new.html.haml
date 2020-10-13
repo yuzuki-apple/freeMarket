@@ -1,3 +1,4 @@
+
 .bodyNew
   .containerNew
     .headerNew
@@ -125,3 +126,7 @@
       = link_to root_path do
         = image_tag "logo.png", class: "footerNew__logo"
         %p © FURIMA, Inc
+
+= render partial: 'form'
+= render 'layouts/error_messages', model: @item
+

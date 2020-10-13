@@ -1,3 +1,4 @@
+
 %header.header__all
   .header__all__main
     .mainHeader
@@ -50,6 +51,10 @@
             = link_to "新規会員登録",new_user_registration_path
           %li.lists-Right__item
             = link_to "ログイン",new_user_session_path
+
+= render "common/main_header"
+
+
 .main
   %section.main-Visual
     .content
@@ -329,7 +334,7 @@
     =link_to "/" do
       = image_tag "FURIMA-logo-white.svg", style: "width: 100%; vertical-align: bottom;"
   %p{style: "font-size: 14px;margin: 0;padding: 0;"} © FURIMA
-=link_to "#" do
+=link_to "/items/new" do
   .purchase-Btn
     %span.purchase-Btn__text 出品する
     .purchase-Btn__icon
