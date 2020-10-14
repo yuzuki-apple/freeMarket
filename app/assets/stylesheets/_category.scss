@@ -1,0 +1,72 @@
+.category__child, .category__parent, .category__grandchild{
+  display: none;
+}
+
+// カテゴリーの大枠の要素の共通項
+.category__list{
+  position: absolute;
+  height: 590px;
+  background-color: white;
+  border-right: 1px solid whitesmoke;
+}
+
+// 子要素はカテゴリー名の共通項
+.category__child--name{
+  width: 100%;
+  color: black;
+  display: inline-block;
+  padding: 0px 15px;
+  font-size: 12px;
+  letter-spacing: 2px;
+
+}
+
+.category_list2{
+  height: 30px;
+}
+
+.category_list3{
+  height: 20px;
+}
+
+.category{
+  padding-bottom: 10px;
+  width: 300px;
+  
+  &:hover{
+    .category__parent{
+      top: 40px;
+      display: block;
+      z-index: 3;
+      &--name{
+        width: 100%;
+        color: black;
+        display: inline-block;
+        padding: 0px 20px;
+        font-size: 13px;
+        letter-spacing: 2px;
+
+      }
+      li {
+        &:hover{
+          .category__child{
+            width: 100%;
+            display: block;
+            top: 0;
+            left: 221px;
+            li {
+              &:hover{
+                .category__grandchild{
+                  width: 300px;
+                  display: block;
+                  top: 0;
+                  left: 220px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

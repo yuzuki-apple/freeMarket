@@ -2,7 +2,6 @@ class Item < ApplicationRecord
   validates :images,:name,:description,:category,:condition,:shipment_fee_id,:shipment_region_id,:shipment_schedule_id,:price,presence: true
   validates :name, length: { maximum: 40 }
   validates :description, length: { maximum: 1000 }
-  validates :category, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   validates :condition, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :shipment_fee
@@ -13,9 +12,11 @@ class Item < ApplicationRecord
     validates :shipment_schedule_id, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   validates :price, numericality:{greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "300〜9,999,999円以内で入力してください"}
 
+  belongs_to :category
   belongs_to  :user
   belongs_to  :buyer, class_name: "User", foreign_key: "buyer_id", optional: true
   has_many    :images
   accepts_nested_attributes_for :images, allow_destroy: true
 
 end
+

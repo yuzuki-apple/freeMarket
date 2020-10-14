@@ -7,13 +7,21 @@ Rails.application.routes.draw do
   end
   root 'items#index'
 
-  resources :card,only: [:new,:create,:destroy]
+  # resources :items, only: [:index, :show, :new, :edit]
 
-  resources :items,except: :index do
-    resources :payments,only: [:new,:create]
+  # root "items#new"
+  resources :items ,only: [:index,:new,:create,:show] do
+    collection do
+      get 'get_children'
+      get 'get_grand_children'
+    end
   end
+  resources :categories ,only: :new
+
+  resources :card,only: [:new,:create,:destroy]
 
   get '/users/out', to: 'users#out'
   resources :users, only: [:show]
+
 
 end
