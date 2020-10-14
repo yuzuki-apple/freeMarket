@@ -304,34 +304,6 @@
                 padding-top: 12px;
               }
             }
-            &__detail_stock{
-              &--title{
-                display: flex;
-                align-items: center;
-                margin-top: 46px;
-                label{
-                  font-weight: bolder;
-                  padding-right: 10px;
-                }
-                span{
-                  background-color: red;
-                  color: #ffffff;
-                  border-radius: 5px;
-                  padding: 3px;
-                  font-size: 12px;
-                }
-              }
-              &--input{
-                width: 620px;
-                height: 58px;
-                margin-top: 16px;
-                text-align: right;
-              }
-              p.detail_stock_note{
-                color: red;
-                padding-top: 12px;
-              }
-            }
           }
         }
       }

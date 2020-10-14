@@ -11,16 +11,13 @@ class PaymentsController < ApplicationController
 
   def create
     item = Item.find(params[:item_id])
-    item.stock -= params[:quantity].to_i
-    payment = Payment.new(payment_params)
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     charge = Payjp::Charge.create(
-      amount: item.price.to_i * params[:quantity].to_i,
+      amount: item.price.to_i,
       customer: Card.find_by(user_id: current_user.id).customer_id,
       currency: 'jpy'
     )
-    payment.charge_id = charge.id
-    if payment.save && item.update(stock: item.stock)
+    if item.update(buyer_id: current_user.id)
       redirect_to root_path
     else
       @item = Item.find(params[:item_id])

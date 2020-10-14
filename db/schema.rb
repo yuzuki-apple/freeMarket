@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_143941) do
+ActiveRecord::Schema.define(version: 2020_10_05_073746) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name_kanji", default: "", null: false
@@ -47,7 +47,8 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+    t.string "user_id", default: "", null: false
+    t.bigint "buyer_id"
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
     t.string "category", default: "", null: false
@@ -57,21 +58,9 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
     t.integer "shipment_region_id", default: 0, null: false
     t.integer "shipment_schedule_id", default: 0, null: false
     t.integer "price", null: false
-    t.integer "stock", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "charge_id", null: false
-    t.bigint "user_id"
-    t.bigint "item_id"
-    t.integer "quantity", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_payments_on_item_id"
-    t.index ["user_id"], name: "index_payments_on_user_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -94,7 +83,5 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "users"
-  add_foreign_key "payments", "items"
-  add_foreign_key "payments", "users"
+  add_foreign_key "items", "users", column: "buyer_id"
 end
