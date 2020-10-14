@@ -28,12 +28,14 @@ class ItemsController < ApplicationController
     if @item.valid? && @item.save!
       redirect_to root_path controller: :items, action: :index
     else
+      @parent_category = Category.where(ancestry: nil)
       @item.images.new
       render "new"
     end
   end
 
   def show
+    @parents = Category.where(ancestry: nil)
   end
 
   def edit
@@ -73,7 +75,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:images, :name, :description, :category, :condition, :shipment_fee_id, :shipment_region_id, :shipment_schedule_id, :price, :stock,[images_attributes: [:src]]).merge(user_id: current_user.id)
+    params.require(:item).permit(:images, :name, :description, :category, :condition, :shipment_fee_id, :shipment_region_id, :shipment_schedule_id, :price, :category_id,[images_attributes: [:src]]).merge(user_id: current_user.id)
   end
 
   def set_item

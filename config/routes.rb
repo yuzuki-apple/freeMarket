@@ -18,12 +18,7 @@ Rails.application.routes.draw do
   end
   resources :categories ,only: :new
 
-
   resources :card,only: [:new,:create,:destroy]
-
-  resources :items,except: :index do
-    resources :payments,only: [:new,:create]
-  end
 
   get '/users/out', to: 'users#out'
   resources :users, only: [:show]

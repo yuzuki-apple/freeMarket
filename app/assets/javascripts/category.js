@@ -60,7 +60,6 @@ $(function() {
         })
 
         .done(function(categories) {
-          console.log(categories)
           var insertHTML = `<select name="item[category_id]" id="item_category_id">
                             <option value=0>---</option>`;
           $.each(categories, function(i, category) {
