@@ -59,8 +59,10 @@
                 .content__detail_category--title
                   %label カテゴリー
                   %span 必須
-                = f.select :category, [["選択してください", 0],["メンズ", 1],["レディース", 2],["ベビーズ・キッズ", 3]], {},class: "content__detail_category--select"
-                %p.detail_category_note
+                = form_with(model: @item, local: true) do |form|
+                  .content__detail_category--form
+                    = form.collection_select :category, @parent_category, :id, :name, {prompt: "選択してください"}, {class: "content__detail_category--select"}
+                  %p.detail_category_note
               .content__detail_brand
                 .content__detail_brand--title
                   %label ブランド
@@ -72,12 +74,12 @@
                   %span 必須
                 = f.select :condition, [["選択してください", 0],["新品", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4]], {},class: "content__detail_condition--select"
                 %p.detail_condition_note
-              .content__detail_stock
-                .content__detail_stock--title
-                  %label 在庫数
-                  %span 必須
-                = f.number_field :stock,placeholder:"1〜9,999",min:"1",max:"9999",step:"1",class:"content__detail_stock--input"
-                %p.detail_stock_note
+              -# .content__detail_stock
+              -#   .content__detail_stock--title
+              -#     %label 在庫数
+              -#     %span 必須
+              -#   = f.number_field :stock,placeholder:"1〜9,999",min:"1",max:"9999",step:"1",class:"content__detail_stock--input"
+              -#   %p.detail_stock_note
         .formNew__shipment
           .formNew__shipment--content
             .content

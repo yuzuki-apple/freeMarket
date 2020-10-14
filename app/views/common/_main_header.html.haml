@@ -1,49 +1,51 @@
+
 %header.header__all
   .header__all__main
     .mainHeader
       %h1.icon
-        =link_to root_path do
+        =link_to "/" do
           = image_tag "FURIMA_logo.svg"
       .searchmain
-        %form
-          %input#searchInput.searchmain--input{placeholder: "キーワードから探す"}
+        %form{"accept-charset": "UTF-8", action: "#", method: "get"}
+          %input{name: "utf8", type: "hidden", value: "✓"}
+          %input#searchInput.searchmain--input{name: "key", placeholder: "キーワードから探す"}
           %button{type: "submit"}
             .searchmain__icon
               = image_tag "icon_search.png"
+          %input{name: "authenticity_token", type: "hidden", value: "rGvQaEoXiWof9CviOMrABrWg8GvnR7RZ5CihIgqhun1x4Av6XJI7jRd8fffRfP5WFLbFT4wp6lPDQB+RLe9aTA=="}
       %ul.result-Lists
     .nav
       %ul.listsLeft
         %li.listsLeft__item.listsLeft__item--first
           .category
-            = link_to root_path do
+            = link_to "#", class: "category__search search__btn" do
               カテゴリー
-            .tree.display-None
-              .categoryTree
-                .categoryTree--item
-                  = link_to root_path do
-                    レディース
-                  .subcatTree
-                    .subcatTree--item
-                      = link_to root_path do
-                        トップス
-                      .itemTree
-                        .itemTree--item
-                          = link_to root_path do
-                            Tシャツ
-                        .itemTree--item
-                          = link_to root_path do
-                            シャツ
-                    .subcatTree--item
-                      = link_to root_path do
-                        シャケット
+            %ul.category__parent.category__list
+              - @parents.each do |parent|
+                %li
+                  = link_to "#", class: "category__parent--name" do
+                    = parent.name
+                  %ul.category__child.category__list
+                    - parent.children.each do |child|
+                      %li.category_list2
+                        = link_to "#", class: "category__child--name" do
+                          = child.name
+                        %ul.category__grandchild.category__list
+                          - child.children.each do |grandchild|
+                            %li.category_list3
+                              = link_to "#", class: " category__child--name" do
+                                = grandchild.name 
+
         %li.listsLeft__item.listsLeft__item__second
-          = link_to root_path, id: "#brandBtn" do
+          = link_to "#", id: "#brandBtn" do
             ブランド
           %ul.brandsPulldown.display-None
       %ul.lists-Right
         - if user_signed_in?
           %li.lists-Right__item
-            = link_to "マイページ", user_path(current_user.id)
+            = link_to "サインアウト(仮置)",destroy_user_session_path,method: :delete
+          %li.lists-Right__item
+            = link_to "マイページ", root_path
         - else
           %li.lists-Right__item
             = link_to "新規会員登録",new_user_registration_path
