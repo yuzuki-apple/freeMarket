@@ -23,7 +23,7 @@ describe Item do
         expect(@item).to be_valid
       end
       it "カテゴリーを選択すれば登録できる" do
-        @item.category ="1"
+        @item.category = build(:category)
         expect(@item).to be_valid
       end
       it "商品の状態を選択すれば登録できる" do
@@ -65,9 +65,9 @@ describe Item do
         expect(@item.errors.full_messages).to include("商品の説明を入力してください")
       end
       it "カテゴリーを選択していないと登録できない" do
-        @item.category = '１'
+        @item.category_id = ''
         @item.valid?
-        expect(@item.errors[:category]).to include("「選択してください」以外を選択してください")
+        expect(@item.errors[:category]).to include("を入力してください")
       end
       it "商品の状態を選択していないと登録できない" do
         @item.condition = '１'

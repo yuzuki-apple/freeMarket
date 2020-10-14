@@ -6,7 +6,6 @@ class Item < ApplicationRecord
   validates :images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
-  validates :category_id, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   validates :condition, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :shipment_fee

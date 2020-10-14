@@ -7,12 +7,11 @@ FactoryBot.define do
     association :user
     name                  {"本"}
     description           {"参考書になります"}
-    category              {1}
+    association :category
     condition             {1}
     shipment_fee_id       {1}
     shipment_region_id    {1}
     shipment_schedule_id  {1}
-    stock                 {10}
     price                 {9999}
   end
 
