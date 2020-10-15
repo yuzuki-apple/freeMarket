@@ -12,9 +12,7 @@ FactoryBot.define do
     shipment_fee_id       {1}
     shipment_region_id    {1}
     shipment_schedule_id  {1}
-    stock                 {10}
     price                 {600}
-    # user_id               {1}
     association :user
   end
 

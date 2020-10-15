@@ -51,10 +51,6 @@ describe Item do
         @item.price ="600"
         expect(@item).to be_valid
       end
-      it "在庫数を入力すれば登録できる" do
-        @item.stock ="10"
-        expect(@item).to be_valid
-      end
     end
 
     context '出品がうまくいかないとき' do

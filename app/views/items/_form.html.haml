@@ -73,12 +73,6 @@
                   %span 必須
                 = f.select :condition, [["選択してください", 0],["新品", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4]], {},class: "content__detail_condition--select"
                 %p.detail_condition_note
-              .content__detail_stock
-                .content__detail_stock--title
-                  %label 在庫数
-                  %span 必須
-                = f.number_field :stock,placeholder:"1〜9,999",min:"1",max:"9999",step:"1",class:"content__detail_stock--input"
-                %p.detail_stock_note
         .formNew__shipment
           .formNew__shipment--content
             .content
