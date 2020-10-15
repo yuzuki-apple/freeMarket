@@ -27,5 +27,4 @@ Rails.application.routes.draw do
   get '/users/out', to: 'users#out'
   resources :users, only: [:show]
 
-
 end

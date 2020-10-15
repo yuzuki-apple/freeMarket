@@ -2,7 +2,8 @@ require 'rails_helper'
 describe Item do
 
   before do
-    @item = build(:item)
+    @user = create(:user)
+    @item = build(:item, user_id: @user.id)
   end
 
   describe "商品を出品する" do
@@ -11,6 +12,7 @@ describe Item do
         expect(@item).to be_valid
       end
       it "userがあれば登録できる" do
+        # @item.user_id ="1"
         @item.user = build(:user)
         expect(@item).to be_valid
       end
@@ -43,7 +45,7 @@ describe Item do
         expect(@item).to be_valid
       end
       it "価格を入力すれば登録できる" do
-        @item.price ="9999"
+        @item.price ="600"
         expect(@item).to be_valid
       end
     end
@@ -89,18 +91,13 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment schedule「選択してください」以外を選択してください")
       end
-      it "販売価格は半角で無いと登録できない" do
-        @item.price = '２２２２'
-        @item.valid?
-        expect(@item.errors.full_messages).to include("販売価格：300〜9,999,999円以内で入力してください")
-      end
       it "販売価格は300円以上で無いと登録できない" do
-        @item.price = '299'
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("販売価格：300〜9,999,999円以内で入力してください")
       end
-      it "販売価格は10'000'000円で無いと登録できない" do
-        @item.price = '10000001'
+      it "販売価格は10'000'000円未満で無いと登録できない" do
+        @item.price = 10000001
         @item.valid?
         expect(@item.errors.full_messages).to include("販売価格：300〜9,999,999円以内で入力してください")
       end
