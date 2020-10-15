@@ -35,14 +35,11 @@
           .itembox__body
             %div
               %div
-                %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png",style: "height: 346px; width: 100%; object-fit: cover;"}/
+                = image_tag @item.images[0].src.url, style: "height: 346px; width: 100%; object-fit: cover;"
                 %div{style: "display: flex; justify-content: center; margin-top: 10px;"}
-                  %div
-                    %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png",style: "height: 87px; width: 140px; object-fit: cover; margin-right: 5px;"}/
-                  %div
-                    %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png",style: "height: 87px; width: 140px; object-fit: cover; margin-right: 5px; margin-left: 5px;"}/
-                  %div
-                    %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png",style: "height: 87px; width: 140px; object-fit: cover; margin-left: 5px;"}/
+                  - @item.images.each do |image|
+                    %div
+                      = image_tag image.src.url, style: "height: 87px; width: 140px; object-fit: cover; margin-right: 5px;"
           .itembox__price
             .itembox__price-price
               = @item.price
