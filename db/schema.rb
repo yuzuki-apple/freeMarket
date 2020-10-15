@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
     t.integer "shipment_region_id", default: 0, null: false
     t.integer "shipment_schedule_id", default: 0, null: false
     t.integer "price", null: false
-    t.integer "stock", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
