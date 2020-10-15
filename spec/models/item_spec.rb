@@ -91,11 +91,6 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment schedule「選択してください」以外を選択してください")
       end
-      # it "販売価格は半角で無いと登録できない" do
-      #   @item.price = '２２２２'
-      #   @item.valid?
-      #   expect(@item.errors.full_messages).to include("販売価格：300〜9,999,999円以内で入力してください")
-      # end
       it "販売価格は300円以上で無いと登録できない" do
         @item.price = 299
         @item.valid?
