@@ -59,8 +59,9 @@
                 .content__detail_category--title
                   %label カテゴリー
                   %span 必須
-                = f.select :category, [["選択してください", 0],["メンズ", 1],["レディース", 2],["ベビーズ・キッズ", 3]], {},class: "content__detail_category--select"
-                %p.detail_category_note
+                .content__detail_category--form
+                  = f.collection_select :category_id, @parent_category,:id,:name,{prompt:"選択してください"}, {id:"item_category",class:"content__detail_category--select"}
+                  %p.detail_category_note
               .content__detail_brand
                 .content__detail_brand--title
                   %label ブランド
