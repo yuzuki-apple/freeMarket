@@ -4,15 +4,15 @@ FactoryBot.define do
     after(:build) do |built_item|
       built_item.images << FactoryBot.build(:image, item: built_item)
     end
-    name                  {"湯呑"}
-    brand                 {"吉野家"}
-    description           {"吉野家の景品"}
-    category              {"1"}
+
+    name                  {"本"}
+    description           {"青チャート"}
+    association :category
     condition             {"1"}
     shipment_fee_id       {1}
     shipment_region_id    {1}
     shipment_schedule_id  {1}
-    price                 {600}
+    price                 {1800}
     association :user
   end
 

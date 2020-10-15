@@ -1,6 +1,7 @@
 class CardController < ApplicationController
 
   def new
+    @parents = Category.where(ancestry: nil)
     if current_user&.card
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       customer = Payjp::Customer.retrieve(current_user.card.customer_id)

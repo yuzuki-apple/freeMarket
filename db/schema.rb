@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_143941) do
+ActiveRecord::Schema.define(version: 2020_10_05_073746) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name_kanji", default: "", null: false
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "src"
     t.bigint "item_id"
@@ -47,11 +54,11 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id"
     t.bigint "user_id"
     t.bigint "buyer_id"
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
-    t.string "category", default: "", null: false
     t.string "brand"
     t.string "condition", default: "", null: false
     t.integer "shipment_fee_id", default: 0, null: false
@@ -61,18 +68,8 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "charge_id", null: false
-    t.bigint "user_id"
-    t.bigint "item_id"
-    t.integer "quantity", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_payments_on_item_id"
-    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,8 +92,7 @@ ActiveRecord::Schema.define(version: 2020_10_06_143941) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "items", "users", column: "buyer_id"
-  add_foreign_key "payments", "items"
-  add_foreign_key "payments", "users"
 end
