@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
   end
 
   add_foreign_key "cards", "users"
-  add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "items", "users", column: "buyer_id"
