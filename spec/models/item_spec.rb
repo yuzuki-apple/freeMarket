@@ -12,8 +12,6 @@ describe Item do
         expect(@item).to be_valid
       end
       it "userがあれば登録できる" do
-        # @item.user_id ="1"
-        @item.user = build(:user)
         expect(@item).to be_valid
       end
       it "商品名があれば登録できる" do

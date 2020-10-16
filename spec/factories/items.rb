@@ -17,6 +17,6 @@ FactoryBot.define do
   end
 
   factory :image do
-    src   { Rack::Test::UploadedFile.new(File.join("#{Rails.root}/public/images/test_image.jpg"), 'image/png') }
+    src   { Rack::Test::UploadedFile.new(File.join("#{Rails.root}/public/images/sample.jpg"), 'image/png') }
   end
 end
