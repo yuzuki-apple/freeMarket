@@ -1,0 +1,42 @@
+%header.paymentHeader
+  %h1= link_to image_tag("logo.svg"), root_path
+
+.payment
+  %main
+    %section
+      %h2.paymentHeader 購入内容の確認
+    %section.paymentDetail
+      %figure.paymentDetailImage= image_tag "#{@item.images[0].src}"
+      %section.paymentDetailDescription
+        %p= @item.name
+        %p.paymentDetailDescription--price
+          %span= @shipment_fee.name
+          %span= "¥#{@item.price.to_s(:delimited)}"
+    %section.paymentAmount
+      %span.paymentAmount--total 支払い金額
+      %span.paymentAmount--price= "¥#{@item.price.to_s(:delimited)}"
+    %section.paymentMethod
+      - if @card
+        .card
+          %span.card_type= "#{@card.brand.upcase}"
+          %span.card_num= "**** **** **** **** #{@card.last4}"
+        .card_name= @card.name
+        - if @item.buyer_id
+          .soldOut 売り切れました
+        -else
+          = form_with url:item_payments_path,local:true,id:"new_form" do |f|
+            .paymentPurchase
+              = f.submit "購入する",class:"paymentPurchase--button"
+      - else
+        .card_registration
+          %span.card_registration--title カードでのお支払いにご協力ください。
+          %span.card_registration--comment 先にユーザーマイページでカードのご登録をお願いします。
+
+%footer.paymentFooter
+  %nav
+    %ul.paymentFooter__items
+      %li.paymentFooter__items--li= link_to "プライバシーポリシー",root_path
+      %li.paymentFooter__items--li= link_to "メルカリ利用規約",root_path
+      %li.paymentFooter__items--li= link_to image_tag("logo-white.svg"),root_path
+  .company
+    %small © FURIMA

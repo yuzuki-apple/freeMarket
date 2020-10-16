@@ -15,7 +15,7 @@
       width: 700px;
       background-color: #ffffff;
       &__alert{
-        color:#262626; 
+        color:#262626;
         background:#FFEBE8;
         text-align: center;
         border:2px solid #990000;
@@ -251,6 +251,16 @@
                   padding: 16px;
                 }
               }
+              #child{
+                width: 620px;
+                height: 58px;
+                margin-top: 16px;
+              }
+              #item_category_id{
+                width: 620px;
+                height: 58px;
+                margin-top: 16px;
+              }
               p.detail_category_note{
                 padding-top: 12px;
                 color: red;
@@ -276,7 +286,6 @@
                 height: 48px;
                 margin: 16px 0px 0px;
               }
-              
             }
             &__detail_condition{
               &--title{
@@ -299,9 +308,6 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.detail_condition_note{
                 color: red;
@@ -337,9 +343,6 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.shipment_fee_note{
                 color: red;
@@ -367,9 +370,6 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.shipment_region_note{
                 color: red;
@@ -397,9 +397,6 @@
                 width: 620px;
                 height: 58px;
                 margin-top: 16px;
-                option{
-                  
-                }
               }
               p.shipment_shedule_note{
                 color: red;
@@ -407,7 +404,6 @@
               }
             }
           }
-          
         }
       }
       &__price{
@@ -503,7 +499,6 @@
                 text-align: center;
                 text-decoration: none;
                 margin-bottom: 48px;
-                
               }
             }
           }
@@ -513,7 +508,7 @@
             font-size: small;
           }
         }
-      }  
+      }
     }
     .footerNew{
       height: 220px;
