@@ -56,7 +56,8 @@
               %tbody
                 %tr
                   %th{style:"width: 152px; background-color: #eee; font-weight: 400; padding: 8px; border: 1px solid #dedede; font-size: 14px; text-align: center;"} 出品者
-                  %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"} hoge
+                  %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"}
+                    = @item.user.nickname
                 %tr
                   %th{style:"width: 152px; background-color: #eee; font-weight: 400; padding: 8px; border: 1px solid #dedede; font-size: 14px; text-align: center;"} カテゴリー
                   %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"}
@@ -67,10 +68,6 @@
                     %link_to{href: "#",style:"color: #3ccace;"} アウター
                 %tr
                   %th{style:"width: 152px; background-color: #eee; font-weight: 400; padding: 8px; border: 1px solid #dedede; font-size: 14px; text-align: center;"} ブランド
-                  %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"}
-                    = @item.user.nickname
-                %tr
-                  %th{style:"width: 152px; background-color: #eee; font-weight: 400; padding: 8px; border: 1px solid #dedede; font-size: 14px; text-align: center;"}  商品のサイズ
                   %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"}
                     = @item.brand
                 %tr
