@@ -69,11 +69,16 @@ describe Item do
         @item.valid?
         expect(@item.errors[:category]).to include("を入力してください")
       end
-      # it "カテゴリーを残り２つ選択していないと登録できない" do
-      #   @item.category_id = 1
-      #   @item.valid?
-      #   expect(@item.errors[:category]).to include("を入力してください")
-      # end
+      it "カテゴリーを残り２つ選択していないと登録できない" do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors[:category]).to include("を入力してください")
+      end
+      it "カテゴリーを残り１つ選択していないと登録できない" do
+        @item.category_id = 2
+        @item.valid?
+        expect(@item.errors[:category]).to include("を入力してください")
+      end
       it "商品の状態を選択していないと登録できない" do
         @item.condition = '１'
         @item.valid?
