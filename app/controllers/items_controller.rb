@@ -15,13 +15,6 @@ class ItemsController < ApplicationController
     @item = Item.new
     @images = @item.images.build
     @parent_category = Category.where(ancestry: nil)
-
-    # @items = Item.all
-    # @items = Item.includes(:images).order('created_at DESC')
-    # respond_to do |format|
-    # format.html
-    #   format.json
-    # end
   end
 
   # def new
