@@ -61,11 +61,30 @@
                 %tr
                   %th{style:"width: 152px; background-color: #eee; font-weight: 400; padding: 8px; border: 1px solid #dedede; font-size: 14px; text-align: center;"} カテゴリー
                   %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"}
-                    %link_to{href: "#",style:"color: #3ccace;"} ベビー・キッズ
-                    %br/
-                    %link_to{href: "#",style:"color: #3ccace;"} ベビー服(男女兼用)  ~95cm
-                    %br/
-                    %link_to{href: "#",style:"color: #3ccace;"} アウター
+                    - @parents.each do |parent|
+                      -if @item.category_id == parent.id
+                        = link_to '#' do
+                          = parent.name
+                          %br                
+                      - parent.children.each do |child|
+                        -if @item.category_id == child.id
+                          = link_to '#' do
+                            = parent.name
+                            %br
+                          = link_to '#' do
+                            = child.name
+                            %br               
+                        - child.children.each do |grandchild|
+                          -if @item.category_id == grandchild.id
+                            = link_to '#' do
+                              = parent.name
+                            %br
+                            = link_to '#' do
+                              = child.name
+                            %br
+                            = link_to '#' do
+                              = grandchild.name
+                            %br
                 %tr
                   %th{style:"width: 152px; background-color: #eee; font-weight: 400; padding: 8px; border: 1px solid #dedede; font-size: 14px; text-align: center;"} ブランド
                   %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"}
