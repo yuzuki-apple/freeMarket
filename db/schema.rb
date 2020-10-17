@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
     t.string "brand"
-    t.integer "condition_id", default: 0, null: false
+    t.string "condition", default: "", null: false
     t.integer "shipment_fee_id", default: 0, null: false
     t.integer "shipment_region_id", default: 0, null: false
     t.integer "shipment_schedule_id", default: 0, null: false
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
   end
 
   add_foreign_key "cards", "users"
+  add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "items", "users", column: "buyer_id"

@@ -1,14 +1,12 @@
 class Item < ApplicationRecord
-  validates :user_id,:images,:name,:description,:category,:condition_id,:shipment_fee_id,:shipment_region_id,:shipment_schedule_id,:price, presence: true
+  validates :user_id,:images,:name,:description,:category,:condition,:shipment_fee_id,:shipment_region_id,:shipment_schedule_id,:price,presence: true
   validates :images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
-  # validates :condition, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
+  validates :condition, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :user, class_name: "User"
 
-    belongs_to_active_hash :condition
-    validates :condition_id, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
     belongs_to_active_hash :shipment_fee
     validates :shipment_fee_id, numericality:{other_than: 0, message: "「選択してください」以外を選択してください"}
     belongs_to_active_hash :shipment_region

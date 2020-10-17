@@ -71,8 +71,7 @@
                 .content__detail_condition--title
                   %label 商品の状態
                   %span 必須
-                -# = f.select :condition, [["選択してください", 0],["新品", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4]], {},class: "content__detail_condition--select"
-                = f.collection_select :condition_id, Condition.all, :id, :name, {}, class: "content__detail_condition--select"
+                = f.select :condition, [["選択してください", 0],["新品", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4]], {},class: "content__detail_condition--select"
                 %p.detail_condition_note
         .formNew__shipment
           .formNew__shipment--content
