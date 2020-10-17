@@ -62,12 +62,12 @@
                   %th{style:"width: 152px; background-color: #eee; font-weight: 400; padding: 8px; border: 1px solid #dedede; font-size: 14px; text-align: center;"} カテゴリー
                   %td{style:"width: 467px; padding: 15px 15px; border: 1px solid #dedede; font-size: 14px;"}
                     - @parents.each do |parent|
-                      -if @items.category_id == parent.id
+                      -if @item.category_id == parent.id
                         = link_to '#' do
                           = parent.name
                           %br                
                       - parent.children.each do |child|
-                        -if @items.category_id == child.id
+                        -if @item.category_id == child.id
                           = link_to '#' do
                             = parent.name
                             %br
@@ -75,7 +75,7 @@
                             = child.name
                             %br               
                         - child.children.each do |grandchild|
-                          -if @items.category_id == grandchild.id
+                          -if @item.category_id == grandchild.id
                             = link_to '#' do
                               = parent.name
                             %br
