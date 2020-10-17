@@ -22,6 +22,7 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User",  optional: true
 
   # カテゴリーの単体テスト
+  # 以下のコメントアウトは今後必要になるかもしれないので残しております
   # validate :category_is_grandchild
 
   # private

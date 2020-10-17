@@ -4,6 +4,7 @@ FactoryBot.define do
     after(:build) do |built_item|
       built_item.images << FactoryBot.build(:image, item: built_item)
 
+      # カテゴリーの単体テストで任意ではあるが今後必要になるかもしれないので残しております
       # after(:build) do |category|
       #   parent_category = create(:category)
       #   # category.save
