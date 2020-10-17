@@ -65,7 +65,7 @@ describe Item do
         expect(@item.errors.full_messages).to include("商品の説明を入力してください")
       end
       it "カテゴリーを選択していないと登録できない" do
-        @item.category_id = ''
+        @item.category_id = nil
         @item.valid?
         expect(@item.errors[:category]).to include("を入力してください")
       end

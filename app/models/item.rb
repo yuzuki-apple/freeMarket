@@ -20,4 +20,16 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   # belongs_to :buyer, class_name: "User", foreign_key: "buyer_id", optional: true
   belongs_to :buyer, class_name: "User",  optional: true
+
+  # カテゴリーの単体テスト
+  # validate :category_is_grandchild
+
+  # private
+
+  # def category_is_grandchild
+  #   if self.category.children.length != 0
+  #     errors.add(:category, "not grandchild")
+  #   end
+  # end
+
 end
