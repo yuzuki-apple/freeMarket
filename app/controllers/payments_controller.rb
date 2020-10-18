@@ -1,6 +1,5 @@
-
 class PaymentsController < ApplicationController
-
+  before_action :authenticate_user!
   def new
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     customer = Payjp::Customer.retrieve(current_user.card.customer_id) if current_user.card
