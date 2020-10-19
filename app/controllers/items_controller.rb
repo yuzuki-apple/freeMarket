@@ -39,6 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @parent_category = Category.where(ancestry: nil)
   end
 
 
