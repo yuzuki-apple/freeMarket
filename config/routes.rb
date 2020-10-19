@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # resources :items, only: [:index, :show, :new, :edit]
 
   # root "items#new"
-  resources :items ,only: [:index,:new,:create,:show] do
+  resources :items ,only: [:index,:new,:create,:show,:edit] do
     collection do
       get 'get_children'
       get 'get_grand_children'
