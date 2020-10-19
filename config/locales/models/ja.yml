@@ -8,7 +8,7 @@ ja:
         name: 商品名
         description: 商品の説明
         category: カテゴリー：
-        condition: 商品の状態：
+        condition_id: 商品の状態：
         shipment_fee_id: 配送料の負担：
         shipment_region_id: 発送元の地域：
         shipment_schedule_id: 発送までの日数：

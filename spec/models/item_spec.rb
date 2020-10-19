@@ -27,7 +27,7 @@ describe Item do
         expect(@item).to be_valid
       end
       it "商品の状態を選択すれば登録できる" do
-        @item.condition ="1"
+        @item.condition_id ="1"
         expect(@item).to be_valid
       end
       it "配送料の負担を選択すれば登録できる" do
@@ -80,7 +80,7 @@ describe Item do
         expect(@item.errors[:category]).to include("を入力してください")
       end
       it "商品の状態を選択していないと登録できない" do
-        @item.condition = '１'
+        @item.condition_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("商品の状態：「選択してください」以外を選択してください")
       end
