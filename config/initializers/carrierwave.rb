@@ -12,8 +12,8 @@ CarrierWave.configure do |config|
       aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
       region: 'ap-northeast-1'
     }
-    config.fog_directory  = 'nagai0152'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/nagai0152'
+    config.fog_directory  = 'frema-itemsimage'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/frema-itemsimage'
   else
     config.storage :file
     config.enable_processing = false if Rails.env.test?
