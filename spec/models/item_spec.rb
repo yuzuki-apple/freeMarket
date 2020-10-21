@@ -12,8 +12,6 @@ describe Item do
         expect(@item).to be_valid
       end
       it "userがあれば登録できる" do
-        # @item.user_id ="1"
-        @item.user = build(:user)
         expect(@item).to be_valid
       end
       it "商品名があれば登録できる" do
@@ -29,7 +27,7 @@ describe Item do
         expect(@item).to be_valid
       end
       it "商品の状態を選択すれば登録できる" do
-        @item.condition ="1"
+        @item.condition_id ="1"
         expect(@item).to be_valid
       end
       it "配送料の負担を選択すれば登録できる" do
@@ -67,12 +65,22 @@ describe Item do
         expect(@item.errors.full_messages).to include("商品の説明を入力してください")
       end
       it "カテゴリーを選択していないと登録できない" do
-        @item.category_id = ''
+        @item.category_id = nil
+        @item.valid?
+        expect(@item.errors[:category]).to include("を入力してください")
+      end
+      it "カテゴリーを残り２つ選択していないと登録できない" do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors[:category]).to include("を入力してください")
+      end
+      it "カテゴリーを残り１つ選択していないと登録できない" do
+        @item.category_id = 2
         @item.valid?
         expect(@item.errors[:category]).to include("を入力してください")
       end
       it "商品の状態を選択していないと登録できない" do
-        @item.condition = '１'
+        @item.condition_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("商品の状態：「選択してください」以外を選択してください")
       end
@@ -84,12 +92,12 @@ describe Item do
       it "発送元の地域を選択していないと登録できない" do
         @item.shipment_region_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment region「選択してください」以外を選択してください")
+        expect(@item.errors.full_messages).to include("発送元の地域：「選択してください」以外を選択してください")
       end
       it "発送までの日数を選択していないと登録できない" do
         @item.shipment_schedule_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment schedule「選択してください」以外を選択してください")
+        expect(@item.errors.full_messages).to include("発送までの日数：「選択してください」以外を選択してください")
       end
       it "販売価格は300円以上で無いと登録できない" do
         @item.price = 299
