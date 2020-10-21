@@ -426,6 +426,16 @@ img {
       .productList {
         width: 220px;
         display: inline-block;
+        &__sold{
+          background-color: red;
+          height: 30px;
+          line-height: 30px;
+          &--inner{
+            color: #ffffff;
+            font-size: 20px;
+            text-align: center;
+          }
+        }
         
         .productList--img {
           position: relative;
@@ -434,7 +444,6 @@ img {
           z-index: auto;
           display: block;
           transition: opacity 0.15s;
-        
           &:hover {
             opacity: 0.55;
           }
