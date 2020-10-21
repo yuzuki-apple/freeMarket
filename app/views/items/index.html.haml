@@ -97,8 +97,8 @@
           .productList
             = link_to item_path(item.id) do
               - if item.buyer_id.present? 
-                .items-box_img__sold
-                  .items-box_photo__sold--inner
+                .productList__sold
+                  .productList__sold--inner
                     SOLD
               %figure.productList--img
                 = image_tag item.images[0].src.url, style: "height:150px; width: 220px;"
