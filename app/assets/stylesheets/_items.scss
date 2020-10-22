@@ -424,7 +424,6 @@ img {
       display: flex;
       justify-content: space-around;
       .productList {
-        width: 220px;
         display: inline-block;
         &__sold{
           background-color: red;
@@ -437,7 +436,9 @@ img {
           }
         }
         
-        .productList--img {
+        .productList--img{
+          height: 150px;
+          width: 220px;
           position: relative;
           overflow: hidden;
           margin: 0;
@@ -458,11 +459,31 @@ img {
             font-weight: bold;
             text-align: left;
           }
-          .fa {
-            display: inline-block;
-            font-size: inherit;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
+          .details{
+            font-size: 16px;
+            &__price{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              &--inner{
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+                font-size: 14px;
+              }
+              li{
+                list-style: none;
+                i{
+                  display: inline-block;
+                  font-size: inherit;
+                  text-rendering: auto;
+                  -webkit-font-smoothing: antialiased;
+                }
+              }
+            }
+            &__tax{
+              font-size: 5px;
+            }
           }
         }
       }
@@ -534,12 +555,31 @@ img {
         font-size: 16px;
         font-weight: bold;
       }
+      ul{
+        padding-right: 40px;
+        list-style: none;
+        color: #fff;
+        li{
+          font-size: 12px;
+          line-height: 32px;
+          text-decoration: none;
+        }
+      }
     }
   }
   .footer__logo {
     max-width: 160px;
     width: 100%;
     margin: 0 auto;
+    &--img{
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  .copyright{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
   }
 }
 
@@ -554,10 +594,9 @@ img {
   padding: 15px;
   display: block;
   transition: opacity 0.15s;
-      
-        &:hover {
-          opacity: 0.55;
-        }
+  &:hover {
+    opacity: 0.55;
+  }
   .purchase-Btn__text {
     color: #fff;
     display: block;

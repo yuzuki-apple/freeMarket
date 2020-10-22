@@ -100,20 +100,21 @@
                 .productList__sold
                   .productList__sold--inner
                     SOLD
-              %figure.productList--img
-                = image_tag item.images[0].src.url, style: "height:150px; width: 220px;"
-              .productList--body
-                .name
-                  = item.name
-                .details{style: "font-size: 16px;"}
-                  %div{style: "justify-content: space-between; align-items: center; display: flex;"}
-                    %div{style: "margin: 0;padding: 0;font-weight: bold; font-size: 14px;"}
-                      = item.price
-                      %span 円
-                    %li{style: "list-style: none;"}
-                      %i.fa.fa-star.likeIcon
-                      1
-                  %div{style: "font-size: 5px;"} (税込)
+            .productList--img
+              = image_tag item.images[0].src.url
+            .productList--body
+              .name
+                = item.name
+              .details
+                .details__price
+                  .details__price--inner
+                    = item.price
+                    %span 円
+                  %li
+                    %i.fa.fa-star.likeIcon
+                    1
+                .details__tax 
+                  (税込)
   %aside.Banner
     .inner
       %h2.inner__title
@@ -128,43 +129,44 @@
   %ul.contents
     %li.content
       %h2.content__head FURIMAについて
-      %ul{style: "list-style: none; padding-right: 40px;"}
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+      %ul
+        %li.company
           =link_to "#" do
             会社概要（運営会社）
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+        %li.policy
           =link_to "#" do
             プライバシーポリシー
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+        %li.regulation
           =link_to "#" do
             FURIMA利用規約
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+        %li.point
           =link_to "#" do
             ポイントに関する特約
     %li.content
       %h2.content__head FURIMAを見る
-      %ul{style: "list-style: none; padding-right: 40px;"}
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+      %ul
+        %li
           =link_to "#" do
             カテゴリー一覧
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+        %li
           =link_to "#" do
             ブランド一覧
     %li.content
       %h2.content__head ヘルプ＆ガイド
-      %ul{style: "list-style: none; padding-right: 40px;"}
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
-          %a{:href => "#"} FURIMAガイド
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+      %ul
+        %li
+          FURIMAガイド
+        %li
           =link_to "#" do
             FURIMAロゴ利用ガイドライン
-        %li{style: "color: #fff; text-decoration: none; font-size: 12px; line-height: 32px;"}
+        %li
           =link_to "#" do
             お知らせ
   .footer__logo
     =link_to "/" do
-      = image_tag "FURIMA-logo-white.svg", style: "width: 100%; vertical-align: bottom;"
-  %p{style: "font-size: 14px;margin: 0;padding: 0;"} © FURIMA
+      = image_tag "FURIMA-logo-white.svg", class: "footer__logo--img"
+  .copyright
+    © FURIMA
 =link_to "/items/new" do
   .purchase-Btn
     %span.purchase-Btn__text 出品する
