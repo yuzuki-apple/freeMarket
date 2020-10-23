@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
+    @items = Item.includes(:images).order('created_at DESC').limit(5)
     @parents = Category.where(ancestry: nil)
   end
 
@@ -9,19 +10,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @images = @item.images.build
     @parent_category = Category.where(ancestry: nil)
-
-    # @items = Item.all
-    # @items = Item.includes(:images).order('created_at DESC')
-    # respond_to do |format|
-    # format.html
-    #   format.json
-    # end
   end
-
-  # def new
-  #   @item = Item.new
-  #   @images = @item.images.build
-  # end
 
   def create
     @item = Item.new(item_params)
