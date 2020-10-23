@@ -3,10 +3,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
     @parents = Category.where(ancestry: nil)
   end
 
@@ -15,11 +11,6 @@ class ItemsController < ApplicationController
     @images = @item.images.build
     @parent_category = Category.where(ancestry: nil)
   end
-
-  # def new
-  #   @item = Item.new
-  #   @images = @item.images.build
-  # end
 
   def create
     @item = Item.new(item_params)
