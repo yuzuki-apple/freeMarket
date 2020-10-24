@@ -337,10 +337,10 @@ img {
 
 
 // 古賀さん
-.top-KeyFeatures {
+.top-KeyFeatures{
   padding: 60px 100px;
   background-color: white;
-  .head {
+  .head{
     font-size: 27px;
     text-align: center;
     margin: 0 0 40px;
@@ -348,7 +348,7 @@ img {
     margin-bottom: 25px;
     padding-bottom: 15px;
     position: relative;
-    .after {
+    .after{
       content: "";
       width: 70px;
       height: 4px;
@@ -359,32 +359,32 @@ img {
       transform: translateX(-50%);
     }
   }
-  .items {
+  .items{
     max-width: calc(1040px + 20px);
     width: 100%;
     margin:0 auto;
     display: flex;
     flex-wrap: wrap;
-    .item {
+    .item{
       display: flex;
       flex-direction: column;
       width: 30%;
       text-align: center;
       padding: 0 10px;
-      .item__img {
+      .item__img{
         width: 70%;
         margin:0 auto;
         line-height: 120px;
-        .image {
+        .image{
           height: 300px;
         }
       }
-      .item__sub-title {
+      .item__sub-title{
         margin: 38px 0 10px;
         font-size: 19px;
         font-weight: bold;
       }
-      .item__detail {
+      .item__detail{
         margin: 0 0 40px;
         font-size: 17px;
         font-weight: 200;
@@ -393,53 +393,61 @@ img {
     }
   }
 }
-
-.pickupContainer__first {
-  padding: 80px 0 0;
+.pickupContainer__first{
+  padding: 80px 0;
   background-color: #f8f8f8;
   height: 100%;
-  .head {
+  .head{
     text-align: center;
     font-size: 28px;
     line-height: 1.4;
     font-weight: bold;
   }
   .productBox{
-    a {
+    a{
       text-decoration: none;
-    }
-    
+    } 
     .productHead{
       text-align: center;
-      
-      .title {
+      .title{
         font-size: 24px;
         font-weight: bold;
         color: #3CCACE;
       }
     }
-    .productLists {
+    .productLists{
       width: 780px;
       margin: 26px auto;
       display: flex;
       justify-content: space-around;
       .productList {
-        width: 220px;
         display: inline-block;
-        
-        .productList--img {
+        &__sold{
+          background-color: red;
+          height: 30px;
+          line-height: 30px;
+          &--inner{
+            color: #ffffff;
+            font-size: 20px;
+            text-align: center;
+          }
+        }
+        &__img{
           position: relative;
           overflow: hidden;
           margin: 0;
           z-index: auto;
           display: block;
           transition: opacity 0.15s;
-        
+          &--url{
+            height: 150px;
+            width: 220px;
+          }
           &:hover {
             opacity: 0.55;
           }
         }
-        .productList--body {
+        &__body {
           background-color: white;
           color: #333;
           padding: 16px;
@@ -449,83 +457,36 @@ img {
             font-weight: bold;
             text-align: left;
           }
-          .fa {
-            display: inline-block;
-            font-size: inherit;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
+          .details{
+            font-size: 16px;
+            &__price{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              &--inner{
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+                font-size: 14px;
+              }
+              li{
+                list-style: none;
+                i{
+                  display: inline-block;
+                  font-size: inherit;
+                  text-rendering: auto;
+                  -webkit-font-smoothing: antialiased;
+                }
+              }
+            }
+            &__tax{
+              font-size: 5px;
+            }
           }
         }
       }
     }
   }
-}
-
-
-.pickupContainer__second {
-  padding: 80px 0 0;
-  padding-bottom: 80px;
-  background-color: #f8f8f8;
-  height: 100%;
-  .head {
-    text-align: center;
-    font-size: 28px;
-    line-height: 1.4;
-    font-weight: bold;
-  }
-  .productBox{
-    a {
-      text-decoration: none;
-    }
-    .productHead{
-      text-align: center;
-      .title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #3CCACE;
-      }
-    }
-    .productLists {
-      width: 780px;
-      margin: 26px auto;
-      display: flex;
-      justify-content: space-around;
-      .productList {
-        width: 220px;
-        display: inline-block;
-        .productList--img {
-          position: relative;
-          overflow: hidden;
-          margin: 0;
-          z-index: auto;
-          display: block;
-          transition: opacity 0.15s;
-
-          &:hover {
-            opacity: 0.55;
-          }
-        }
-        .productList--body {
-          background-color: white;
-          color: #333;
-          padding: 16px;
-          .name {
-            line-height: 1.5;
-            font-weight: bold;
-            font-size: 14px;
-            text-align: left;
-          }
-          .fa {
-            display: inline-block;
-            font-size: inherit;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-          }
-        }
-      }
-    }
-  }
-  font-weight: bold; font-size: 14px;
 }
 
 .Banner {
@@ -537,7 +498,6 @@ img {
   .inner {
     color: #fff;
     text-align: center;
-
     .inner__title {
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 24px;
@@ -558,17 +518,14 @@ img {
       width: 180px;
       display: block;
       transition: opacity 0.15s;
-    
       &:hover {
         opacity: 0.55;
       }
     }
   }
 }
-
 .footer {
   padding: 60px 0;
-  color: #fff;
   background-color: #272727;
   text-align: center;
   margin: 0;
@@ -591,6 +548,19 @@ img {
         margin: 0 0 20px;
         font-size: 16px;
         font-weight: bold;
+        color: #fff;
+      }
+      ul{
+        padding-right: 40px;
+        list-style: none;
+        li{
+          font-size: 12px;
+          line-height: 32px;
+          text-decoration: none;
+          span{
+            color: #fff;
+          }
+        }
       }
     }
   }
@@ -598,6 +568,15 @@ img {
     max-width: 160px;
     width: 100%;
     margin: 0 auto;
+    &--img{
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  .copyright{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
   }
 }
 
@@ -612,10 +591,9 @@ img {
   padding: 15px;
   display: block;
   transition: opacity 0.15s;
-      
-        &:hover {
-          opacity: 0.55;
-        }
+  &:hover {
+    opacity: 0.55;
+  }
   .purchase-Btn__text {
     color: #fff;
     display: block;

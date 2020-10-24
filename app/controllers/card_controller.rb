@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-
+  before_action :authenticate_user!
   def new
     @parents = Category.where(ancestry: nil)
     if current_user&.card

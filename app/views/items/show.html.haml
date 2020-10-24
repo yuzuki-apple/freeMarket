@@ -122,7 +122,7 @@
               = link_to '編集の編集', edit_item_path(@item.id), method: :get, class: "editbox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #ea352d; border-radius: 10px;"
             .deletebox
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, class: "deletebox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; margin-top:20px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #aaaaaa; border-radius: 10px;"
-        - elsif user_signed_in? && current_user.id != @item.user_id
+        - elsif user_signed_in? && current_user.id != @item.user_id && !@item.buyer_id
           = link_to '購入画面に進む', new_item_payment_path(@item.id), method: :get, class: "paymentbox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; margin-top:20px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #ea352d; border-radius: 10px;"
         .commentbox
           %div.commentcontents
