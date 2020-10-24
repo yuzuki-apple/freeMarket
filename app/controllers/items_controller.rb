@@ -39,6 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item.user_id = current_user.id && user_signed_in?
     @parent_category = Category.where(ancestry: nil)
   end
 
