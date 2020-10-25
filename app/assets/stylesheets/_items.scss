@@ -421,7 +421,6 @@ img {
       display: flex;
       justify-content: space-around;
       .productList {
-        display: inline-block;
         &__sold{
           background-color: red;
           height: 30px;
@@ -431,6 +430,9 @@ img {
             font-size: 20px;
             text-align: center;
           }
+        }
+        &__not-sold{
+          height: 30px;
         }
         &__img{
           position: relative;
