@@ -100,6 +100,8 @@
                 .productList__sold
                   .productList__sold--inner
                     SOLD
+              - else
+                .productList__not-sold
             .productList__img
               = image_tag item.images[0].src.url, class: "productList__img--url"
             .productList__body
