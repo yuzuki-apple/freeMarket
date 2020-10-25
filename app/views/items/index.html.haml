@@ -94,8 +94,8 @@
           .title 新規投稿商品
       .productLists
         - @items.each do |item|
-          .productList
-            = link_to item_path(item.id) do
+          = link_to item_path(item.id) do
+            .productList
               - if item.buyer_id.present? 
                 .productList__sold
                   .productList__sold--inner
