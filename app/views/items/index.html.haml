@@ -94,12 +94,14 @@
           .title 新規投稿商品
       .productLists
         - @items.each do |item|
-          .productList
-            = link_to item_path(item.id) do
+          = link_to item_path(item.id) do
+            .productList
               - if item.buyer_id.present? 
                 .productList__sold
                   .productList__sold--inner
                     SOLD
+              - else
+                .productList__not-sold
             .productList__img
               = image_tag item.images[0].src.url, class: "productList__img--url"
             .productList__body
