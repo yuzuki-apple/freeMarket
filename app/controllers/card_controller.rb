@@ -27,6 +27,7 @@ class CardController < ApplicationController
       if @card.save
         redirect_to new_card_path
       else
+        gon.api_key = ENV["PAYJP_PUBLIC_KEY"]
         render :new
       end
     end
