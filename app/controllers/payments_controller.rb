@@ -19,7 +19,11 @@ class PaymentsController < ApplicationController
     if item.update(buyer_id: current_user.id)
       redirect_to root_path
     else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(current_user.card.customer_id) if current_user.card
+      @card = customer.cards.retrieve(current_user.card.card_id) if current_user.card
       @item = Item.find(params[:item_id])
+      @shipment_fee = ShipmentFee.find(@item.shipment_fee_id)
       render "new"
     end
   end

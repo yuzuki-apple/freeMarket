@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_10_05_073746) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "family_name_kanji", default: "", null: false
     t.string "first_name_kanji", default: "", null: false
     t.string "family_name_kana", default: "", null: false
@@ -21,9 +22,8 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
     t.integer "prefecture_id", null: false
     t.string "city", default: "", null: false
     t.string "block_number", default: "", null: false
-    t.string "apartment_name", default: "", null: false
-    t.string "phone_number", default: "", null: false
-    t.bigint "user_id"
+    t.string "apartment_name", default: ""
+    t.string "phone_number", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_073746) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"

@@ -5,6 +5,9 @@ class Address < ApplicationRecord
   validates :family_name_kana,:first_name_kana,format:{with:/[ぁ-ん]+/}
   validates :post_number,format:{with:/\d{3}\-\d{4}/}
   validates :phone_number,format:{with:/\d{10,11}|\A\d{0}\z/}
+
+  belongs_to :user, optional: true
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
 end

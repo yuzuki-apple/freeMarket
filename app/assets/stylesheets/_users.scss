@@ -1,3 +1,14 @@
+@mixin zip_prefecture(){
+  display:inline-block;
+  vertical-align:top;
+  width:49%;
+}
+
+$main_color:  #3CCACE;
+$color_white: #ffffff;
+$color_red:   rgba(255,0,0,1);
+$color_black: rgba(255,0,0,0);
+
 .registrationHeader {
   text-align:center;
   h1 {
@@ -41,9 +52,9 @@
       }
       &.active {
         font-weight:600;
-        color:#3CCACE;
+        color:$main_color;
         &::before {
-          background:#3CCACE;
+          background:$main_color;
         }
       }
     }
@@ -86,34 +97,34 @@
         border:1px solid #cccccc;
         font-size:4vw;
         &:focus {
-          border:2px solid #3CCACE;
+          border:2px solid $main_color;
           outline:0;
         }
       }
       &-require {
-        background:#3CCACE;
+        background:$main_color;
         margin-left:3vw;
         padding:1vw 2vw;
         border-radius:1vw;
-        color:#fff;
+        color:$color_white;
         font-size:3vw;
         vertical-align:top;
       }
       .errMessage {
         height:4vw;
         font-size:4vw;
-        color:rgba(255,0,0,1);
+        color:$color_red;
       }
-      @keyframes errHeight {0% {height:0;color:rgba(255,0,0,0);}100% {height:4vw;color:rgba(255,0,0,1);}}
+      @keyframes errHeight {0% {height:0;color:$color_black;}100% {height:4vw;color:$color_red;}}
       .errHeight {
         animation:errHeight 0.3s;
       }
-      @keyframes errHeight0 {0% {height:4vw;color:rgba(255,0,0,1);}100% {height:0;color:rgba(255,0,0,0);}}
+      @keyframes errHeight0 {0% {height:4vw;color:$color_red;}100% {height:0;color:$color_black;}}
       .errHeight0 {
         animation:errHeight0 0.3s;
       }
       .errBorder {
-        border:2px solid #ff0000;
+        border:2px solid $color_red;
       }
       &.half {
         >*:nth-child(3) {
@@ -153,15 +164,11 @@
         display:inline;
       }
       &.zipCode {
-        display:inline-block;
-        vertical-align:top;
-        width:49%;
+        @include zip_prefecture();
         margin-left:0;
       }
       &.prefecture {
-        display:inline-block;
-        vertical-align:top;
-        width:49%;
+        @include zip_prefecture();
         margin-left:2%;
       }
     }
@@ -185,9 +192,9 @@
     }
     .submit input {
       margin:10vw auto 0;
-      background:#3CCACE;
-      border:1px solid #3CCACE;
-      color:#fff;
+      background:$main_color;
+      border:1px solid $main_color;
+      color:$color_white;
       display:block;
       width:90%;
       line-height:12vw;
@@ -210,9 +217,9 @@
     margin:10vw auto 0;
     &+a {
       margin:10vw auto 0;
-      background:#3CCACE;
-      border:1px solid #3CCACE;
-      color:#fff;
+      background:$main_color;
+      border:1px solid $main_color;
+      color:$color_white;
       display:block;
       width:90%;
       line-height:12vw;
@@ -229,9 +236,9 @@
     border-top:1px solid #eeeeee;
     a{
       margin:5vw auto 0;
-      background:#3CCACE;
-      border:1px solid #3CCACE;
-      color:#fff;
+      background:$main_color;
+      border:1px solid $main_color;
+      color:$color_white;
       display:block;
       width:90%;
       line-height:12vw;
@@ -341,8 +348,8 @@
           height:15px;
           font-size:14px;
         }
-        @keyframes errHeight {0% {height:0;color:rgba(255,0,0,0);}100% {height:15px;color:rgba(255,0,0,1);}}
-        @keyframes errHeight0 {0% {height:15px;color:rgba(255,0,0,1);}100% {height:0;color:rgba(255,0,0,0);}}
+        @keyframes errHeight {0% {height:0;color:$color_black;}100% {height:15px;color:$color_red;}}
+        @keyframes errHeight0 {0% {height:15px;color:$color_red;}100% {height:0;color:$color_black;}}
         &.half {
           >*:nth-child(3) {
             margin-left:2%;
