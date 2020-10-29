@@ -29,20 +29,19 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
-|password|string|null: false, length: {minimum: 7}|
-|password_confirm|string|null: false, length: {minimum: 7}|
+|encrypted_password|string|null: false|
 |family_name_kanji|string|null: false|
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_day|integer|null: false|
+|reset_password_token|string|unique: true|
+|reset_password_sent_at|datetime||
+|remember_created_at|datetime||
 
 ### Association
 - has_many :items
 - has_one :address
-- has_one :creditcard
+- has_one :card
 
 
 ## addressesテーブル
@@ -63,29 +62,19 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+- belongs_to :prefecture
 
 
-## creditcardsテーブル
+## cardsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|card_number|interger|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to :user
-
-
-## items_categoriesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :category
 
 
 ## itemsテーブル
@@ -93,20 +82,21 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|buyer_id|references|null: false, foreign_key: true|
 |name|string|null: false|
-|price|int|null: false|
-|description|text|null: false|
+|price|integer|null: false|
+|description|string|null: false|
 |brand|string||
-|size|string||
-|condition|string|null: false|
-|shipment_fee|string|null: false|
-|shipment_region|string|null: false|
-|shipment_schedule|string|null: false|
+|condition_id|integer|null: false|
+|shipment_fee_id|integer|null: false|
+|shipment_region_id|integer|null: false|
+|shipment_schedule_id|integer|null: false|
 
 ### Association
 - belongs_to :user
-- has_many :categories, thorough: :items_categories
-- has_many :items_categories
+- belongs_to :category
+- belongs_to :buyer
 - has_many :images
 
 
@@ -114,11 +104,11 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string||
+|ancestry|string||
 
 ### Association
-- has_many :items, through: :items_categories
-- has_many :items_categories
+- has_many :items
 
 
 ## imagesテーブル
@@ -126,7 +116,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key: true|
-|image_url|string|null: false|
+|src|string|null: false|
 
 ### Association
 - belongs_to :item
