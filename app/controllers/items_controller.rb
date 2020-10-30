@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
@@ -28,6 +28,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item.user_id = current_user.id && user_signed_in?
+    @parent_category = Category.where(ancestry: nil)
+    @item.images.build
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render "edit"
+    end
   end
 
 
@@ -45,13 +56,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def update
-    if @item.update(item_params)
-      redirect_to root_path
-    else
-      render "edit"
-    end
-  end
 
   def destroy
     if @item.user_id == current_user.id && @item.destroy
@@ -64,7 +68,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:images, :name, :description, :category, :brand, :condition_id, :shipment_fee_id, :shipment_region_id, :shipment_schedule_id, :price, :category_id,[images_attributes: [:src]]).merge(user_id: current_user.id)
+    params.require(:item).permit(:images, :name, :description, :category, :brand, :condition_id, :shipment_fee_id, :shipment_region_id, :shipment_schedule_id, :price, :category_id, images_attributes: [:src, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def set_item

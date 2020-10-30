@@ -119,7 +119,7 @@
         - if user_signed_in? && current_user.id == @item.user_id
           .edit_deletebox{style: "background-color: #fff; margin: 24px 0px; padding: 20px 10px; height: 160px;"}
             %p.editbox
-              = link_to '編集の編集', "#", method: :get, class: "editbox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #ea352d; border-radius: 10px;"
+              = link_to '編集の編集', edit_item_path(@item.id), method: :get, class: "editbox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #ea352d; border-radius: 10px;"
             .deletebox
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, class: "deletebox__link", style: "display: inline-block; color: #ffffff; font-size: 14px; margin-top:20px; height: 50px; width: 100%; line-height: 50px; text-align: center; background-color: #aaaaaa; border-radius: 10px;"
         - elsif user_signed_in? && current_user.id != @item.user_id && !@item.buyer_id

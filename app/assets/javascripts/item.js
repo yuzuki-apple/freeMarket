@@ -91,11 +91,19 @@ $(function(){
       var count = $('.preview-box').length;
       setLabel(count);
       //item_images_attributes_${id}_image から${id}に入った数字のみを抽出
-      var id = $(this).attr('id').replace(/[^0-9]/g, '');
+      var id = Number($(this).attr('id').replace(/[^0-9]/g, ''));
       //取得したidに該当するプレビューを削除
       $(`#preview-box__${id}`).remove();
       //フォームの中身を削除
       $(`#item_images_attributes_${id}_src`).val("");
+
+      // チェックボックスのid取得
+      const hiddenCheck = $(`#item_images_attributes_${id}__destroy`);
+
+      // もしチェックボックスが存在すればチェックを入れる
+      if (hiddenCheck) hiddenCheck.prop('checked', true);
+  
+      $(this).parent().remove();
 
       //削除時のラベル操作
       var count = $('.preview-box').length;
