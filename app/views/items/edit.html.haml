@@ -25,16 +25,17 @@
                   .post__drop__box__container
                     .prev-content
                       -if image =!  nil
-                        - @item.images.each do |image|
+                        - @item.images.each_with_index do |image,index|
                           - if image.persisted?
-                            .preview-box{:id => "preview-box__${image}"}
+                            .preview-box{:id => "preview-box__#{index}"}
                               .upper-box
                                 = image_tag image.src.url, style: "height: 87px; width: 140px; object-fit: cover; margin-right: 5px;"
                               .lower-box
                                 .update-box
                                   %label.edit_btn 編集
-                                .delete-box{:id => "delete_btn_${image}"}
-                                  %span 削除
+                                .delete-box{:id => "delete_btn_#{index}"}
+                                  %span 削除 
+
                     .label-content
                       %label.image__select
                       %label{for: "item_images_attributes_#{@item.images.length - 1}_src", class: "label-box", id: "label-box--0", style: "background-color: #eeeeee; width: 100%; height: 150px; margin: 0 auto; padding: 45px 0px; border: dotted 1px;"}
@@ -42,7 +43,9 @@
                     .hidden-content
                       = f.fields_for  :images, {class: "image__select__input"} do |i|
                         = i.file_field :src, class: "hidden-field"
-                        -# = i.object.src
+                        - if i.object.persisted?
+                          = i.check_box :_destroy, class: "hidden-checkbox"
+                        
                 %p.image_note
         .formNew__description
           .formNew__description--content
