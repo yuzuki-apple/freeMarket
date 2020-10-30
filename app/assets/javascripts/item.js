@@ -88,12 +88,10 @@ $(function(){
 
     // 画像の削除
     $(document).on('click', '.delete-box', function() {
-      console.log("ok");
       var count = $('.preview-box').length;
       setLabel(count);
       //item_images_attributes_${id}_image から${id}に入った数字のみを抽出
       var id = Number($(this).attr('id').replace(/[^0-9]/g, ''));
-      console.log(id)
       //取得したidに該当するプレビューを削除
       $(`#preview-box__${id}`).remove();
       //フォームの中身を削除

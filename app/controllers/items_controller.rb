@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy, :edit]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
@@ -28,14 +28,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @item.user_id = current_user.id && user_signed_in?
     @parent_category = Category.where(ancestry: nil)
     @item.images.build
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
